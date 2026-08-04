@@ -84,16 +84,32 @@ export const keywordGapDetector: Detector = {
           aiOverviewPresent: serp.aiOverviewPresent === true,
         },
         intent: cluster.intent as OpportunityDraft['intent'],
-        effortClass: cluster.intent === 'tool_intent' ? 'free_tool' : 'new_page',
+        effortClass:
+          cluster.intent === 'tool_intent'
+            ? 'free_tool'
+            : cluster.intent === 'informational'
+              ? 'page_edit'
+              : 'new_page',
         weakestTier,
         sourceCount: demandRow ? 2 : 1,
         sampleDiscount: 1,
         suggestedAction: {
-          kind: cluster.intent === 'tool_intent' ? 'build_free_tool' : 'publish_landing_page',
+          // The asset follows the intent: a question wants an answer, a
+          // comparison wants a page, a repeated structured task wants a tool.
+          // Serving all three with one page type is how content programmes end
+          // up ranking for nothing.
+          kind:
+            cluster.intent === 'tool_intent'
+              ? 'build_free_tool'
+              : cluster.intent === 'informational'
+                ? 'publish_blog'
+                : 'publish_landing_page',
           title:
             cluster.intent === 'tool_intent'
               ? `Build a utility that answers "${serp.query}"`
-              : `Publish a page targeting "${serp.query}"`,
+              : cluster.intent === 'informational'
+                ? `Publish an answer-led article for "${serp.query}"`
+                : `Publish a page targeting "${serp.query}"`,
           spec:
             `Query: "${serp.query}" (${serp.market}, intent: ${cluster.intent}). ` +
             `Currently ${serp.ownPosition ? `#${serp.ownPosition}` : 'absent'}; achievable #${target} ` +
