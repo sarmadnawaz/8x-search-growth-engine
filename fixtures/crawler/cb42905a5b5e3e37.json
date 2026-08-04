@@ -1,0 +1,10 @@
+{
+  "requestKey": "https://pocketpal.me/robots.txt",
+  "fetchedAt": "2026-08-04T17:07:11.521Z",
+  "payload": {
+    "url": "https://pocketpal.me/robots.txt",
+    "status": 200,
+    "body": "User-Agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: https://pocketpal.me/sitemap.xml\n",
+    "contentType": "text/plain"
+  }
+}
