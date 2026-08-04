@@ -63,4 +63,4 @@ Decisions made without waiting for answers — each is reversible and flagged in
 | Build plan for remaining hours | `docs/03-build-plan-24h.md` | ✅ done | Boxed to real remaining time; runtime de-scope order stated |
 | Process narrative (how this was built) | `docs/04-process.md` | ✅ done | Honest log: models, agents, decisions — including what review passes caught |
 | Dashboard mock-up | `mockups/dashboard.html` | ✅ done | Shows the loop, not a score page; no fake-verified states |
-| Working vertical slice | `app/` | ⏳ **next — not yet built** | Two domains, one pipeline, one command to run; fixture property closes the verify loop |
+| Working vertical slice | `lib/engine/`, `app/` | ✅ done | Four properties through one pipeline; fixture property closes the verify loop; `npm run dev` on a seeded DB |

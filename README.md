@@ -1,24 +1,118 @@
-# 8x Search Growth Engine — take-home submission
+# Search Growth Engine
 
-**One paragraph:** A config-driven engine that runs the same loop for every 8x property — *add a domain → inspect → compare → rank opportunities → make → measure → learn* — where every recommendation is a typed detector output carrying its raw evidence (source + fetch time + confidence tier), every action carries machine-checkable acceptance criteria verified by re-crawl, and every outcome is a diff between immutable snapshots. Adding the 21st domain is one YAML file. The design was grounded in 8x's real portfolio: research identified the actual app domains, and live checks (2026-08-04) found cherly.app missing robots.txt and sitemap.xml — the demo's opening finding, shown honestly as *proposed* until it can be executed on a domain we control access to.
+A reusable engine that finds, prioritises, acts on and **verifies** search growth opportunities across a portfolio of domains. Add a domain → inspect → compare → rank → make → measure → learn, with the same code path for every property.
 
-**Status:** research, decomposition, system design, build plan, and dashboard mock-up are complete (this repo). The vertical slice build is the next block, hour-boxed against the remaining time in [docs/03-build-plan-24h.md](docs/03-build-plan-24h.md) — nothing below claims code that doesn't exist yet.
+The design constraint everything else follows from: **adding the next domain is a config file, not a code change** — and there's a check that fails if that stops being true.
 
-## What's here
+---
 
-| Doc | Contents |
+## Run it
+
+```bash
+npm install
+cp .env.example .env
+npm run dev            # dashboard on http://localhost:3000, seeded with real data
+```
+
+No API keys needed to browse: the SQLite database is committed with four properties already run.
+
+To run the pipeline yourself:
+
+```bash
+npm run pipeline -- cherly.app --replay     # offline, replays recorded API responses (0.1s)
+npm run pipeline -- cherly.app              # live (keys optional; missing ones degrade cleanly)
+npm run check:onboarding                    # the repeatability test
+```
+
+## What actually works
+
+| | |
 |---|---|
-| [docs/00-assignment-decomposition.md](docs/00-assignment-decomposition.md) | The brief restated as 10 testable requirements, the implicit rubric, scoping decisions with revisit-conditions, questions for Theo |
-| [docs/01-research.md](docs/01-research.md) | Multi-agent research with sources, every claim tiered [strong]/[directional]/[weak]: who 8x is, the $0 evidence stack, GEO/AEO evidence vs folklore, prior art & Google-policy risk, production cost at 21 domains (≈$30–60/mo) |
-| [docs/02-system-design.md](docs/02-system-design.md) | Architecture (adapters → evidence → scoring → actions → snapshots), entity model, deterministic scoring formula with a worked example on a real finding, verification & measurement design, 16-tactic SEO/GEO/AEO portfolio, portfolio-level arbitration, ASO scope edge |
-| [docs/03-build-plan-24h.md](docs/03-build-plan-24h.md) | Vertical-slice plan boxed to the hours actually remaining, stack decision log with rejected alternatives, runtime de-scope order, honest-limits section |
-| [docs/04-process.md](docs/04-process.md) | How this was produced: Claude Code orchestration, model selection rationale, 5-agent parallel research + adversarial critic (which overturned assumptions and live-verified findings), review-panel pass |
-| [docs/05-stack-evaluation.md](docs/05-stack-evaluation.md) | Factor-scored stack selection: candidates per layer scored on scalability, reliability, community, hiring, performance, ops cost, type-safety, exit cost — with workload-derived weights and the triggers that would flip each decision |
-| [docs/06-scale-architecture.md](docs/06-scale-architecture.md) | The same system at 500 domains: verified load math, storage evolution (partitioned Postgres → OLAP ladder with real precedents), fleet reliability (SLOs, degradation ladder, failure modes), cost curve, human-review throughput math, operating model — every escalation gated on an observable trigger |
-| [mockups/dashboard.html](mockups/dashboard.html) | Working dashboard mock-up built around the loop: evidence-linked target list, action detail with acceptance criteria, snapshot diff, trend with shipped-action markers. Open directly in a browser; light/dark aware |
+| **Real evidence** | Polite crawler, Google Autocomplete, PageSpeed Insights, SERP sampling. Every row carries source, confidence tier and fetch time |
+| **Mechanical detectors** | Filters over evidence, so a recommendation cannot exist without the data that produced it |
+| **Deterministic scoring** | `impact × confidence × fit × prior ÷ effort`, computed in code — no LLM assigns a priority |
+| **Actions with acceptance criteria** | Machine-checkable, re-evaluated against a fresh fetch |
+| **Verification by observation** | An action reaches `verified` only when a re-check passes |
+| **Config-only onboarding** | Enforced by `npm run check:onboarding` |
+| **Offline replay** | Full pipeline from cached fixtures, no keys |
 
-## The three claims this submission stakes out
+### Verified end to end
 
-1. **It's a system, not an audit** — analysis never writes recommendations; it writes evidence. Detectors turn evidence into opportunities; a deterministic formula (not an LLM) turns opportunities into priority; re-crawls turn actions into verified outcomes. Each stage is inspectable.
-2. **Repeatability is designed to be demonstrated, not asserted** — the slice runs two real 8x domains through identical code from two config files, adds a third (sway.day) as config-only the first time the pipeline completes, and ships a check that fails if onboarding touches engine code. Until that code lands, this is the plan's acceptance test — stated as such.
-3. **Evidence discipline extends to the research and to the demo itself** — every research claim carries a tier; GEO/AEO folklore is included *labelled as folklore* (llms.txt, schema-as-citation-lever); Google's scaled-content enforcement is a first-class design constraint; and findings on domains we can't deploy to are shown as *proposed with a generated fix artifact*, never as fake-verified. The executed→verified lifecycle is demonstrated on a fixture property we control.
+On `demo-fixture.local`, a site the engine controls (served over real HTTP during the run):
+
+```
+run 1            6 actions, 2 assets — robots+sitemap 0/2 criteria pass
+run 2 --apply    shipped robots.txt, sitemap.xml
+                 [verified] Publish robots.txt — 2/2 criteria pass
+                 [verified] Publish an XML sitemap — 2/2 criteria pass
+run 3            0 new actions, still verified (idempotent)
+```
+
+On **cherly.app**, a real portfolio domain, the engine independently found what the research predicted — no robots.txt, no sitemap.xml, no canonical or structured data on any of 6 crawled pages — and produced the fix. Because we have no deploy access there, those actions stay **`proposed` with the artifact attached**, and `--apply` refuses:
+
+```
+apply:  refused Publish robots.txt for cherly.app — no deploy access for cherly.app
+```
+
+That refusal is the point. Nothing in this system is displayed as verified when a `curl` would say otherwise.
+
+### Repeatability, demonstrated
+
+| property | pages | clusters | evidence | opportunities |
+|---|---|---|---|---|
+| cherly.app | 6 | 32 | 22 | 4 |
+| pocketpal.me | 8 | 18 | 29 | 3 |
+| sway.day | 6 | 12 | 23 | 3 |
+| demo-fixture.local | 3 | — | 10 | 6 |
+
+`sway.day` was onboarded after the engine was built: one YAML file, zero code changes.
+
+## How it's put together
+
+```
+properties/*.yaml     per-property config — the only property-specific surface
+lib/engine/
+  adapters/           collect evidence (crawler, autocomplete, serp, psi) + fixture cache
+  detectors/          pure functions: evidence -> scored opportunity drafts
+  scoring.ts          the formula, with the score -> priority mapping documented
+  make.ts             actions + generated artifacts; generating and shipping are separate permissions
+  verify.ts           re-check acceptance criteria against a fresh fetch
+  pipeline.ts         orchestration, degradation handling, snapshots
+lib/schemas.ts        Zod: one source of truth for entity shapes
+app/                  dashboard (Next.js + shadcn/ui)
+scripts/              pipeline CLI, onboarding check
+```
+
+Four rules the code enforces:
+
+1. **Analysis writes evidence, never conclusions.** Detectors turn evidence into opportunities; scoring turns opportunities into priorities. Each stage is separately inspectable.
+2. **Snapshots are immutable.** Trends, diffs and verification are all comparisons between runs.
+3. **Adapter failure degrades one evidence family**, marks the snapshot `partial`, and never fails the run.
+4. **Generating a fix and shipping it are different permissions.** No property without `deployAccess` is ever written to, whatever its policy says.
+
+## Honest limits
+
+- **We can't execute on domains we don't own.** Findings there are detection plus a generated artifact at `proposed`. The executed → verified lifecycle is demonstrated on a property we control.
+- **SEO outcomes lag 2–6 months.** This proves the plumbing — baselines, diffs, verification, windows — not uplift. The trend chart shows indexable pages, which moves on a timescale that can be shown honestly; ranking outcomes belong to the measure stage's windows.
+- **Search volume is `modeled`** from autocomplete richness, tagged as such, and confidence-capped in scoring. Production swaps in a volume API behind the same adapter and the tier becomes `measured`.
+- **The autocomplete endpoint is undocumented** and can rate-limit. That's why every response is cached and `--replay` exists.
+- **SERP evidence needs a key.** Without `SERPER_API_KEY` the keyword detectors return nothing and the snapshot is marked degraded — the engine does not invent rankings to fill the gap.
+
+## What I'd do next
+
+1. **SERP + AI-visibility probes at full strength** — keyword and GEO/AEO detectors are written but under-fed without API keys.
+2. **LLM asset makers behind the existing seam** — Haiku for extraction, Sonnet for drafts, Opus as evaluator, each output validated by the Zod schemas already in place, gated by the review queue that already exists.
+3. **Measurement windows** — the `Measurement` entity and verdict vocabulary (`improving / flat / declining / too_early`) are modelled; the scheduled re-measure job is not yet written.
+4. **The learn loop** — per-tactic win-rate priors feeding the `tacticPrior` factor, which currently defaults to 1.0.
+
+## Documents
+
+| Doc | |
+|---|---|
+| [00 decomposition](docs/00-assignment-decomposition.md) | The brief as testable requirements, scoping decisions, open questions |
+| [01 research](docs/01-research.md) | Evidence stack, GEO/AEO evidence vs folklore, prior art, policy risk — every claim tiered |
+| [02 system design](docs/02-system-design.md) | Architecture, entity model, scoring, verification, 16-tactic portfolio |
+| [03 build plan](docs/03-build-plan-24h.md) | Hour-boxed slice, decision log, de-scope order |
+| [04 process](docs/04-process.md) | How this was researched and built, including what review passes caught |
+| [05 stack evaluation](docs/05-stack-evaluation.md) | Factor-scored per layer, with the triggers that would flip each decision |
+| [06 scale architecture](docs/06-scale-architecture.md) | The same system at 500 domains, every escalation gated on an observable trigger |
