@@ -44,126 +44,6 @@ export interface LlmProvider {
 }
 
 // ---------------------------------------------------------------------------
-// Vercel AI Gateway — one key, many providers, OpenAI-compatible surface.
-// ---------------------------------------------------------------------------
-
-const GATEWAY_URL = 'https://ai-gateway.vercel.sh/v1/chat/completions'
-
-/** Models are `provider/model`; the gateway routes on the prefix. */
-const DEFAULT_MODEL = 'google/gemini-2.5-flash'
-
-interface ChatChoice {
-  message?: {
-    content?: string
-    annotations?: { url_citation?: { url: string } }[]
-  }
-}
-
-interface ChatResponse {
-  model?: string
-  choices?: ChatChoice[]
-  error?: { message: string; type?: string }
-}
-
-/** Pull URLs out of citation annotations, falling back to links in the prose. */
-function citationsFrom(payload: ChatResponse, text: string): string[] {
-  const annotated = (payload.choices ?? [])
-    .flatMap((c) => c.message?.annotations ?? [])
-    .map((a) => a.url_citation?.url)
-    .filter((u): u is string => Boolean(u))
-
-  if (annotated.length > 0) return [...new Set(annotated)]
-
-  // Grounded answers often carry sources inline; a URL in the text is weaker
-  // evidence than an annotation, but it is still something the model chose to
-  // surface rather than something we inferred.
-  const inline = text.match(/https?:\/\/[^\s)\]"']+/g) ?? []
-  return [...new Set(inline)]
-}
-
-export function gatewayProvider(): LlmProvider {
-  const model = process.env.LLM_MODEL ?? DEFAULT_MODEL
-
-  async function call(body: Record<string, unknown>): Promise<ChatResponse> {
-    const res = await fetch(GATEWAY_URL, {
-      method: 'POST',
-      headers: {
-        authorization: `Bearer ${process.env.AI_GATEWAY_API_KEY ?? ''}`,
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify({ model, ...body }),
-    })
-    const payload = (await res.json()) as ChatResponse
-    if (!res.ok) {
-      throw new Error(`gateway ${res.status}: ${payload.error?.message ?? 'request failed'}`)
-    }
-    return payload
-  }
-
-  return {
-    name: `gateway:${model}`,
-
-    unavailableReason() {
-      return process.env.AI_GATEWAY_API_KEY ? null : 'AI_GATEWAY_API_KEY not set'
-    },
-
-    supportsGrounding() {
-      // Opt-in, and off by default — deliberately.
-      //
-      // Google Search grounding is a Gemini capability, but the gateway's
-      // OpenAI-compatible chat surface rejects the grounding tool
-      // (`400 Invalid input: expected "function"`), so it is not reachable
-      // the way a plain tool call would suggest. Defaulting this to true would
-      // have the engine assert a capability nobody has observed — the same
-      // mistake it refuses to make about a domain's rankings.
-      //
-      // Set LLM_GROUNDING=on once grounded answers are confirmed to return
-      // citations on this route; until then the probe declines to run.
-      return process.env.LLM_GROUNDING === 'on'
-    },
-
-    async answerGrounded(prompt) {
-      const payload = await call({
-        messages: [{ role: 'user', content: prompt }],
-        // Only sent when grounding is confirmed available: an unsupported tool
-        // makes the whole request invalid, which would take out the enrichment
-        // path as well.
-        ...(process.env.LLM_GROUNDING === 'on'
-          ? { tools: [{ type: 'google_search' }] }
-          : {}),
-      })
-
-      const text = payload.choices?.[0]?.message?.content ?? ''
-      return { text, citations: citationsFrom(payload, text), model: payload.model ?? model }
-    },
-
-    async generateObject({ system, prompt, schema, schemaName }) {
-      const payload = await call({
-        messages: [
-          {
-            role: 'system',
-            content: `${system}\n\nRespond with a single JSON object and nothing else.`,
-          },
-          { role: 'user', content: prompt },
-        ],
-        response_format: { type: 'json_object' },
-      })
-
-      const text = payload.choices?.[0]?.message?.content ?? ''
-      // Models wrap JSON in fences often enough that stripping them is cheaper
-      // than a retry, but the model is never trusted to have produced the
-      // right shape — the caller's schema decides.
-      const cleaned = text
-        .trim()
-        .replace(/^```(?:json)?\s*/i, '')
-        .replace(/```$/, '')
-      void schemaName
-      return schema.parse(JSON.parse(cleaned))
-    },
-  }
-}
-
-// ---------------------------------------------------------------------------
 // OpenAI Responses API — the route where grounding is genuinely available.
 // ---------------------------------------------------------------------------
 
@@ -267,22 +147,21 @@ export function openAiProvider(): LlmProvider {
 /**
  * Provider selection by available credential.
  *
- * Both routes implement the same two methods, so which one runs is
- * configuration rather than a code path — the point of keeping this seam
- * narrow. OpenAI is preferred when its key is present because its Responses
- * API genuinely exposes web search and returns the URLs it consulted, and the
- * probe is worthless without that. The gateway is the alternative when one key
- * has to cover many models.
+ * One route, behind the `LlmProvider` interface. OpenAI is the provider
+ * because its Responses API genuinely exposes web search and returns the URLs
+ * it consulted, and the AI-visibility probe is worthless without that: an
+ * ungrounded model answering "which apps do you recommend" reports its
+ * training data, not what an assistant tells a user today.
  *
- * LLM_PROVIDER forces a choice when both keys exist.
+ * The seam stays narrow rather than disappearing. Adding a second provider is
+ * one more object implementing these two methods, which is why the interface
+ * exists at all.
+ *
+ * LLM_PROVIDER=none forces the disabled route for tests and offline runs.
  */
 export function getProvider(): LlmProvider {
-  const forced = process.env.LLM_PROVIDER
-  if (forced === 'none') return disabledProvider()
-  if (forced === 'openai') return openAiProvider()
-  if (forced === 'gateway') return gatewayProvider()
-
-  return process.env.OPENAI_API_KEY ? openAiProvider() : gatewayProvider()
+  if (process.env.LLM_PROVIDER === 'none') return disabledProvider()
+  return openAiProvider()
 }
 
 /**
