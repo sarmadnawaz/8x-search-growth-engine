@@ -1,8 +1,11 @@
 import {
   answerBlock,
+  asQuestion,
+  canonicalFor,
   escapeHtml,
   internalLinks,
   jsonLd,
+  metaDescription,
   page,
   slugify,
   type Maker,
@@ -29,7 +32,7 @@ const landingPage: Maker = {
   async make(ctx: MakerContext): Promise<MadeAsset> {
     const { config, subject, evidence } = ctx
     const slug = slugify(subject)
-    const question = `What is the best ${subject}?`
+    const question = asQuestion(subject, (s) => `What is the best ${s}?`)
 
     const enriched = await ctx.enrich?.(
       `Write a 45-word direct answer to "${question}" for ${config.name}, which is: ${config.description}. ` +
@@ -74,7 +77,8 @@ const landingPage: Maker = {
       satisfies: ['answer_block_present', 'internal_links_min:3', 'schema_type_present:FAQPage'],
       body: page({
         title,
-        description: answer.slice(0, 155),
+        description: metaDescription(answer),
+        canonical: canonicalFor(config.domain, `${slug}.html`),
         bodyParts: [
           `    <h1>${escapeHtml(title)}</h1>`,
           answerBlock(question, answer),
@@ -128,7 +132,8 @@ const comparisonPage: Maker = {
       satisfies: ['answer_block_present', 'internal_links_min:3'],
       body: page({
         title: `${config.name} vs alternatives for ${subject}`,
-        description: answer.slice(0, 155),
+        description: metaDescription(answer),
+        canonical: canonicalFor(config.domain, `${slug}.html`),
         bodyParts: [
           `    <h1>${escapeHtml(config.name)} vs alternatives for ${escapeHtml(subject)}</h1>`,
           answerBlock(question, answer),
@@ -150,7 +155,7 @@ const blogPost: Maker = {
   async make(ctx: MakerContext): Promise<MadeAsset> {
     const { config, subject, evidence } = ctx
     const slug = slugify(subject)
-    const question = `How do you choose ${subject}?`
+    const question = asQuestion(subject, (s) => `How do you choose ${s}?`)
 
     const enriched = await ctx.enrich?.(
       `Write three short paragraphs (60 words each) answering "${question}" for readers considering ${config.name} (${config.description}). ` +
@@ -174,7 +179,13 @@ const blogPost: Maker = {
       evidence.competitors.length > 0
         ? `<li>${evidence.competitors.length} distinct results currently rank on page one (<a href="https://www.google.com/search?q=${encodeURIComponent(subject)}">Google search results</a>).</li>`
         : '',
-      `<li>Demand signal for this topic scored ${evidence.demand.toFixed(1)} of 10 in our own index (<a href="/methodology.html">methodology</a>).</li>`,
+      // A zero here means this subject came from an AI-citation gap rather than
+      // a query cluster, so no demand was ever measured for it. Printing "0.0
+      // of 10" states an absence as a measurement, which is the one thing a
+      // sourced figure must not do.
+      evidence.demand > 0
+        ? `<li>Demand signal for this topic scored ${evidence.demand.toFixed(1)} of 10 in our own index (<a href="/methodology.html">methodology</a>).</li>`
+        : '',
     ].filter(Boolean)
 
     return {
@@ -184,7 +195,8 @@ const blogPost: Maker = {
       satisfies: ['answer_block_present', 'sourced_stats:3', 'internal_links_min:3'],
       body: page({
         title: `${question}, ${config.name}`,
-        description: answer.slice(0, 155),
+        description: metaDescription(answer),
+        canonical: canonicalFor(config.domain, `blog/${slug}.html`),
         bodyParts: [
           `    <h1>${escapeHtml(question)}</h1>`,
           answerBlock(question, answer),
@@ -195,7 +207,7 @@ const blogPost: Maker = {
           jsonLd({
             '@type': 'Article',
             headline: question,
-            description: answer.slice(0, 155),
+            description: metaDescription(answer),
           }),
         ].filter(Boolean),
       }),
@@ -275,7 +287,8 @@ const freeTool: Maker = {
       ],
       body: page({
         title: `${spec.label}, free, no signup | ${config.name}`,
-        description: answer.slice(0, 155),
+        description: metaDescription(answer),
+        canonical: canonicalFor(config.domain, `tools/${slug}.html`),
         bodyParts: [
           `    <h1>${escapeHtml(spec.label)}</h1>`,
           answerBlock(question, answer),

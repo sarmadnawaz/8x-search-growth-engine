@@ -16,3 +16,6 @@ tsconfig.tsbuildinfo
 *.db-shm
 prisma/*.db
 8x-Search-Growth-Engine.docx
+.vercel
+.env*
+!.env.example
