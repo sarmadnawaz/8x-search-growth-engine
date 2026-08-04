@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fixture Property — a small site the engine controls</title>
+    <meta
+      name="description"
+      content="A deliberately imperfect static site used to demonstrate the engine's detect, fix and verify loop end to end."
+    />
+  </head>
+  <body>
+    <h1>Fixture Property</h1>
+    <p>
+      This site exists so the engine can demonstrate a complete action lifecycle on infrastructure
+      we actually control: a detector finds a real gap here, the engine generates the fix, the fix
+      is applied, and the next run's verification pass observes the result. Findings on domains we
+      cannot deploy to stay at <em>proposed</em> instead.
+    </p>
+    <p>
+      It ships without a robots.txt or an XML sitemap on purpose — the same condition found on a
+      real portfolio domain during research — so the first run has something true to detect.
+    </p>
+    <ul>
+      <li><a href="/pricing.html">Pricing</a></li>
+      <li><a href="/guide.html">Getting started guide</a></li>
+    </ul>
+  </body>
+</html>

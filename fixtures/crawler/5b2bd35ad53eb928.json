@@ -1,0 +1,10 @@
+{
+  "requestKey": "https://cherly.app/sitemap.xml",
+  "fetchedAt": "2026-08-04T16:47:18.802Z",
+  "payload": {
+    "url": "https://www.cherly.app/sitemap.xml",
+    "status": 404,
+    "body": "",
+    "contentType": "text/html; charset=utf-8"
+  }
+}
