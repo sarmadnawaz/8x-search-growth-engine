@@ -376,7 +376,17 @@ function toolSpecFor(subject: string): ToolSpec {
 
 // ---------------------------------------------------------------------------
 
-export const MAKERS: Maker[] = [landingPage, comparisonPage, blogPost, freeTool]
+export const MAKERS: Maker[] = [
+  landingPage,
+  comparisonPage,
+  blogPost,
+  // The GEO retrofit tactic asks for exactly what the blog maker builds: an
+  // answer-first page carrying sourced statistics. Same maker, different
+  // trigger — the tactic with controlled evidence behind it (Princeton, KDD
+  // 2024) rather than a second template that would drift from the first.
+  { ...blogPost, kind: 'geo_retrofit' },
+  freeTool,
+]
 
 export function makerFor(kind: string): Maker | undefined {
   return MAKERS.find((m) => m.kind === kind)
