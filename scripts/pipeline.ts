@@ -6,6 +6,7 @@
  *   npm run pipeline -- --all
  */
 import { collect } from '../lib/engine/pipeline'
+import { detect } from '../lib/engine/detectors'
 import { listPropertyDomains } from '../lib/engine/config'
 
 async function main() {
@@ -32,6 +33,14 @@ async function main() {
     if (summary.degraded.length > 0) {
       console.log(`  degraded: ${summary.degraded.join('; ')}`)
     }
+
+    const detected = await detect(summary.snapshotId)
+    console.log(
+      `  ${detected.opportunities} opportunities (${detected.blockers} blocker) — ` +
+        Object.entries(detected.byDetector)
+          .map(([id, n]) => `${id}: ${n}`)
+          .join(', '),
+    )
   }
 }
 
