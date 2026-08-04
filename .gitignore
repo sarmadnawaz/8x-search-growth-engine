@@ -1,0 +1,13 @@
+.DS_Store
+.claude/
+data/
+output/*/
+node_modules/
+venv/
+.env
+.env.local
+*.docx
+.next/
+# NOTE: fixtures/ and prisma/dev.db are committed on purpose —
+# they give reviewers a populated dashboard and an offline --replay path with no API keys.
+*.db-journal

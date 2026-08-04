@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>8x Search Growth Engine — dashboard mock-up</title>
+<style>
+  :root {
+    color-scheme: light;
+    --page:           #f9f9f7;
+    --surface-1:      #fcfcfb;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --grid:           #e1e0d9;
+    --baseline:       #c3c2b7;
+    --border:         rgba(11,11,11,0.10);
+    --series-1:       #2a78d6;
+    --series-2:       #eb6834;
+    --series-3:       #1baf7a;
+    --series-4:       #eda100;
+    --good:           #0ca30c;
+    --good-text:      #006300;
+    --warning:        #fab219;
+    --serious:        #ec835a;
+    --critical:       #d03b3b;
+    --wash:           rgba(42,120,214,0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) {
+      color-scheme: dark;
+      --page:           #0d0d0d;
+      --surface-1:      #1a1a19;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --grid:           #2c2c2a;
+      --baseline:       #383835;
+      --border:         rgba(255,255,255,0.10);
+      --series-1:       #3987e5;
+      --series-2:       #d95926;
+      --series-3:       #199e70;
+      --series-4:       #c98500;
+      --good-text:      #0ca30c;
+      --wash:           rgba(57,135,229,0.12);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --page:           #0d0d0d;
+    --surface-1:      #1a1a19;
+    --text-primary:   #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted:     #898781;
+    --grid:           #2c2c2a;
+    --baseline:       #383835;
+    --border:         rgba(255,255,255,0.10);
+    --series-1:       #3987e5;
+    --series-2:       #d95926;
+    --series-3:       #199e70;
+    --series-4:       #c98500;
+    --good-text:      #0ca30c;
+    --wash:           rgba(57,135,229,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--page);
+    color: var(--text-primary);
+    font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding: 24px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  h1 { font-size: 18px; font-weight: 650; }
+  h2 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--text-secondary); margin-bottom: 12px; }
+  .topbar { display: flex; align-items: center; gap: 16px; margin-bottom: 6px; flex-wrap: wrap; }
+  .topbar .spacer { flex: 1; }
+  .note { color: var(--text-muted); font-size: 12px; margin-bottom: 20px; }
+  .pill {
+    border: 1px solid var(--border); border-radius: 999px; padding: 5px 14px;
+    background: var(--surface-1); color: var(--text-secondary); font-size: 13px; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .pill.active { border-color: var(--series-1); color: var(--text-primary); font-weight: 600; }
+  .pill .spark { display: inline-block; }
+  .card {
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px;
+    padding: 18px 20px; margin-bottom: 16px;
+  }
+  /* loop stepper */
+  .loop { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+  .loop .step { position: relative; padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface-1); }
+  .loop .step.done   { border-left: 3px solid var(--series-1); }
+  .loop .step.active { border-left: 3px solid var(--series-2); background: var(--wash); }
+  .loop .k { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--text-muted); }
+  .loop .v { font-weight: 600; font-size: 13px; margin-top: 2px; }
+  .loop .d { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+  /* stat tiles */
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+  .tile { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+  .tile .label { font-size: 12px; color: var(--text-secondary); }
+  .tile .value { font-size: 26px; font-weight: 650; margin-top: 2px; }
+  .tile .delta { font-size: 12px; margin-top: 2px; color: var(--text-secondary); }
+  .tile .delta.up   { color: var(--good-text); }
+  .tile .delta.down { color: var(--critical); }
+  .cols { display: grid; grid-template-columns: 7fr 5fr; gap: 16px; }
+  @media (max-width: 900px) { .cols { grid-template-columns: 1fr; } .loop { grid-template-columns: repeat(2, 1fr); } }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--text-muted); font-weight: 600; padding: 6px 8px; border-bottom: 1px solid var(--grid); }
+  td { padding: 9px 8px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+  tr:hover td { background: var(--wash); }
+  .chip { display: inline-flex; align-items: center; gap: 5px; border: 1px solid var(--border); border-radius: 999px; padding: 1px 9px; font-size: 11.5px; color: var(--text-secondary); white-space: nowrap; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+  .conf-high .dot { background: var(--good); } .conf-med .dot { background: var(--warning); } .conf-low .dot { background: var(--serious); }
+  .prio { font-variant-numeric: tabular-nums; font-weight: 650; }
+  .status { font-size: 11.5px; border-radius: 6px; padding: 2px 8px; border: 1px solid var(--border); white-space: nowrap; }
+  .status.verified { color: var(--good-text); border-color: var(--good); }
+  .status.shipped  { color: var(--series-1); }
+  .status.draft    { color: var(--text-secondary); }
+  .status.queued   { color: var(--text-muted); }
+  ul.changes { list-style: none; }
+  ul.changes li { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--grid); font-size: 13px; }
+  ul.changes li:last-child { border-bottom: 0; }
+  ul.changes .ico { width: 18px; text-align: center; flex: none; }
+  .legend { display: flex; gap: 16px; align-items: center; font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; flex-wrap: wrap; }
+  .legend .key { display: inline-flex; align-items: center; gap: 6px; }
+  .legend .swatch { width: 14px; height: 3px; border-radius: 2px; background: var(--series-1); display: inline-block; }
+  .legend .marker { width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 8px solid var(--series-2); display: inline-block; }
+  .action-card { border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; margin-top: 12px; background: var(--surface-1); }
+  .action-card .path { font-size: 11.5px; color: var(--text-muted); margin-bottom: 6px; }
+  .action-card .path b { color: var(--text-secondary); font-weight: 600; }
+  .crit { list-style: none; margin-top: 8px; font-size: 13px; }
+  .crit li { padding: 3px 0; color: var(--text-secondary); }
+  .crit .ok::before   { content: "✓ "; color: var(--good-text); font-weight: 700; }
+  .crit .todo::before { content: "○ "; color: var(--text-muted); }
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .split .box { border: 1px dashed var(--baseline); border-radius: 10px; padding: 12px 14px; font-size: 12.5px; color: var(--text-secondary); }
+  .split .box b { color: var(--text-primary); display: block; margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+  #tooltip {
+    position: fixed; pointer-events: none; display: none; z-index: 10;
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px;
+    padding: 6px 10px; font-size: 12px; box-shadow: 0 4px 14px rgba(0,0,0,.12);
+  }
+  #tooltip .t { color: var(--text-muted); font-size: 11px; }
+  .themebtn { font: inherit; font-size: 12.5px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>8x Search Growth Engine</h1>
+  <span class="pill active">cherly.app
+    <svg class="spark" width="52" height="16" viewBox="0 0 52 16" aria-hidden="true"><polyline points="0,14 10,13 20,11 30,8 41,6 52,4" fill="none" stroke="var(--series-1)" stroke-width="2"/></svg>
+  </span>
+  <span class="pill">pocketpal.me
+    <svg class="spark" width="52" height="16" viewBox="0 0 52 16" aria-hidden="true"><polyline points="0,11 10,10 20,10 30,9 41,7 52,7" fill="none" stroke="var(--series-1)" stroke-width="2"/></svg>
+  </span>
+  <span class="pill">sway.day
+    <svg class="spark" width="52" height="16" viewBox="0 0 52 16" aria-hidden="true"><circle cx="46" cy="10" r="3" fill="var(--series-1)"/></svg>
+    <span style="font-size:10.5px;color:var(--text-muted)">baseline set</span>
+  </span>
+  <span class="pill">+ Add domain</span>
+  <span class="spacer"></span>
+  <button class="pill themebtn" onclick="toggleTheme()">◐ theme</button>
+</div>
+<p class="note">Mock-up, illustrative (seeded) sample data — except the robots.txt/sitemap findings, which are real (live-checked 2026-08-04, still 404 → shown as <b>proposed</b>, never fake-verified) · executed→verified lifecycle is demonstrated on a fixture property we control · cherly.app launched 2026-07-27; snapshots since launch · every number in the real system links to its raw evidence · last run 2026-08-04 06:00 UTC (snapshot #6)</p>
+
+<!-- THE LOOP -->
+<div class="card">
+  <h2>This run · the loop</h2>
+  <div class="loop">
+    <div class="step done"><div class="k">1 · Input</div><div class="v">Config loaded</div><div class="d">markets: US/EN, MX/ES · 3 competitors · policy: review-first</div></div>
+    <div class="step done"><div class="k">2 · Inspect</div><div class="v">24 pages crawled</div><div class="d">2 technical issues open · AI-crawler parity OK</div></div>
+    <div class="step done"><div class="k">3 · Compare</div><div class="v">30 tracked queries</div><div class="d">top-10 SERPs · 3 competitors · 28 clusters</div></div>
+    <div class="step done"><div class="k">4 · Rank</div><div class="v">23 opportunities</div><div class="d">5 high-priority · all evidence-linked</div></div>
+    <div class="step active"><div class="k">5 · Make</div><div class="v">3 assets drafted</div><div class="d">2 awaiting human review</div></div>
+    <div class="step done"><div class="k">6 · Measure</div><div class="v">6 actions tracked</div><div class="d">0 verified on 8x domains · verdicts: too_early</div></div>
+    <div class="step done"><div class="k">7 · Learn</div><div class="v">Priors unchanged</div><div class="d">no measured outcomes yet (windows open)</div></div>
+  </div>
+</div>
+
+<!-- KPI TILES -->
+<div class="tiles" style="margin-bottom:16px">
+  <div class="tile"><div class="label">Day-0 baseline checks passing</div><div class="value">6<span style="font-size:14px;color:var(--text-muted)">/9</span></div><div class="delta up">▲ +1 vs snapshot #5 (schema added)</div></div>
+  <div class="tile"><div class="label">Indexed pages (site: sample)</div><div class="value">12</div><div class="delta up">▲ from 0 at launch · 24 crawlable</div></div>
+  <div class="tile"><div class="label">Open opportunities</div><div class="value">23</div><div class="delta">5 high · 11 medium · 7 low</div></div>
+  <div class="tile"><div class="label">Actions verified done</div><div class="value">0<span style="font-size:14px;color:var(--text-muted)">/6</span></div><div class="delta">2 in review · lifecycle proven on fixture ✓</div></div>
+  <div class="tile"><div class="label">AI-answer presence</div><div class="value">1<span style="font-size:14px;color:var(--text-muted)">/20</span></div><div class="delta">Perplexity inclusion rate · weekly panel</div></div>
+</div>
+
+<!-- TREND -->
+<div class="card">
+  <h2>Evolution over time — indexed pages (moves in days; rankings get 2–6 month windows)</h2>
+  <div class="legend">
+    <span class="key"><span class="swatch"></span> Indexed pages (site: sample, per snapshot) — of 24 crawlable</span>
+    <span class="key"><span class="marker"></span> Action shipped &amp; verified (none yet — markers appear when the first action ships)</span>
+  </div>
+  <svg id="trend" width="100%" height="180" viewBox="0 0 1080 180" role="img" aria-label="Indexed pages rising from 0 to 12 across six snapshots since launch; no shipped actions yet">
+    <!-- gridlines -->
+    <line x1="40" y1="20"  x2="1080" y2="20"  stroke="var(--grid)"/>
+    <line x1="40" y1="65"  x2="1080" y2="65"  stroke="var(--grid)"/>
+    <line x1="40" y1="110" x2="1080" y2="110" stroke="var(--grid)"/>
+    <line x1="40" y1="155" x2="1080" y2="155" stroke="var(--baseline)"/>
+    <text x="4" y="24"  font-size="11" fill="var(--text-muted)">12</text>
+    <text x="4" y="69"  font-size="11" fill="var(--text-muted)">8</text>
+    <text x="4" y="114" font-size="11" fill="var(--text-muted)">4</text>
+    <!-- series -->
+    <polyline id="trendline" points="40,155 248,155 456,132 664,99 872,54 1080,20" fill="none" stroke="var(--series-1)" stroke-width="2"/>
+    <g fill="var(--series-1)">
+      <circle cx="40" cy="155" r="4"/><circle cx="248" cy="155" r="4"/><circle cx="456" cy="132" r="4"/>
+      <circle cx="664" cy="99" r="4"/><circle cx="872" cy="54" r="4"/><circle cx="1080" cy="20" r="4"/>
+    </g>
+    <text x="1052" y="14" font-size="12" font-weight="600" fill="var(--text-primary)">12</text>
+    <text x="40"  y="144" font-size="12" fill="var(--text-secondary)">0</text>
+    <!-- x labels -->
+    <text x="40"   y="176" font-size="11" fill="var(--text-muted)">Jul 27</text>
+    <text x="248"  y="176" font-size="11" fill="var(--text-muted)" text-anchor="middle">Jul 29</text>
+    <text x="456"  y="176" font-size="11" fill="var(--text-muted)" text-anchor="middle">Jul 31</text>
+    <text x="664"  y="176" font-size="11" fill="var(--text-muted)" text-anchor="middle">Aug 1</text>
+    <text x="872"  y="176" font-size="11" fill="var(--text-muted)" text-anchor="middle">Aug 3</text>
+    <text x="1080" y="176" font-size="11" fill="var(--text-muted)" text-anchor="end">Aug 4</text>
+  </svg>
+</div>
+
+<div class="cols">
+  <!-- TARGET LIST -->
+  <div class="card">
+    <h2>Target list — top opportunities (evidence-linked)</h2>
+    <table>
+      <thead><tr><th>Query / topic · intent</th><th>Evidence</th><th>Asset</th><th>Prio</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>robots.txt + sitemap.xml missing</b><br><span style="color:var(--text-muted)">technical · discovery hygiene</span></td>
+          <td><span class="chip conf-high"><span class="dot"></span>crawler · measured</span> <span class="chip">real finding, 2026-08-04</span></td>
+          <td>technical fix</td><td class="prio">89</td><td><span class="status queued">proposed · awaiting deploy access</span></td>
+        </tr>
+        <tr>
+          <td><b>ai stylist app</b><br><span style="color:var(--text-muted)">commercial</span></td>
+          <td><span class="chip conf-high"><span class="dot"></span>SERP gap · measured</span> <span class="chip conf-med"><span class="dot"></span>demand · modeled ×14</span></td>
+          <td>landing page</td><td class="prio">43</td><td><span class="status draft">draft · in review</span></td>
+        </tr>
+        <tr>
+          <td><b>what to wear today generator</b><br><span style="color:var(--text-muted)">tool intent</span></td>
+          <td><span class="chip conf-med"><span class="dot"></span>demand · modeled</span> <span class="chip">no ranking tool in top 20</span></td>
+          <td>free tool</td><td class="prio">38</td><td><span class="status queued">queued</span></td>
+        </tr>
+        <tr>
+          <td><b>"best ai stylist app" — AI answers omit us</b><br><span style="color:var(--text-muted)">AEO / GEO</span></td>
+          <td><span class="chip conf-med"><span class="dot"></span>LLM probe 0/5 · Wilson-bound</span></td>
+          <td>comparison page + PR</td><td class="prio">31</td><td><span class="status queued">queued</span></td>
+        </tr>
+        <tr>
+          <td><b>outfit planner app free</b><br><span style="color:var(--text-muted)">commercial</span></td>
+          <td><span class="chip conf-med"><span class="dot"></span>autocomplete ×9 · modeled</span></td>
+          <td>landing variant</td><td class="prio">24</td><td><span class="status queued">queued</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ACTION DETAIL -->
+    <div class="action-card">
+      <div class="path"><b>Loop trace:</b> cherly.app → evidence #e-004, #e-005 (crawler: robots.txt 404, sitemap.xml 404) → opportunity #1 → action #a-01 → generated artifacts in review queue</div>
+      <b style="font-size:13.5px">Action #a-01 — ship robots.txt + XML sitemap for cherly.app · <span style="color:var(--text-muted);font-weight:500">proposed — we can't deploy to 8x domains; generated files attached for review</span></b>
+      <ul class="crit">
+        <li class="todo">/robots.txt returns 200 and references the sitemap</li>
+        <li class="todo">/sitemap.xml returns 200, valid XML, covers all public routes</li>
+        <li class="todo">All sitemap URLs return 200 and are indexable (no stray noindex)</li>
+        <li class="todo">Search/RAG AI bots allowed per config ai_crawler_policy</li>
+      </ul>
+      <div style="border-top:1px solid var(--grid); margin-top:10px; padding-top:10px">
+        <b style="font-size:12.5px">Same fix, executed where we control the deploy — action #f-01 on demo-fixture.local</b>
+        <ul class="crit">
+          <li class="ok">All four criteria above · <b>verified on re-crawl</b> (snapshot #2) — the verify gate flips only on evidence</li>
+          <li class="todo">Payoff measurement: separate window (2–4 weeks) · verdict: too_early</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT CHANGED + ARCHITECTURE -->
+  <div>
+    <div class="card">
+      <h2>What changed since snapshot #5</h2>
+      <ul class="changes">
+        <li><span class="ico" style="color:var(--good-text)">▲</span><span><b>12 pages indexed</b> (site: sample), up from 9 in snapshot #5</span></li>
+        <li><span class="ico" style="color:var(--good-text)">✓</span><span>Fixture-property lifecycle test passed: action #f-01 <b>verified on re-crawl</b> — the loop closes for real where we control the deploy</span></li>
+        <li><span class="ico" style="color:var(--warning)">!</span><span>First AI-answer citation gained (Perplexity, 1/5 samples) for “ai stylist” probes; still absent from AI Overviews and ChatGPT</span></li>
+        <li><span class="ico" style="color:var(--critical)">▼</span><span>Competitor comparison pages now target 4 of our tracked clusters</span></li>
+        <li><span class="ico" style="color:var(--text-muted)">■</span><span>CrUX still below popularity threshold — expected for a week-old domain; lab CWV used as baseline</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Why this scales to domain #21</h2>
+      <div class="split">
+        <div class="box"><b>Config (per property)</b>domain · markets &amp; languages · business goal · conversion route · competitors · content types · publishing policy (review-first / auto for low-risk)</div>
+        <div class="box"><b>Shared engine (code)</b>crawler &amp; data adapters · normalised entities (Page, Query, Evidence, Opportunity, Action, Asset, Snapshot) · scoring · asset templates · verification checks · scheduler</div>
+      </div>
+      <p style="margin-top:10px;font-size:12.5px;color:var(--text-secondary)">Adding <b>sway.day</b> was one YAML file — same pipeline, same dashboard, zero new code.</p>
+    </div>
+  </div>
+</div>
+
+<div id="tooltip"></div>
+<script>
+  function toggleTheme() {
+    const r = document.documentElement;
+    const cur = r.getAttribute('data-theme');
+    const next = cur === 'dark' ? 'light' : (cur === 'light' ? 'dark'
+      : (matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark'));
+    r.setAttribute('data-theme', next);
+  }
+  // crosshair tooltip on the trend chart
+  const data = [
+    ['Jul 27', 0], ['Jul 29', 0], ['Jul 31', 3],
+    ['Aug 1', 6], ['Aug 3', 9], ['Aug 4', 12]
+  ];
+  const svg = document.getElementById('trend'), tip = document.getElementById('tooltip');
+  svg.addEventListener('mousemove', e => {
+    const rect = svg.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width * 1080;
+    const i = Math.max(0, Math.min(5, Math.round((x - 40) / 208)));
+    tip.style.display = 'block';
+    tip.style.left = (e.clientX + 14) + 'px';
+    tip.style.top  = (e.clientY - 10) + 'px';
+    tip.innerHTML = '<div class="t">' + data[i][0] + ' 2026 · snapshot #' + (i + 1) + '</div><b>' + data[i][1] + '</b> pages indexed (site: sample)';
+  });
+  svg.addEventListener('mouseleave', () => tip.style.display = 'none');
+</script>
+</body>
+</html>
