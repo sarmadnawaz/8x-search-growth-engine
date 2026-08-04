@@ -1,0 +1,115 @@
+{
+  "requestKey": "technical seo checklist|us|en",
+  "fetchedAt": "2026-08-04T18:26:52.737Z",
+  "payload": {
+    "searchParameters": {
+      "q": "technical seo checklist",
+      "gl": "us",
+      "hl": "en",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "The technical SEO checklist for search engines and AI search",
+        "link": "https://www.semrush.com/blog/technical-seo-checklist/",
+        "snippet": "1. Look for crawling and indexing issues · Check whether your site is indexed · Check for any duplicates of your website · Make sure your robots ...",
+        "date": "Jun 23, 2026",
+        "position": 1
+      },
+      {
+        "title": "A Comprehensive Technical SEO Checklist for 2026",
+        "link": "https://dashthis.com/blog/technical-seo-checklist/",
+        "snippet": "Technical SEO checklist · 1. Audit your website · 2. Speed up your site · 3. Improve crawling · 4. Make your site mobile-friendly · 5. Boost core web vitals · 6 ...",
+        "rating": 4.7,
+        "ratingCount": 83,
+        "position": 2
+      },
+      {
+        "title": "Technical SEO Checklist - The Roadmap to a Complete ...",
+        "link": "https://cognitiveseo.com/blog/17963/technical-seo-checklist/",
+        "snippet": "31 steps within an technical SEO checklist that will help you create an SEO audit considering usability, UX, crawlability, navigation, ...",
+        "date": "Mar 20, 2018",
+        "position": 3
+      },
+      {
+        "title": "Technical SEO Checklist for Enterprise Large-Scale Sites",
+        "link": "https://www.bigdropinc.com/blog/technical-seo-checklist-for-enterprise-large-scale-sites/",
+        "snippet": "Technical SEO Checklist: · 1. Site Architecture and URL Structure · 2. Crawlability and Indexation · 3. Page Speed and Core Web Vitals · 4.",
+        "date": "Sep 18, 2025",
+        "position": 4
+      },
+      {
+        "title": "Your Technical SEO Checklist",
+        "link": "https://www.marketingprofs.com/articles/2017/33236/your-2018-technical-seo-checklist",
+        "snippet": "1. Install essential tools ・ 2. Improve indexing and crawlability ・ 3. Improve your 'crawl budget' 4. Clean up your sitemap. Fix broken links and redirects",
+        "position": 5
+      },
+      {
+        "title": "What Is Technical SEO? The Best Checklist in 2026",
+        "link": "https://aioseo.com/technical-seo/",
+        "snippet": "Checklist Points 1. Use the Right SEO Tool 2. Nail Your Page Experience 3. Check Your Website for Crawl Errors 4. Create a User-friendly Site ...",
+        "date": "Jan 16, 2025",
+        "position": 6
+      },
+      {
+        "title": "The Complete SEO Checklist",
+        "link": "https://backlinko.com/seo-checklist",
+        "snippet": "This complete SEO checklist covers all SEO aspects: including technical SEO, on-page SEO, keyword research and even AI SEO. It works for blogs, ...",
+        "date": "Jan 29, 2026",
+        "position": 7
+      },
+      {
+        "title": "Technical SEO Checklist: 6 Steps to Optimize Your Site for SEO & AI Search",
+        "link": "https://www.linkedin.com/pulse/technical-seo-checklist-6-steps-optimize-your-site-ai-a1eqc",
+        "snippet": "1. Fix Crawling & Indexing Issues · 2. Improve Site Performance & User Experience · 3. Strengthen Site Architecture · 4. Implement Structured Data.",
+        "position": 8
+      },
+      {
+        "title": "Technical SEO Checklist: SERP & AI Visibility (2026)",
+        "link": "https://wellows.com/blog/technical-seo-checklist-for-agencies/",
+        "snippet": "A practical technical SEO checklist to scale audits, manage multiple clients, and improve SERP and AI search visibility in 2026.",
+        "date": "Jan 20, 2026",
+        "position": 9
+      }
+    ],
+    "peopleAlsoAsk": [
+      {
+        "question": "What is a technical SEO checklist?",
+        "snippet": "Crawl your site from http:// and keep an eye out for mixed content warnings, pages that don't redirect, or redirect chains. Audit your HTTP status codes. Important pages should be returning a 200, old pages should 301 to their replacements and nothing important should get a 404 or 5xx."
+      },
+      {
+        "question": "What does technical SEO include?"
+      },
+      {
+        "question": "What is the 80/20 rule for SEO?"
+      },
+      {
+        "question": "Is SEO dead or evolving in 2026?",
+        "snippet": "The discipline is evolving; the demand for trusted, authoritative content is not going away. The more accurate framing is this: SEO in 2026 is still relevant, still growing as an industry, and still essential for visibility.Jun 7, 2026"
+      }
+    ],
+    "relatedSearches": [
+      {
+        "query": "On-page SEO checklist"
+      },
+      {
+        "query": "Off-page SEO checklist"
+      },
+      {
+        "query": "Technical seo checklist template"
+      },
+      {
+        "query": "Technical SEO checklist 2026"
+      },
+      {
+        "query": "Technical SEO checklist PDF"
+      },
+      {
+        "query": "Technical seo checklist excel"
+      }
+    ],
+    "credits": 1
+  }
+}
