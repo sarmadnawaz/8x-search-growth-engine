@@ -6,11 +6,14 @@
  *   npm run pipeline -- demo-fixture.local --apply    # also ship generated fixes (owned property only)
  *   npm run pipeline -- --all --replay
  */
+import { loadEnv } from '../lib/env'
 import { collect } from '../lib/engine/pipeline'
 import { detect } from '../lib/engine/detectors'
 import { make, apply } from '../lib/engine/make'
 import { verifyActions } from '../lib/engine/verify'
 import { listPropertyDomains } from '../lib/engine/config'
+
+loadEnv()
 
 async function main() {
   const args = process.argv.slice(2)

@@ -7,6 +7,7 @@ import { crawlerAdapter } from './adapters/crawler'
 import { autocompleteAdapter } from './adapters/autocomplete'
 import { serpAdapter } from './adapters/serp'
 import { psiAdapter } from './adapters/psi'
+import { aiProbeAdapter } from './adapters/aiProbe'
 import type { Adapter, AdapterContext, ClusterInput } from './adapters/types'
 
 export const ENGINE_VERSION = '0.1.0'
@@ -15,7 +16,13 @@ export const ENGINE_VERSION = '0.1.0'
  * Collection order matters: autocomplete discovers clusters, and the SERP
  * adapter samples them. Everything else is independent.
  */
-const ADAPTERS: Adapter[] = [crawlerAdapter, autocompleteAdapter, serpAdapter, psiAdapter]
+const ADAPTERS: Adapter[] = [
+  crawlerAdapter,
+  autocompleteAdapter,
+  serpAdapter,
+  psiAdapter,
+  aiProbeAdapter,
+]
 
 export interface RunOptions {
   domain: string

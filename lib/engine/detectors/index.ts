@@ -4,9 +4,15 @@ import { loadProperty } from '../config'
 import { score, toPriority } from '../scoring'
 import { technicalDetector } from './technical'
 import { keywordGapDetector, snippetDetector } from './keyword'
+import { aiCitationDetector } from './geo'
 import type { Detector } from './types'
 
-export const DETECTORS: Detector[] = [technicalDetector, keywordGapDetector, snippetDetector]
+export const DETECTORS: Detector[] = [
+  technicalDetector,
+  keywordGapDetector,
+  snippetDetector,
+  aiCitationDetector,
+]
 
 export interface DetectSummary {
   snapshotId: string
