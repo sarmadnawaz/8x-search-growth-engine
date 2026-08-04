@@ -1,0 +1,10 @@
+{
+  "requestKey": "http://127.0.0.1:3100/sitemap.xml",
+  "fetchedAt": "2026-08-04T16:46:52.475Z",
+  "payload": {
+    "url": "http://127.0.0.1:3100/sitemap.xml",
+    "status": 404,
+    "body": "",
+    "contentType": "text/plain"
+  }
+}

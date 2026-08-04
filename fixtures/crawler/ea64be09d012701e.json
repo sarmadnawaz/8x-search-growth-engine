@@ -1,0 +1,10 @@
+{
+  "requestKey": "http://127.0.0.1:3100/guide.html",
+  "fetchedAt": "2026-08-04T16:46:52.651Z",
+  "payload": {
+    "url": "http://127.0.0.1:3100/guide.html",
+    "status": 200,
+    "body": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <title>Getting started guide — Fixture Property</title>\n    <meta name=\"description\" content=\"How to get started with the fixture property in three steps.\" />\n    <script type=\"application/ld+json\">\n      {\n        \"@context\": \"https://schema.org\",\n        \"@type\": \"Article\",\n        \"headline\": \"Getting started guide\",\n        \"description\": \"How to get started with the fixture property in three steps.\"\n      }\n    </script>\n  </head>\n  <body>\n    <h1>Getting started guide</h1>\n    <p>\n      Three steps to get going. This page carries a title, a meta description, an h1 and Article\n      schema, so the crawler should find fewer issues here than on the pricing page — which is the\n      point: the detector output should differ per page in ways a reviewer can check by reading the\n      HTML.\n    </p>\n    <ol>\n      <li>Add a property config.</li>\n      <li>Run the pipeline.</li>\n      <li>Review the prioritised opportunities.</li>\n    </ol>\n    <p><a href=\"/\">Home</a> · <a href=\"/pricing.html\">Pricing</a></p>\n  </body>\n</html>\n",
+    "contentType": "text/html; charset=utf-8"
+  }
+}

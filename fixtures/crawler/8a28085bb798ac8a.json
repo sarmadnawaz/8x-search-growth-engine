@@ -1,0 +1,10 @@
+{
+  "requestKey": "https://cherly.app/robots.txt",
+  "fetchedAt": "2026-08-04T16:47:17.631Z",
+  "payload": {
+    "url": "https://www.cherly.app/robots.txt",
+    "status": 404,
+    "body": "",
+    "contentType": "text/html; charset=utf-8"
+  }
+}

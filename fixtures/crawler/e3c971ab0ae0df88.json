@@ -1,0 +1,10 @@
+{
+  "requestKey": "http://127.0.0.1:3100/",
+  "fetchedAt": "2026-08-04T16:46:52.531Z",
+  "payload": {
+    "url": "http://127.0.0.1:3100/",
+    "status": 200,
+    "body": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <title>Fixture Property — a small site the engine controls</title>\n    <meta\n      name=\"description\"\n      content=\"A deliberately imperfect static site used to demonstrate the engine's detect, fix and verify loop end to end.\"\n    />\n  </head>\n  <body>\n    <h1>Fixture Property</h1>\n    <p>\n      This site exists so the engine can demonstrate a complete action lifecycle on infrastructure\n      we actually control: a detector finds a real gap here, the engine generates the fix, the fix\n      is applied, and the next run's verification pass observes the result. Findings on domains we\n      cannot deploy to stay at <em>proposed</em> instead.\n    </p>\n    <p>\n      It ships without a robots.txt or an XML sitemap on purpose — the same condition found on a\n      real portfolio domain during research — so the first run has something true to detect.\n    </p>\n    <ul>\n      <li><a href=\"/pricing.html\">Pricing</a></li>\n      <li><a href=\"/guide.html\">Getting started guide</a></li>\n    </ul>\n  </body>\n</html>\n",
+    "contentType": "text/html; charset=utf-8"
+  }
+}
