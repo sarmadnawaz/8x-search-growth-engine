@@ -58,8 +58,16 @@ export const aiProbeAdapter: Adapter = {
   unavailableReason(ctx) {
     if (ctx.config.promptPanel.length === 0) return 'no promptPanel configured'
     if (ctx.mode === 'live') {
-      const reason = getProvider().unavailableReason()
+      const provider = getProvider()
+      const reason = provider.unavailableReason()
       if (reason) return reason
+      // Grounding is a requirement, not a preference. Without live search the
+      // model answers from training data that predates every property here, so
+      // the probe would report a permanent zero that looks like a measurement.
+      // Refusing is the honest outcome.
+      if (!provider.supportsGrounding()) {
+        return `${provider.name} cannot ground answers in live search — an ungrounded probe measures training data, not visibility`
+      }
     }
     return null
   },

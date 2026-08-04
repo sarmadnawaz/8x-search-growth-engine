@@ -1,0 +1,8 @@
+{
+  "requestKey": "https://stretchit.app/robots.txt",
+  "fetchedAt": "2026-08-04T18:52:21.679Z",
+  "payload": {
+    "status": 200,
+    "body": "User-agent: *\nAllow: /\nLLM-Policy: /llms.txt\nSitemap: /sitemap.xml"
+  }
+}

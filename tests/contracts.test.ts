@@ -37,6 +37,9 @@ describe('property configs', () => {
 
 const FIXTURE_DIR = join(process.cwd(), 'fixtures')
 
+/** Adapters whose cached responses live under fixtures/<name>/. */
+const ADAPTER_NAMES = ['crawler', 'autocomplete', 'serp', 'psi', 'competitor', 'ai_probe']
+
 /** Each adapter's fixtures must still parse as the shape its collector assumes. */
 const FIXTURE_SHAPES: Record<string, z.ZodTypeAny> = {
   crawler: z.object({
@@ -70,9 +73,13 @@ describe('recorded vendor responses', () => {
     })
   }
 
-  it('every fixture records what was requested and when', () => {
+  it('every recorded vendor response records what was requested and when', () => {
     if (!existsSync(FIXTURE_DIR)) return
-    for (const adapter of readdirSync(FIXTURE_DIR)) {
+    // Only directories written by an adapter's cache are vendor fixtures.
+    // Anything else under fixtures/ is someone's working file, and asserting
+    // a cache envelope on it would fail for the wrong reason.
+    const adapterDirs = readdirSync(FIXTURE_DIR).filter((d) => ADAPTER_NAMES.includes(d))
+    for (const adapter of adapterDirs) {
       const dir = join(FIXTURE_DIR, adapter)
       for (const file of readdirSync(dir).filter((f) => f.endsWith('.json'))) {
         const record = JSON.parse(readFileSync(join(dir, file), 'utf8'))
