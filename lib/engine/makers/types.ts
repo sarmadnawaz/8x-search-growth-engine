@@ -69,10 +69,18 @@ export function answerBlock(question: string, answer: string): string {
 }
 
 export function jsonLd(node: Record<string, unknown>): string {
-  return `    <script type="application/ld+json">\n${JSON.stringify(
+  // JSON.stringify does not escape `<`, so a value containing `</script>`
+  // closes the block and everything after it becomes markup. The values here
+  // include model-generated copy, which makes this the one place untrusted
+  // text reaches a page as anything other than escaped text.
+  const serialise = (value: unknown) =>
+    JSON.stringify(value, null, 2)
+      .replace(/</g, '\\u003c')
+      .replace(/>/g, '\\u003e')
+      .replace(/&/g, '\\u0026')
+
+  return `    <script type="application/ld+json">\n${serialise(
     { '@context': 'https://schema.org', ...node },
-    null,
-    2,
   )
     .split('\n')
     .map((l) => '    ' + l)

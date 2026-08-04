@@ -1,7 +1,22 @@
-import type { Action, Asset, Opportunity } from '@prisma/client'
 import { Badge } from '@/components/ui/badge'
 
-type ActionWithRelations = Action & { assets: Asset[]; opportunity: Opportunity }
+/**
+ * The shape this card renders, rather than the whole database row. The read
+ * model selects only these columns — actions carry a paragraph of observations
+ * and whole generated pages, and pulling all of it to render a list cost
+ * megabytes a request.
+ */
+export interface ActionCardModel {
+  id: string
+  kind: string
+  title: string
+  spec: string
+  status: string
+  verifiedAt: Date | null
+  criteria: unknown
+  lastCheck: unknown
+  assets: { id: string; type: string; path: string | null; reviewState: string; body: string }[]
+}
 
 interface CriterionResult {
   id: string
@@ -33,7 +48,7 @@ export function ActionCard({
   action,
   deployAccess,
 }: {
-  action: ActionWithRelations
+  action: ActionCardModel
   deployAccess: boolean
 }) {
   const criteria = action.criteria as unknown as CriterionResult[]

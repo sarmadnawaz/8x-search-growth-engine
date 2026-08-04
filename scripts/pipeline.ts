@@ -28,9 +28,15 @@ async function main() {
     process.exit(1)
   }
 
+  const failures: string[] = []
+
   for (const domain of domains) {
     console.log(`\n=== ${domain} (${mode}) ===`)
     const started = Date.now()
+
+    // One property's failure must not take the fleet with it. A batch that
+    // stops at the first bad config silently skips every property after it.
+    try {
 
     const summary = await collect({ domain, mode })
     console.log(
@@ -73,7 +79,19 @@ async function main() {
       }
     }
 
-    console.log(`  done in ${((Date.now() - started) / 1000).toFixed(1)}s`)
+      console.log(`  done in ${((Date.now() - started) / 1000).toFixed(1)}s`)
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err)
+      failures.push(`${domain}: ${message}`)
+      console.error(`  FAILED — ${message}`)
+    }
+  }
+
+  if (failures.length > 0) {
+    console.error(`\n${failures.length} of ${domains.length} properties failed:`)
+    for (const failure of failures) console.error(`  ${failure}`)
+    // Exit non-zero so a scheduler can tell a clean run from a broken one.
+    process.exitCode = 1
   }
 }
 

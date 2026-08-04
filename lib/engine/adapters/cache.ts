@@ -1,20 +1,42 @@
 import { createHash } from 'node:crypto'
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 
 /**
- * Every external response is written to fixtures/ on first success and read
- * back in replay mode.
+ * Recorded vendor responses.
  *
- * This is not a performance cache. It is:
- *   - the reviewer's no-keys path (`--replay` reproduces a full run offline)
- *   - protection for finite free-tier credits during development
- *   - the archive that makes evidence re-derivable when a detector changes
+ * Two jobs, and conflating them was a bug worth stating plainly: this is an
+ * *archive* for replay and audit, and it is a *freshness cache* for live runs.
+ * The first version had no expiry and short-circuited live fetches whenever a
+ * recording existed — so the second run of a property replayed the first run's
+ * crawl, SERPs and probes forever. Every trend the engine measures is a diff
+ * between snapshots, so a permanent cache meant every verdict was `flat` by
+ * construction and no property could ever be observed to change.
  *
- * In production the same seam writes to object storage instead of disk.
+ * Now a live run only reuses a recording inside its freshness window; outside
+ * it, the call is made again and the archive gains a new dated entry. Replay
+ * still reads the most recent recording regardless of age, because replay is
+ * reproducing a past run rather than observing the present.
  */
 
 const FIXTURE_DIR = join(process.cwd(), 'fixtures')
+
+/**
+ * How long a recorded response stays usable in a live run, per adapter.
+ *
+ * These are cost decisions, not correctness ones: a crawl is cheap and should
+ * be fresh, a SERP costs credits and a day-old ranking is still a ranking, and
+ * a grounded LLM probe is the most expensive call in the system.
+ */
+const DEFAULT_MAX_AGE_MS: Record<string, number> = {
+  crawler: 6 * 60 * 60 * 1000, // 6 hours
+  serp: 20 * 60 * 60 * 1000, // just under a day, so a daily run always refreshes
+  autocomplete: 7 * 24 * 60 * 60 * 1000, // demand moves slowly
+  competitor: 7 * 24 * 60 * 60 * 1000,
+  psi: 24 * 60 * 60 * 1000,
+  ai_probe: 7 * 24 * 60 * 60 * 1000,
+}
+const FALLBACK_MAX_AGE_MS = 24 * 60 * 60 * 1000
 
 function fixturePath(adapter: string, requestKey: string): string {
   const hash = createHash('sha256').update(requestKey).digest('hex').slice(0, 16)
@@ -45,7 +67,12 @@ export function writeFixture<T>(adapter: string, requestKey: string, payload: T)
     fetchedAt: new Date().toISOString(),
     payload,
   }
-  writeFileSync(path, JSON.stringify(record, null, 2))
+  // Write-then-rename: two workers recording the same request key (sibling
+  // properties sharing a query is a designed-for case) would otherwise
+  // interleave into a torn file that fails to parse and re-spends the call.
+  const temp = `${path}.${process.pid}.tmp`
+  writeFileSync(temp, JSON.stringify(record, null, 2))
+  renameSync(temp, path)
 }
 
 export class MissingFixtureError extends Error {
@@ -56,22 +83,20 @@ export class MissingFixtureError extends Error {
 }
 
 /**
- * Fetch through the cache. In replay mode a missing fixture is an explicit
- * error rather than a silent empty result: absence of evidence must never be
- * indistinguishable from evidence of absence.
- */
-/**
  * Local URLs are never cached, in either direction.
  *
  * The cache protects external dependencies — rate limits, credits, politeness
- * budgets — and a server we run ourselves has none of those. Caching it is
- * actively harmful: a recorded fixture would keep replaying the site as it was
- * before the engine shipped its fixes, so a change the engine made could never
- * appear in a later snapshot. A fixture of 127.0.0.1 is also meaningless on
- * any other machine.
+ * budgets — and a server we run ourselves has none of those. A fixture of
+ * 127.0.0.1 is also meaningless on any other machine.
  */
 function isLocal(requestKey: string): boolean {
   return /^https?:\/\/(127\.0\.0\.1|localhost|\[::1\])/.test(requestKey)
+}
+
+function isFresh(record: CachedPayload<unknown>, adapter: string): boolean {
+  const maxAge = DEFAULT_MAX_AGE_MS[adapter] ?? FALLBACK_MAX_AGE_MS
+  const age = Date.now() - new Date(record.fetchedAt).getTime()
+  return Number.isFinite(age) && age >= 0 && age < maxAge
 }
 
 export async function cached<T>(
@@ -87,7 +112,12 @@ export async function cached<T>(
   }
 
   const hit = readFixture<T>(adapter, requestKey)
-  if (hit) return { payload: hit.payload, cached: true, latencyMs: 0 }
+
+  // Replay reproduces a past run, so age is irrelevant there. A live run may
+  // only reuse a recording that is still within its freshness window.
+  if (hit && (mode === 'replay' || isFresh(hit, adapter))) {
+    return { payload: hit.payload, cached: true, latencyMs: 0 }
+  }
   if (mode === 'replay') throw new MissingFixtureError(adapter, requestKey)
 
   const started = Date.now()

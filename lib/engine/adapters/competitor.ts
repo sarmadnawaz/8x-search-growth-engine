@@ -1,4 +1,5 @@
 import { cached } from './cache'
+import { safeFetch } from '../http'
 import type { Adapter, AdapterContext, CollectResult } from './types'
 import type { EvidenceInput } from '../../schemas'
 
@@ -26,8 +27,26 @@ interface SectionProfile {
 }
 
 async function fetchText(url: string): Promise<{ status: number; body: string }> {
-  const res = await fetch(url, { headers: { 'user-agent': USER_AGENT }, redirect: 'follow' })
-  return { status: res.status, body: res.status < 400 ? await res.text() : '' }
+  const res = await safeFetch(url, { userAgent: USER_AGENT, timeoutMs: 15_000 })
+  return { status: res.status, body: res.body }
+}
+
+/**
+ * Keep a candidate URL on the competitor's own origin.
+ *
+ * `Sitemap:` lines in a third party's robots.txt and `<loc>` entries in their
+ * sitemap index are attacker-controlled input that this server would otherwise
+ * fetch verbatim — and the response body is archived to disk. The crawler
+ * already resolves sitemap paths against the origin under audit for a
+ * different reason; the same discipline closes this.
+ */
+function sameOrigin(candidate: string, origin: string): string | null {
+  try {
+    const url = new URL(candidate, origin)
+    return url.origin === new URL(origin).origin ? url.toString() : null
+  } catch {
+    return null
+  }
 }
 
 function extractLocs(xml: string): string[] {
@@ -92,9 +111,11 @@ export const competitorAdapter: Adapter = {
           cached: robots.cached,
           latencyMs: robots.latencyMs,
         })
-        candidates.push(
-          ...[...robots.payload.body.matchAll(/sitemap:\s*(\S+)/gi)].map((m) => m[1]),
-        )
+        for (const match of robots.payload.body.matchAll(/sitemap:\s*(\S+)/gi)) {
+          const safe = sameOrigin(match[1], origin)
+          if (safe) candidates.push(safe)
+          else ctx.log(`${competitor}: ignoring off-origin sitemap reference`)
+        }
       } catch (err) {
         ctx.log(`${competitor}: robots.txt unavailable (${err instanceof Error ? err.message : err})`)
       }
@@ -118,7 +139,7 @@ export const competitorAdapter: Adapter = {
           // this is profiling, not a crawl of someone else's site.
           const nested = locs.filter((l) => l.endsWith('.xml'))
           if (nested.length > 0 && locs.length === nested.length) {
-            for (const child of nested.slice(0, 3)) {
+            for (const child of nested.slice(0, 3).map((c) => sameOrigin(c, origin)).filter((c): c is string => c !== null)) {
               const sub = await cached('competitor', child, ctx.mode, () => fetchText(child))
               await ctx.record({
                 adapter: 'competitor',
@@ -127,10 +148,10 @@ export const competitorAdapter: Adapter = {
                 cached: sub.cached,
                 latencyMs: sub.latencyMs,
               })
-              urls.push(...extractLocs(sub.payload.body))
+              for (const loc of extractLocs(sub.payload.body)) urls.push(loc)
             }
           } else {
-            urls.push(...locs)
+            for (const loc of locs) urls.push(loc)
           }
           if (urls.length > 0) break
         } catch (err) {

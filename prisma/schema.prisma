@@ -50,6 +50,13 @@ model Snapshot {
   engineVersion String
   /// adapters that failed or were skipped this run (degradation is recorded, not hidden)
   degradedAdapters  Json  @default("[]")
+  /// Denormalised at the end of collect. Outcome checks compare the first and
+  /// last snapshot in a series; deriving that by counting pages per snapshot
+  /// made verification cost grow with the square of elapsed time, because the
+  /// number of snapshots grows every night and every action re-counted all of
+  /// them. This column makes the same question one indexed read.
+  indexablePages    Int   @default(0)
+  totalPages        Int   @default(0)
 
   property     Property      @relation(fields: [domain], references: [domain], onDelete: Cascade)
   pages        Page[]
@@ -200,6 +207,10 @@ model Action {
   assets       Asset[]
   measurements Measurement[]
 
+  /// The identity the make stage checks before creating work. It was enforced
+  /// by a read-then-write, which two concurrent runs both pass — and the
+  /// duplicate costs a paid generation call. The database enforces it now.
+  @@unique([domain, kind, subject])
   @@index([domain, status])
 }
 

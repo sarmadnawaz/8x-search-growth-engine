@@ -27,10 +27,14 @@ export default async function PropertyPage({ params }: { params: Promise<{ domai
     config,
     latest,
     opportunities,
+    opportunityTotal,
     actions,
-    pages,
+    actionTotal,
+    evidenceById,
     clusters,
     evidenceCount,
+    pageCount,
+    indexablePages,
     changes,
     series,
   } = data
@@ -42,18 +46,18 @@ export default async function PropertyPage({ params }: { params: Promise<{ domai
     { k: '1 · Input', v: `${markets} market${markets === 1 ? '' : 's'}`, d: 'from config' },
     {
       k: '2 · Inspect',
-      v: `${pages.length} pages`,
-      d: `${pages.filter((p) => p.indexable).length} indexable`,
+      v: `${pageCount} pages`,
+      d: `${indexablePages} indexable`,
     },
     { k: '3 · Compare', v: `${clusters.length} clusters`, d: `${evidenceCount} evidence rows` },
     {
       k: '4 · Rank',
-      v: `${opportunities.length} opportunities`,
+      v: `${opportunityTotal} opportunities`,
       d: `${opportunities.filter((o) => o.isBlocker).length} blockers`,
     },
     {
       k: '5 · Make',
-      v: `${actions.length} actions`,
+      v: `${actionTotal} actions`,
       d: `${actions.filter((a) => a.assets.length > 0).length} with assets`,
     },
     {
@@ -130,7 +134,11 @@ export default async function PropertyPage({ params }: { params: Promise<{ domai
                       <TableRow key={o.id} className="align-top">
                         <TableCell className="max-w-[280px] py-3">
                           <p className="text-sm font-medium whitespace-normal">{o.title}</p>
-                          <EvidenceDrawer opportunityId={o.id} />
+                          <EvidenceDrawer
+                            evidence={(o.evidenceIds as string[])
+                              .map((id) => evidenceById.get(id))
+                              .filter((e) => e !== undefined)}
+                          />
                         </TableCell>
                         <TableCell className="py-3">
                           <Badge variant="outline" className="text-[10px]">
@@ -156,6 +164,11 @@ export default async function PropertyPage({ params }: { params: Promise<{ domai
                     ))}
                   </TableBody>
                 </Table>
+              )}
+              {opportunityTotal > opportunities.length && (
+                <p className="text-muted-foreground mt-3 text-xs">
+                  Showing the top {opportunities.length} of {opportunityTotal} by priority.
+                </p>
               )}
               <p className="text-muted-foreground mt-3 text-xs">
                 Priority is a mapping, not a measurement: blockers take 90–100 by coverage,
@@ -207,9 +220,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ domai
                           <TableCell className="py-1.5 text-right text-xs tabular-nums">
                             {s.indexablePages} indexable
                           </TableCell>
-                          <TableCell className="text-muted-foreground py-1.5 text-right text-xs tabular-nums">
-                            {s.opportunities} open
-                          </TableCell>
+
                         </TableRow>
                       ))}
                     </TableBody>

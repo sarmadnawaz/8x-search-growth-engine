@@ -1,5 +1,6 @@
 import * as cheerio from 'cheerio'
 import { cached } from './cache'
+import { safeFetch, type FetchResult } from '../http'
 import type { Adapter, AdapterContext, CollectResult, PageInput } from './types'
 import type { EvidenceInput } from '../../schemas'
 
@@ -20,19 +21,31 @@ interface FetchedDoc {
   status: number
   body: string
   contentType: string
+  /** set when the request produced no usable body — not the same as "absent" */
+  failure?: FetchResult['failure']
+}
+
+/**
+ * Whether a response tells us anything about the site.
+ *
+ * A 429, a 403 from a WAF, or a timeout means we were not allowed to look —
+ * which is a different fact from "this file does not exist". Treating them the
+ * same manufactures a full slate of confident technical findings whenever a
+ * site rate-limits us, and the engine would then generate and ship fixes for
+ * problems that were never there.
+ */
+function wasObserved(doc: FetchedDoc): boolean {
+  return !doc.failure && doc.status > 0 && doc.status < 500 && doc.status !== 429 && doc.status !== 403
 }
 
 async function fetchDoc(url: string): Promise<FetchedDoc> {
-  const res = await fetch(url, {
-    headers: { 'user-agent': USER_AGENT, accept: 'text/html,application/xhtml+xml,*/*' },
-    redirect: 'follow',
-  })
-  const body = res.status < 400 ? await res.text() : ''
+  const res: FetchResult = await safeFetch(url, { userAgent: USER_AGENT, timeoutMs: 10_000 })
   return {
-    url: res.url || url,
+    url: res.url,
     status: res.status,
-    body,
-    contentType: res.headers.get('content-type') ?? '',
+    body: res.body,
+    contentType: res.contentType,
+    failure: res.failure,
   }
 }
 
@@ -143,6 +156,21 @@ export const crawlerAdapter: Adapter = {
 
     // --- robots.txt -------------------------------------------------------
     const robots = await fetchThrough(`${origin}/robots.txt`)
+    if (!wasObserved(robots)) {
+      evidence.push({
+        kind: 'crawl_fact',
+        source: 'crawler',
+        tier: 'measured',
+        subject: `${origin}/robots.txt`,
+        value: {
+          fact: 'fetch_failed',
+          url: `${origin}/robots.txt`,
+          detail: { status: robots.status, failure: robots.failure ?? 'blocked' },
+        },
+      })
+      ctx.log(`could not observe robots.txt (status ${robots.status}${robots.failure ? ', ' + robots.failure : ''}) — recording as unobserved, not missing`)
+      return { evidence, pages }
+    }
     const robotsPresent = robots.status === 200 && robots.body.trim().length > 0
     evidence.push({
       kind: 'crawl_fact',

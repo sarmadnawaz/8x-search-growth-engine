@@ -1,0 +1,24 @@
+# The builder stage does `COPY . .`, so anything listed here would otherwise be
+# baked into a cached image layer. `.env` holds live API keys: even though the
+# runtime stage never copies it, the builder layer persists in local and remote
+# layer caches and is readable with `docker history`.
+.env
+.env.*
+!.env.example
+
+.git
+.github
+node_modules
+.next
+*.db
+*.db-*
+
+# Recorded vendor responses and generated site output: large, regenerable, and
+# not needed to build the image.
+fixtures
+fixture-site
+docs
+mockups
+tests
+*.md
+!README.md

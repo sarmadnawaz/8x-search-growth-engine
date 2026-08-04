@@ -1,5 +1,5 @@
 import { mkdirSync, readdirSync, writeFileSync } from 'node:fs'
-import { dirname, join } from 'node:path'
+import { dirname, join, resolve, sep } from 'node:path'
 import { z } from 'zod'
 import { prisma } from '../db'
 import { loadProperty } from './config'
@@ -206,6 +206,12 @@ export async function apply(domain: string): Promise<{ applied: string[]; refuse
   const applied: string[] = []
   const refused: string[] = []
 
+  // Publication is gated on three things, and only one of them was being
+  // checked. Generation asserts the policy; publication has to assert it too,
+  // or a review_first property ships drafts the moment it gains deploy access.
+  // Candidates are considered, then refused with a reason. Filtering them out
+  // of the query instead would make unpublished work silently invisible — the
+  // operator needs to know that work exists and why it has not shipped.
   const actions = await prisma.action.findMany({
     where: { domain, status: { in: ['proposed', 'approved'] } },
     include: { assets: true },
@@ -213,12 +219,31 @@ export async function apply(domain: string): Promise<{ applied: string[]; refuse
 
   for (const action of actions) {
     for (const asset of action.assets) {
+      if (action.status !== 'approved') {
+        refused.push(`${action.title} — awaiting approval (${action.status})`)
+        continue
+      }
       if (!config.deployAccess || !config.localSite || !asset.path) {
         refused.push(`${action.title} — no deploy access for ${domain}`)
         continue
       }
+      if (config.publishingPolicy !== 'auto_low_risk') {
+        refused.push(`${action.title} — ${domain} publishes review-first`)
+        continue
+      }
+      if (asset.reviewState !== 'approved') {
+        refused.push(`${action.title} — asset is ${asset.reviewState}, not approved`)
+        continue
+      }
 
-      const target = join(process.cwd(), config.localSite.dir, asset.path)
+      // asset.path comes back from the database and is only as safe as
+      // whatever wrote it. Containment is asserted here rather than trusted.
+      const root = resolve(process.cwd(), config.localSite.dir)
+      const target = resolve(root, asset.path)
+      if (!target.startsWith(root + sep)) {
+        refused.push(`${action.title} — asset path escapes the site root`)
+        continue
+      }
       mkdirSync(dirname(target), { recursive: true })
       writeFileSync(target, asset.body)
       await prisma.asset.update({ where: { id: asset.id }, data: { reviewState: 'applied' } })
