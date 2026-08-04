@@ -7,8 +7,10 @@ interface CriterionResult {
   id: string
   description: string
   check: string
+  class?: 'delivery' | 'outcome'
   passed?: boolean
   observed?: string
+  verdict?: 'improving' | 'flat' | 'declining' | 'too_early'
 }
 
 const STATUS_VARIANT: Record<string, 'default' | 'secondary' | 'outline' | 'destructive'> = {
@@ -57,19 +59,37 @@ export function ActionCard({
 
       <p className="text-muted-foreground mt-2 text-xs">{action.spec}</p>
 
-      <ul className="mt-3 space-y-1">
-        {results.map((c) => (
-          <li key={c.id} className="text-muted-foreground flex gap-2 text-xs">
-            <span className={c.passed ? 'text-foreground font-bold' : 'text-muted-foreground'}>
-              {c.passed ? '✓' : '○'}
-            </span>
-            <span>
-              {c.description}
-              {c.observed && <span className="opacity-70"> — observed: {c.observed}</span>}
-            </span>
-          </li>
-        ))}
-      </ul>
+      {/* The two questions are shown apart, because they answer on different
+          timescales: delivery settles in seconds, payoff in weeks. */}
+      {(['delivery', 'outcome'] as const).map((group) => {
+        const rows = results.filter((c) => (c.class ?? 'delivery') === group)
+        if (rows.length === 0) return null
+        return (
+          <div key={group} className="mt-3">
+            <p className="text-muted-foreground text-[10px] tracking-wide uppercase">
+              {group === 'delivery' ? 'Did it ship?' : 'Did it pay off?'}
+            </p>
+            <ul className="mt-1 space-y-1">
+              {rows.map((c) => (
+                <li key={c.id} className="text-muted-foreground flex gap-2 text-xs">
+                  <span className={c.passed ? 'text-foreground font-bold' : 'text-muted-foreground'}>
+                    {c.passed ? '✓' : '○'}
+                  </span>
+                  <span>
+                    {c.description}
+                    {c.observed && <span className="opacity-70"> — observed: {c.observed}</span>}
+                    {c.verdict && (
+                      <Badge variant="outline" className="ml-1.5 text-[10px]">
+                        {c.verdict.replace('_', ' ')}
+                      </Badge>
+                    )}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      })}
 
       {lastCheck && (
         <p className="text-muted-foreground mt-2 text-[11px]">

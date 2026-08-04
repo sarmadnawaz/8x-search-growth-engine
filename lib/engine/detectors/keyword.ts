@@ -110,6 +110,16 @@ export const keywordGapDetector: Detector = {
               check: 'page_indexable',
             },
             {
+              id: 'answer_block',
+              description: 'Page opens with a question heading and a direct answer',
+              check: 'answer_block_present',
+            },
+            {
+              id: 'internal_links',
+              description: 'Page is linked into the site, not orphaned',
+              check: 'internal_links_min:3',
+            },
+            {
               id: 'ranking_progress',
               description: `Enters top ${target * 2} for the query within the measurement window`,
               check: `rank_within:${serp.query}=${target * 2}`,
