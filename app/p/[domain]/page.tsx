@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getProperty } from '@/lib/engine/queries'
-import { Sparkline } from '@/app/components/Sparkline'
+import { TrendChart } from '@/app/components/TrendChart'
 import { EvidenceDrawer } from '@/app/components/EvidenceDrawer'
 import { ActionCard } from '@/app/components/ActionCard'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -73,13 +73,16 @@ export default async function PropertyPage({ params }: { params: Promise<{ domai
         <Link href="/" className="text-muted-foreground hover:text-foreground text-xs">
           ← portfolio
         </Link>
-        <h1 className="mt-1.5 text-xl font-semibold tracking-tight">{property.domain}</h1>
+        <p className="border-brand-rule text-brand-accent mt-3 border-b pb-1.5 text-[10px] font-bold tracking-[0.14em] uppercase">
+          Property
+        </p>
+        <h1 className="text-brand-ink mt-3 text-xl font-bold">{property.domain}</h1>
         <div className="mt-2 flex flex-wrap gap-1.5">
           <Badge variant="secondary">{property.name}</Badge>
           <Badge variant="outline">goal: {property.goal}</Badge>
           <Badge variant="outline">{property.publishingPolicy}</Badge>
           <Badge variant={deployAccess ? 'default' : 'outline'}>
-            {deployAccess ? 'deploy access' : 'no deploy access — fixes stay proposed'}
+            {deployAccess ? 'deploy access' : 'no deploy access, fixes stay proposed'}
           </Badge>
         </div>
       </header>
@@ -101,8 +104,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ domai
           {degraded.length > 0 && (
             <p className="text-muted-foreground mt-3 text-xs">
               <span className="text-foreground font-medium">Degraded this run:</span>{' '}
-              {degraded.join(' · ')} — the affected evidence families are absent rather than
-              guessed.
+              {degraded.join(', ')}. Those evidence families are absent rather than guessed.
             </p>
           )}
         </CardContent>
@@ -113,7 +115,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ domai
           <Card>
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-medium">
-                Target list — every row carries its evidence
+                Target list. Every row carries its evidence
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -171,8 +173,8 @@ export default async function PropertyPage({ params }: { params: Promise<{ domai
                 </p>
               )}
               <p className="text-muted-foreground mt-3 text-xs">
-                Priority is a mapping, not a measurement: blockers take 90–100 by coverage,
-                everything else normalises into 20–89 within this snapshot. The factors are stored,
+                Priority is a mapping, not a measurement: blockers take 90 to 100 by coverage,
+                everything else normalises into 20 to 89 within this snapshot. The factors are stored,
                 so the arithmetic can be redone by hand.
               </p>
             </CardContent>
@@ -181,7 +183,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ domai
           <Card>
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-medium">
-                Actions — status is set by re-check, never by assertion
+                Actions. Status is set by re-check, never by assertion
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
@@ -202,34 +204,19 @@ export default async function PropertyPage({ params }: { params: Promise<{ domai
               <CardTitle className="text-sm font-medium">Evolution over time</CardTitle>
             </CardHeader>
             <CardContent>
-              {series.length <= 1 ? (
-                <p className="text-muted-foreground text-sm">
-                  One snapshot so far — that is a baseline, not a trend. Run the pipeline again to
-                  produce a diff.
+              <TrendChart
+                data={series.map((point, i) => ({
+                  at: point.at.toISOString().slice(5, 10),
+                  indexablePages: point.indexablePages,
+                  shipped: i > 0 && point.indexablePages > (series[i - 1]?.indexablePages ?? 0),
+                }))}
+              />
+              {series.length > 1 && (
+                <p className="text-muted-foreground mt-3 text-xs">
+                  Indexable pages, because it moves on a timescale this can honestly show. Ranking
+                  outcomes are measured over 2 to 6 month windows by the measure stage. The ringed
+                  point is the run where the engine shipped its own work.
                 </p>
-              ) : (
-                <>
-                  <Sparkline values={series.map((s) => s.indexablePages)} width={280} height={56} />
-                  <Table>
-                    <TableBody>
-                      {series.map((s, i) => (
-                        <TableRow key={i}>
-                          <TableCell className="text-muted-foreground py-1.5 text-xs">
-                            {s.at.toISOString().slice(0, 16).replace('T', ' ')}
-                          </TableCell>
-                          <TableCell className="py-1.5 text-right text-xs tabular-nums">
-                            {s.indexablePages} indexable
-                          </TableCell>
-
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                  <p className="text-muted-foreground mt-2 text-xs">
-                    Indexable pages, because it moves on a timescale this can honestly show. Ranking
-                    outcomes are measured over 2–6 month windows by the measure stage.
-                  </p>
-                </>
               )}
             </CardContent>
           </Card>
@@ -302,7 +289,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ domai
                 </code>{' '}
                 plus the shared engine. No code in{' '}
                 <code className="bg-muted rounded px-1 py-0.5">lib/engine/</code> mentions this
-                domain —{' '}
+                domain. Run{' '}
                 <code className="bg-muted rounded px-1 py-0.5">npm run check:onboarding</code> fails
                 if that stops being true.
               </p>

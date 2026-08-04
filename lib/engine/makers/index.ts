@@ -42,7 +42,7 @@ const landingPage: Maker = {
       `${config.name} is ${config.description.trim().replace(/\.$/, '')}. ` +
         `It is built for people searching for ${subject}, and the fastest way to try it is through the ${config.conversionRoute.replace(/_/g, ' ')}.`
 
-    const title = enriched?.title ?? `${subject} — ${config.name}`
+    const title = enriched?.title ?? `${subject}, ${config.name}`
 
     // Competitors come from observed SERP evidence, so the comparison is
     // sourced rather than asserted.
@@ -162,7 +162,7 @@ const blogPost: Maker = {
       enriched?.intro ??
       `Choosing ${subject} comes down to the job you need done. ` +
         `This page sets out what to compare, which questions people actually search alongside it, ` +
-        `and where ${config.name} fits — including where it does not.`
+        `and where ${config.name} fits, including where it does not.`
 
     // Figures are drawn from measured evidence and cited to their source, so
     // the page can satisfy `sourced_stats` honestly rather than by inventing
@@ -183,7 +183,7 @@ const blogPost: Maker = {
       producedBy: enriched ? 'template+llm' : 'template',
       satisfies: ['answer_block_present', 'sourced_stats:3', 'internal_links_min:3'],
       body: page({
-        title: `${question} — ${config.name}`,
+        title: `${question}, ${config.name}`,
         description: answer.slice(0, 155),
         bodyParts: [
           `    <h1>${escapeHtml(question)}</h1>`,
@@ -233,7 +233,7 @@ const freeTool: Maker = {
         producedBy: 'template',
         satisfies: [],
         body:
-          `# Tool brief — ${subject}\n\n` +
+          `# Tool brief, ${subject}\n\n` +
           `The engine detected tool intent for "${subject}" but has no utility template that ` +
           `matches this job, so it has not generated one. Shipping a generic calculator here ` +
           `would create a page that ranks for a query it does not answer.\n\n` +
@@ -274,7 +274,7 @@ const freeTool: Maker = {
         'schema_type_present:SoftwareApplication',
       ],
       body: page({
-        title: `${spec.label} — free, no signup | ${config.name}`,
+        title: `${spec.label}, free, no signup | ${config.name}`,
         description: answer.slice(0, 155),
         bodyParts: [
           `    <h1>${escapeHtml(spec.label)}</h1>`,

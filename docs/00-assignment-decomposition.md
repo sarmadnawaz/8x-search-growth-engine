@@ -28,7 +28,6 @@ The email says it directly — "we care more about clear thinking and a useful w
 3. **Closed loop, not open pipeline.** Inspect → … → measure → *learn*. Most candidates will build the left half (analysis). The differentiator is the right half: verification and outcome measurement.
 4. **Judgment about scope.** 24 hours cannot produce the production system. They want to see *which* slice I chose and *why* — the cut-lines are part of the deliverable.
 5. **Process fluency with AI tooling.** The candidate brief for me personally: show how the research, planning, and build were run (Claude Code, model selection, agent fan-out) as a repeatable engineering process — documented in doc 04.
-6. **The evaluator is the CTO.** Research established that Theo Bui is 8x's co-founder/CTO (ex-ML engineer at Cleo), and 8x is an Entrepreneur First company shipping ~3 apps a month. Expect an evaluation taste for speed, leverage, and honest engineering trade-offs over enterprise ceremony — and expect the "is this a system or a one-shot audit" probe to be applied hard.
 
 ## 3. Scoping decisions (defaults I chose, and why)
 
@@ -48,7 +47,7 @@ Decisions made without waiting for answers — each is reversible and flagged in
 ## 4. Questions for Theo — asked in the submission, not blocking the build
 
 1. Do any 8x properties have Search Console / GA4 access you'd grant a test key for? (Changes the measurement adapter from SERP-sampling to first-party data.)
-2. Research confirmed 13 registrable domains (canonical table in doc 01 §1: 11 app domains + 8x.social + 8x-internal.com; Dede's domain unconfirmed). What are the remaining properties toward "20+", with markets/languages per domain?
+2. Research confirmed 13 registrable domains from public app-store records (canonical table in doc 01 §1). What are the remaining properties toward "20+", with markets and languages per domain?
 3. Publishing path: the properties look like Next.js apps on Vercel — should "make" outputs land as MDX pull requests per repo, a shared content service, or draft artifacts for now?
 4. Is ASO (app-store keyword optimization) in scope for this engine, or does it stop at the web edge (store-click-through as the conversion metric)?
 5. Per-property risk appetite: is human review mandatory everywhere, or may low-risk technical fixes (meta descriptions, robots/sitemap) auto-apply on some properties?

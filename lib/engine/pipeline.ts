@@ -117,7 +117,7 @@ export async function collect(options: RunOptions): Promise<RunSummary> {
       const reason = adapter.unavailableReason(ctx)
       if (reason) {
         degraded.push(`${adapter.name}: ${reason}`)
-        log(`[${adapter.name}] skipped — ${reason}`)
+        log(`[${adapter.name}] skipped, ${reason}`)
         continue
       }
 
@@ -202,7 +202,7 @@ export async function collect(options: RunOptions): Promise<RunSummary> {
         // run. Downstream detectors see the gap and score accordingly.
         const message = err instanceof Error ? err.message : String(err)
         degraded.push(`${adapter.name}: ${message}`)
-        log(`[${adapter.name}] FAILED — ${message}`)
+        log(`[${adapter.name}] FAILED, ${message}`)
         await prisma.run.update({
           where: { id: stage.id },
           data: { status: 'failed', detail: message, finishedAt: new Date() },

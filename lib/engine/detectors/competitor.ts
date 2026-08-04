@@ -93,7 +93,7 @@ export const competitorContentGapDetector: Detector = {
       detectorId: competitorContentGapDetector.id,
       detectorVersion: competitorContentGapDetector.version,
       title:
-        `No /${section} surface — ${entry.competitors.length === 1 ? entry.competitors[0] : `${entry.competitors.length} competitors`} ` +
+        `No /${section} surface, ${entry.competitors.length === 1 ? entry.competitors[0] : `${entry.competitors.length} competitors`} ` +
         `publish ${entry.totalPages} pages there`,
       subject: `/${section}`,
       evidenceIds: [...new Set(entry.evidenceIds)],
@@ -122,7 +122,7 @@ export const competitorContentGapDetector: Detector = {
           `${entry.competitors.join(', ')} publish ${entry.totalPages} pages under /${section} and ` +
           `this property has none. Examples: ${entry.examples.slice(0, 3).join(', ')}. ` +
           `This is a roadmap decision rather than a page: decide whether the surface earns its ` +
-          `keep here, and if it does, whether each page can carry unique value — a section of ` +
+          `keep here, and if it does, whether each page can carry unique value, a section of ` +
           `near-duplicates is the pattern search engines demote.`,
         criteria: [
           {
@@ -336,7 +336,7 @@ export const localisationGapDetector: Detector = {
             rivals.map((r) => `${r.competitor} has ${r.count} pages`).join(', ') +
             `. Localisation is a config-level decision here: the same asset templates render per ` +
             `market, so the work is translation and hreflang, not a new content programme. ` +
-            `Machine translation without review is the failure mode — thin localised duplicates ` +
+            `Machine translation without review is the failure mode, thin localised duplicates ` +
             `are treated as scaled content abuse.`,
           criteria: [
             {
