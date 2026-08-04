@@ -1,0 +1,109 @@
+{
+  "requestKey": "envelope budgeting app|us|en",
+  "fetchedAt": "2026-08-04T17:31:15.685Z",
+  "payload": {
+    "searchParameters": {
+      "q": "envelope budgeting app",
+      "gl": "us",
+      "hl": "en",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "Envelope: Budgeting App with Built-In Banking",
+        "link": "https://envelopebudgeting.com/",
+        "snippet": "Envelope is a budgeting app with a checking account and debit card built in, so you can plan your money, control spending, and budget from one place.",
+        "position": 1
+      },
+      {
+        "title": "All I want is a Simple Envelope Budget App",
+        "link": "https://www.reddit.com/r/budget/comments/1c056ef/all_i_want_is_a_simple_envelope_budget_app/",
+        "snippet": "FaithFi formerly MoneyWise has one. Free. They allow you to choose between 3 budgeting styles. Envelope, monthly budget or tracking only. A ...",
+        "sitelinks": [
+          {
+            "title": "What app most closely mimics the envelope budgeting system? - Redditr/budget·20+ comments·2y",
+            "link": "https://www.reddit.com/r/budget/comments/18ol2hf/what_app_most_closely_mimics_the_envelope/"
+          },
+          {
+            "title": "App to replace cash envelope budgetting : r/personalfinancer/personalfinance·10+ comments·1y",
+            "link": "https://www.reddit.com/r/personalfinance/comments/1k0mx2i/app_to_replace_cash_envelope_budgetting/"
+          }
+        ],
+        "position": 2
+      },
+      {
+        "title": "Best Envelope Budgeting Apps",
+        "link": "https://realbudget.app/best-envelope-budgeting-app",
+        "snippet": "Compare popular envelope budgeting apps like RealBudget, YNAB, EveryDollar, Goodbudget, Actual Budget, and Envelope to find the best fit for your budgeting ...",
+        "position": 3
+      },
+      {
+        "title": "The Digital Envelope Budgeting System",
+        "link": "https://www.quorumfcu.org/learn/money-management/the-digital-envelope-budgeting-system/",
+        "snippet": "To achieve the best results with your digital envelope budgeting system, pick an app that you fully understand and will be comfortable using day in and day out.",
+        "position": 4
+      },
+      {
+        "title": "Envelope Budgeting | Personal & Household Budget Software",
+        "link": "https://goodbudget.com/envelope-budgeting/",
+        "snippet": "A home budget app based on the envelope budget system. Available on the Web, Android, and iPhone. Replace your family budget planner, worksheet or ...",
+        "position": 5
+      },
+      {
+        "title": "Envelope: Budgeting app with built-in banking",
+        "link": "https://www.ycombinator.com/companies/envelope",
+        "snippet": "Envelope is a budgeting app with built-in checking and debit cards. It helps people organize real money into digital envelopes, plan ahead for bills and ...",
+        "position": 6
+      },
+      {
+        "title": "What is Envelope? - Envelope User Guide",
+        "link": "https://envelopebudgeting.com/user-guide/what-is-envelope",
+        "snippet": "Envelope is an iOS and Android app that combines envelope budgeting with a built-in checking account and debit cards. Envelope helps families organize money",
+        "position": 7
+      },
+      {
+        "title": "‎Envelope: Budgeting & Banking - You Might Also Like - App Store - Apple",
+        "link": "https://apps.apple.com/us/app/envelope-budgeting-banking/id6444296251?see-all=customers-also-bought-apps&platform=vision",
+        "snippet": "Envelope: Budgeting & Banking. See exactly what you can spend. Manage money, track expenses. Spend, Send, and Save",
+        "position": 8
+      }
+    ],
+    "peopleAlsoAsk": [
+      {
+        "question": "What is the best free app for envelope budgeting?"
+      },
+      {
+        "question": "What website can I use for envelope budgeting?"
+      },
+      {
+        "question": "What is Dave Ramsey's favorite budgeting app?"
+      },
+      {
+        "question": "How to budget money with envelopes?"
+      }
+    ],
+    "relatedSearches": [
+      {
+        "query": "Free envelope budgeting app"
+      },
+      {
+        "query": "Envelope budgeting app reddit"
+      },
+      {
+        "query": "Envelope budgeting bank"
+      },
+      {
+        "query": "Envelope budgeting app review"
+      },
+      {
+        "query": "Envelope app"
+      },
+      {
+        "query": "Envelope budgeting spreadsheet"
+      }
+    ],
+    "credits": 1
+  }
+}

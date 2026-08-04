@@ -1,0 +1,129 @@
+{
+  "requestKey": "what to wear today weather|us|en",
+  "fetchedAt": "2026-08-04T17:30:26.162Z",
+  "payload": {
+    "searchParameters": {
+      "q": "what to wear today weather",
+      "gl": "us",
+      "hl": "en",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "Daily Dress Me",
+        "link": "https://dailydressme.com/",
+        "snippet": "Daily Dress Me breaks down the weather forecast into style inspiration that actually makes sense. All you need to do is type in your city!",
+        "position": 1
+      },
+      {
+        "title": "What to Wear Today, Based on the Weather – Weather Fit iOS App",
+        "link": "https://weatherfit.com/",
+        "snippet": "Weather Fit picks the right layers for the day: t-shirt or sweater, shorts or pants, jacket or none. It tunes them to your personal comfort level so the",
+        "position": 2
+      },
+      {
+        "title": "Outfit for Todays Weather",
+        "link": "https://www.pinterest.com/ideas/outfit-for-todays-weather/955816250273/",
+        "snippet": "Outfit for todays weather · Curvy Jeans Outfits · 4 Best Ways To Wear Sweater. · Dive into a world of breezy elegance designed to embrace the summer warmth.",
+        "position": 3
+      },
+      {
+        "title": "Clothes Forecast - Smart Weather Styling",
+        "link": "https://www.clothesforecast.com/",
+        "snippet": "Recommended Outfits. T-shirt or tank top with shorts. Camisole Dress. Floral Miniskirt And Sleeveless. Orange Crochet Sundress. Oversized Tshirt And Shorts.",
+        "position": 4
+      },
+      {
+        "title": "A weather app that knows my capsule wardrobe and tells me what to wear. ...",
+        "link": "https://www.reddit.com/r/capsulewardrobe/comments/1ldvng6/a_weather_app_that_knows_my_capsule_wardrobe_and/",
+        "snippet": "The ACloset wardrobe app already does this - offering a few outfit suggestions based on today's weather. It's very average.",
+        "sitelinks": [
+          {
+            "title": "More",
+            "link": "https://www.reddit.com/r/capsulewardrobe/comments/1ldvng6/a_weather_app_that_knows_my_capsule_wardrobe_and/mybbyg1/"
+          },
+          {
+            "title": "More",
+            "link": "https://www.reddit.com/r/capsulewardrobe/comments/1ldvng6/a_weather_app_that_knows_my_capsule_wardrobe_and/mybc182/"
+          },
+          {
+            "title": "Finally, an app that tells me how I should dress based on the weatherr/nocode·9 comments·1y",
+            "link": "https://www.reddit.com/r/nocode/comments/1f8mikd/finally_an_app_that_tells_me_how_i_should_dress/"
+          },
+          {
+            "title": "What should I wear today based on the weather : r/shortcuts - Redditr/shortcuts·40+ comments·1y",
+            "link": "https://www.reddit.com/r/shortcuts/comments/1gx4x7j/what_should_i_wear_today_based_on_the_weather/"
+          }
+        ],
+        "position": 5
+      },
+      {
+        "title": "Weather Outfit Chart",
+        "link": "https://www.pinterest.com/ideas/weather-outfit-chart/914559633720/",
+        "snippet": "How To Dress For Weather · Layering Guide For Different Temperatures · Seasonal Clothing Chart · Temperature-based Outfit Ideas ; Dressing Toddler For Weather.",
+        "position": 6
+      },
+      {
+        "title": "How to Dress for the Weather Guide - getoutsideandplay.ca",
+        "link": "https://getoutsideandplay.ca/wp-content/uploads/2020/05/How-to-Dress-for-the-Weather-STANDARD.pdf",
+        "snippet": "Tips Base layer: closest to your skin, fits snuggly and helps wick moisture away. Look for wool or polyester fabrics. Mid layer: the insulating layer that ...",
+        "position": 7
+      },
+      {
+        "title": "How to dress for the weather today",
+        "link": "https://www.my-jewellery.com/en/blog/info-advice/what-to-wear-at-which-temperature",
+        "snippet": "Throw on a short dress, some loafers or a pair of converse and you're ready to face the sun! At 23 degrees you can perfectly wear a skirt, or for the shorts ...",
+        "position": 8
+      }
+    ],
+    "peopleAlsoAsk": [
+      {
+        "question": "What is the 3 3 3 rule for clothes?"
+      },
+      {
+        "question": "Which clothes to wear today?"
+      },
+      {
+        "question": "What color should I wear today?"
+      },
+      {
+        "question": "What makes you look frumpy?"
+      }
+    ],
+    "relatedSearches": [
+      {
+        "query": "What to wear today weather near Newnan, GA"
+      },
+      {
+        "query": "What to wear today weather near Peachtree City, GA"
+      },
+      {
+        "query": "What to wear today weather female"
+      },
+      {
+        "query": "What to wear today weather men"
+      },
+      {
+        "query": "What to wear today weather winter"
+      },
+      {
+        "query": "What to wear today weather women's"
+      },
+      {
+        "query": "What should I Wear tomorrow weather For School"
+      },
+      {
+        "query": "What to Wear today casual"
+      },
+      {
+        "query": "Daily Dress Me weather"
+      },
+      {
+        "query": "What should I wear today weather nyc"
+      }
+    ],
+    "credits": 1
+  }
+}

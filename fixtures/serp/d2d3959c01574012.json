@@ -1,0 +1,87 @@
+{
+  "requestKey": "digital wardrobe app|mx|es",
+  "fetchedAt": "2026-08-04T17:30:06.369Z",
+  "payload": {
+    "searchParameters": {
+      "q": "digital wardrobe app",
+      "gl": "mx",
+      "hl": "es",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "Best Wardrobe Apps in 2026: 10 Closet Apps Tested & ...",
+        "link": "https://www.nouva.app/blog/best-wardrobe-apps-2026-comparison",
+        "snippet": "We tested 10 wardrobe and closet organiser apps for three months. Here's an honest ranking of which digital wardrobe apps are actually worth ...",
+        "date": "13 abr 2026",
+        "position": 1
+      },
+      {
+        "title": "Whering: Tu Armario Virtual - Apps en Google Play",
+        "link": "https://play.google.com/store/apps/details?id=com.whering.app&hl=es_MX",
+        "snippet": "La app social de styling y armario digital gratuita más grande del mundo (9 M+ usuarios). Diseñada para que ames tu armario. “Revolucionó mi forma de vestir ...",
+        "rating": 4.4,
+        "ratingCount": 25937,
+        "position": 2
+      },
+      {
+        "title": "Whering: Your Digital Closet - App Store - Apple",
+        "link": "https://apps.apple.com/us/app/whering-your-digital-closet/id1519461680",
+        "snippet": "The world's largest free social styling & closet app (9 M+ users). Built to help you love your closet. “Revolutionized the way I dress and shop” – Vogue.",
+        "position": 3
+      },
+      {
+        "title": "Best app to keep up with what's in your closet",
+        "link": "https://www.reddit.com/r/femalefashionadvice/comments/177fzog/best_app_to_keep_up_with_whats_in_your_closet/",
+        "snippet": "ALTA is the best app I have come across - it's SO easy and intuitive when it comes to uploading your wardrobe from photos that already exist ...",
+        "sitelinks": [
+          {
+            "title": "Help, what's your favorite digital closet app ...",
+            "link": "https://www.reddit.com/r/fashionwomens35/comments/1pakgdj/help_whats_your_favorite_digital_closet_app_tried/",
+            "date": "49 publicaciones30 nov 2025"
+          },
+          {
+            "title": "Suggestions for a closet/wardrobe tracking app ...",
+            "link": "https://www.reddit.com/r/capsulewardrobe/comments/1jd19pv/suggestions_for_a_closetwardrobe_tracking_app/",
+            "date": "54 publicaciones17 mar 2025"
+          }
+        ],
+        "position": 4
+      },
+      {
+        "title": "The Best Digital Wardrobe & Styling Apps in 2025",
+        "link": "https://whering.co.uk/best-wardrobe-apps-2025",
+        "snippet": "After testing all the best wardrobe apps out there, I think Whering is the best free wardrobe and styling app. It has the perfect mix of organisation and play ...",
+        "date": "5 mar 2025",
+        "position": 5
+      },
+      {
+        "title": "The Best 6 Closet & Outfit Planning Apps Reviewed - Laurieloo",
+        "link": "https://thelaurieloo.com/ultimate-closet-app-roundup/",
+        "snippet": "The Best 6 Closet & Outfit Planning Apps Reviewed ; 1 | Stylebook · iPhone · $3.99 ; 2 | Cladwell · iPhone and coming soon to Android · Free for Life (Limited Time).",
+        "position": 6
+      },
+      {
+        "title": "Indyx: Catalog, Style, Resell Your Closet",
+        "link": "https://www.myindyx.com/",
+        "snippet": "Your one-stop wardrobe app to catalog, style, & resell. Start on your own, or use our professional cataloging services to get an instant digital wardrobe.",
+        "position": 7
+      },
+      {
+        "title": "Acloset — Your AI-Powered Smart Closet",
+        "link": "https://www.acloset.app/",
+        "snippet": "Your Digital Closet. AI organizes your clothes from a single photo. Import from Amazon, Zara, Shein, and more — your entire wardrobe, always with you.",
+        "position": 8
+      },
+      {
+        "title": "Wardrobe App",
+        "link": "https://dribbble.com/tags/wardrobe-app",
+        "snippet": "Discover 45 Wardrobe App designs on Dribbble. Your resource to discover and connect with designers worldwide.",
+        "position": 9
+      }
+    ],
+    "credits": 1
+  }
+}

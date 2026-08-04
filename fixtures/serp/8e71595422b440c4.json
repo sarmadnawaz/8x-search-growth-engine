@@ -1,0 +1,121 @@
+{
+  "requestKey": "stretching routine app|us|en",
+  "fetchedAt": "2026-08-04T17:32:15.617Z",
+  "payload": {
+    "searchParameters": {
+      "q": "stretching routine app",
+      "gl": "us",
+      "hl": "en",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "I Could Never Stick to My Stretching Routine. Then I Found This App.",
+        "link": "https://www.nytimes.com/wirecutter/reviews/bend-app-review/?eafs_enabled=false",
+        "snippet": "The Bend app offers an impressive library of guided stretching routines tailored to specific areas of the body, such as your neck, lower back, or hips.",
+        "date": "Jan 12, 2026",
+        "position": 1
+      },
+      {
+        "title": "The 7 Best Stretching Apps of 2025",
+        "link": "https://dieringe.com/blog/stretching-apps",
+        "snippet": "We tested the 7 best stretching apps for 2025 – from free options to premium solutions. Here, you'll find out which app fits your training style.",
+        "date": "Feb 18, 2025",
+        "position": 2
+      },
+      {
+        "title": "Best FREE stretching apps?",
+        "link": "https://www.reddit.com/r/flexibility/comments/1j1go5c/best_free_stretching_apps/",
+        "sitelinks": [
+          {
+            "title": "More",
+            "link": "https://www.reddit.com/r/flexibility/comments/1j1go5c/best_free_stretching_apps/mfjiz5b/"
+          },
+          {
+            "title": "More",
+            "link": "https://www.reddit.com/r/flexibility/comments/1j1go5c/best_free_stretching_apps/mfjli7e/"
+          }
+        ],
+        "position": 3
+      },
+      {
+        "title": "What are good free stretching/mobility apps for daily stretching?",
+        "link": "https://www.facebook.com/groups/171433100077452/posts/1767825263771553/",
+        "position": 4
+      },
+      {
+        "title": "What are some good, free apps that have a list of stretches/exercises with instructions on ...",
+        "link": "https://www.quora.com/What-are-some-good-free-apps-that-have-a-list-of-stretches-exercises-with-instructions-on-how-to-perform-them-correctly",
+        "position": 5
+      },
+      {
+        "title": "Best apps to get you into a stretching routine as beginner? : r/flexibility",
+        "link": "https://www.reddit.com/r/flexibility/comments/1azjr30/best_apps_to_get_you_into_a_stretching_routine_as/",
+        "snippet": "Hi sorry if this post isn't allowed. I recently came across an app called Bend and decided to buy one month and try it, but I see a log of people on ...",
+        "sitelinks": [
+          {
+            "title": "More",
+            "link": "https://www.reddit.com/r/flexibility/comments/1azjr30/best_apps_to_get_you_into_a_stretching_routine_as/ks2aqr1/"
+          },
+          {
+            "title": "More",
+            "link": "https://www.reddit.com/r/flexibility/comments/1azjr30/best_apps_to_get_you_into_a_stretching_routine_as/ks4k7s7/"
+          },
+          {
+            "title": "Best FREE stretching apps? : r/flexibility - Redditr/flexibility·40+ comments·1y",
+            "link": "https://www.reddit.com/r/flexibility/comments/1j1go5c/best_free_stretching_apps/"
+          },
+          {
+            "title": "Are the apps for stretching actually worth it ? Can you suggest me a ...r/flexibility·20+ comments·1y",
+            "link": "https://www.reddit.com/r/flexibility/comments/1htrrof/are_the_apps_for_stretching_actually_worth_it_can/"
+          }
+        ],
+        "position": 6
+      },
+      {
+        "title": "Best Free Stretching Apps to Boost Flexibility in 2026 - WeStretch",
+        "link": "https://westretch.ca/blog/best-free-stretching-apps-in-2026/",
+        "snippet": "The 6 Best Free Stretching Apps Reviewed · 1. WeStretch · 2. Bend · 3. Daily Yoga · 4. Fitify Flexibility & Stretching · 5. StretchIt · 6. Gentle Stretch & Mobility.",
+        "position": 7
+      }
+    ],
+    "peopleAlsoAsk": [
+      {
+        "question": "What is the best free stretching app?"
+      },
+      {
+        "question": "Is 20 minutes of stretching a day enough?"
+      },
+      {
+        "question": "What is the best daily stretch routine?"
+      },
+      {
+        "question": "Are free stretching apps safe to use?",
+        "snippet": "Even 5–10 minutes daily can help improve mobility and reduce stiffness over time. Are stretching apps safe to use at home? Yes, as long as you follow guided instructions and avoid pushing into pain. Look for apps that emphasize gentle progression."
+      }
+    ],
+    "relatedSearches": [
+      {
+        "query": "Stretching routine app free"
+      },
+      {
+        "query": "Best app for stretching free"
+      },
+      {
+        "query": "Stretching routine app for android"
+      },
+      {
+        "query": "Best stretching routine app"
+      },
+      {
+        "query": "Free stretching apps for Android"
+      },
+      {
+        "query": "Stretching routine app for iphone"
+      }
+    ],
+    "credits": 1
+  }
+}

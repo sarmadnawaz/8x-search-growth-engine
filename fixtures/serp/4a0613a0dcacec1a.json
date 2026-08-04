@@ -1,0 +1,127 @@
+{
+  "requestKey": "envelope budgeting app review|us|en",
+  "fetchedAt": "2026-08-04T17:31:26.348Z",
+  "payload": {
+    "searchParameters": {
+      "q": "envelope budgeting app review",
+      "gl": "us",
+      "hl": "en",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "Envelope budget app?",
+        "link": "https://www.reddit.com/r/budget/comments/1c1rzgz/envelope_budget_app/",
+        "snippet": "Its a great tool, but it comes with a learning curve. So it's not for everyone. It takes some time to get your head around. I literally can't ...",
+        "date": "2 years ago",
+        "sitelinks": [
+          {
+            "title": "All I want is a Simple Envelope Budget App - Reddit",
+            "link": "https://www.reddit.com/r/budget/comments/1c056ef/all_i_want_is_a_simple_envelope_budget_app/",
+            "date": "89 postsApr 10, 2024"
+          },
+          {
+            "title": "Personal Finance App that can do envelope budgeting ...",
+            "link": "https://www.reddit.com/r/macapps/comments/1krbn8y/personal_finance_app_that_can_do_envelope/",
+            "date": "36 postsMay 20, 2025"
+          }
+        ],
+        "position": 1
+      },
+      {
+        "title": "All I want is a Simple Envelope Budget App",
+        "link": "https://www.reddit.com/r/budget/comments/1c056ef/all_i_want_is_a_simple_envelope_budget_app/",
+        "sitelinks": [
+          {
+            "title": "One time purchase app for envelope budgeting? - SoftwareMPU Talk · 3 years ago",
+            "link": "https://talk.macpowerusers.com/t/one-time-purchase-app-for-envelope-budgeting/31552"
+          }
+        ],
+        "position": 2
+      },
+      {
+        "title": "One time purchase app for envelope budgeting? - Software",
+        "link": "https://talk.macpowerusers.com/t/one-time-purchase-app-for-envelope-budgeting/31552",
+        "position": 3
+      },
+      {
+        "title": "The 10 Best Budgeting Apps of 2026 (Tested & Compared)",
+        "link": "https://envelopebudgeting.com/articles/best-budgeting-apps",
+        "snippet": "Envelope - Best Overall and Best for Budgeting with Built-In Spending Controls. Editor's Pick | Price: $40/year with waivable fee | Platforms: ...",
+        "date": "Jun 5, 2026",
+        "position": 4
+      },
+      {
+        "title": "RealBudget: Envelope Budgeting - Apps on Google Play",
+        "link": "https://play.google.com/store/apps/details?id=com.litapplications.realbudget&hl=en_US",
+        "snippet": "This budget app is great! It mimics an envelope style budget, and it gives you all the same flexibility as a physical system would. For starters, getting setup ...",
+        "rating": 4.7,
+        "ratingCount": 487,
+        "position": 5
+      },
+      {
+        "title": "Envelope: Budgeting app with built-in banking",
+        "link": "https://www.ycombinator.com/companies/envelope",
+        "snippet": "Envelope is a budgeting app with built-in checking and debit cards. It helps people organize real money into digital envelopes, plan ahead for bills and ...",
+        "position": 6
+      },
+      {
+        "title": "Envy: Envelope Budget Planner - App Store - Apple",
+        "link": "https://apps.apple.com/us/app/envy-envelope-budget-planner/id1569230951",
+        "snippet": "\"Love the simplicity of this app. This is the best app so far.\" left to spend. Clean and user-friendly interface.\"",
+        "rating": 4.8,
+        "ratingCount": 781,
+        "position": 7
+      },
+      {
+        "title": "Envelopes Budgeting App: My Honest Review and User ...",
+        "link": "https://www.youtube.com/watch?v=h-i-bVV-f5c",
+        "snippet": "I explore its features, usability, and effectiveness in managing personal finances through the envelope budgeting method.",
+        "date": "1 year ago",
+        "position": 8
+      },
+      {
+        "title": "Goodbudget App Review",
+        "link": "https://www.experian.com/blogs/ask-experian/goodbudget-budgeting-app-review/",
+        "snippet": "Goodbudget is an app that digitizes the envelope budgeting method, where you allocate money to specific spending categories rather than ...",
+        "date": "Jan 13, 2026",
+        "position": 9
+      },
+      {
+        "title": "Envelope: Budgeting App with Built-In Banking",
+        "link": "https://envelopebudgeting.com/",
+        "snippet": "Hundreds of 5-star reviews Y Combinator Selection Full-service banking meets effortless budgeting. No syncing. No power of envelope budgeting. Envelope ...",
+        "position": 10
+      }
+    ],
+    "relatedSearches": [
+      {
+        "query": "Envelope budgeting app review reddit"
+      },
+      {
+        "query": "Best envelope budgeting app review"
+      },
+      {
+        "query": "Envelope budgeting app free"
+      },
+      {
+        "query": "Envelope budgeting app reddit"
+      },
+      {
+        "query": "Envelope budgeting bank"
+      },
+      {
+        "query": "Envelope Money"
+      },
+      {
+        "query": "Best envelope budgeting app"
+      },
+      {
+        "query": "Envelope app"
+      }
+    ],
+    "credits": 1
+  }
+}

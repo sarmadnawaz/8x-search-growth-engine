@@ -1,0 +1,131 @@
+{
+  "requestKey": "mobility routine app|us|en",
+  "fetchedAt": "2026-08-04T17:32:01.570Z",
+  "payload": {
+    "searchParameters": {
+      "q": "mobility routine app",
+      "gl": "us",
+      "hl": "en",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "Mobility apps : r/crossfit",
+        "link": "https://www.reddit.com/r/crossfit/comments/1hp7zuw/mobility_apps/",
+        "snippet": "I created an app to help you with your stretching and mobility routines. It's free to download & I'd love your feedback!",
+        "sitelinks": [
+          {
+            "title": "Best App for Mobility? : r/crossfitr/crossfit·10+ comments·3y",
+            "link": "https://www.reddit.com/r/crossfit/comments/12c3bo2/best_app_for_mobility/"
+          },
+          {
+            "title": "mobility training apps that actually work? : r/flexibilityr/flexibility·20+ comments·3mo",
+            "link": "https://www.reddit.com/r/flexibility/comments/1sp2xid/mobility_training_apps_that_actually_work/"
+          }
+        ],
+        "position": 1
+      },
+      {
+        "title": "GOWOD - Personalized Mobility & Stretching For Every Sport",
+        "link": "https://www.gowod.app/",
+        "snippet": "Use the GOWOD app to assess your mobility for free and receive personalized stretching routines that optimize your movements for enhanced sports performance.",
+        "position": 2
+      },
+      {
+        "title": "mobility training apps that actually work?",
+        "link": "https://www.reddit.com/r/flexibility/comments/1sp2xid/mobility_training_apps_that_actually_work/",
+        "sitelinks": [
+          {
+            "title": "More",
+            "link": "https://www.reddit.com/r/flexibility/comments/1sp2xid/mobility_training_apps_that_actually_work/ogyjpor/"
+          },
+          {
+            "title": "More",
+            "link": "https://www.reddit.com/r/flexibility/comments/1sp2xid/mobility_training_apps_that_actually_work/oh1hpvg/"
+          },
+          {
+            "title": "What are good free stretching/mobility apps for daily stretching?Facebook · Run Aotearoa · 6 comments · 1y",
+            "link": "https://www.facebook.com/groups/171433100077452/posts/1767825263771553/"
+          }
+        ],
+        "position": 3
+      },
+      {
+        "title": "What are good free stretching/mobility apps for daily stretching?",
+        "link": "https://www.facebook.com/groups/171433100077452/posts/1767825263771553/",
+        "position": 4
+      },
+      {
+        "title": "Best Mobility Apps: 12 Compared on 4 Pillars That Matter",
+        "link": "https://pliability.com/stories/mobility-apps",
+        "snippet": "1. pliability: Best All-Around Mobility App · 2. Mobility Manual: Best for a Fully Customized Plan · 3. StretchIt: Best for Flexibility Goals · 4.",
+        "date": "Oct 15, 2024",
+        "position": 5
+      },
+      {
+        "title": "8 Mobility Apps That Will Improve Your Range of Motion - Yogaia",
+        "link": "https://yogaia.com/blog/mobility-apps",
+        "snippet": "GOWOD and Pliability are top athletic mobility apps offering personalized mobility tests, performance tracking, and recovery programs.",
+        "date": "Nov 2, 2025",
+        "position": 6
+      },
+      {
+        "title": "Mobility Training & Coaching App",
+        "link": "https://thereadystate.com/the-ready-state-app/",
+        "snippet": "The Ready State's mobility coaching app teaches you simple and effective methods to treat your pain and stiffness with step by step video guides.",
+        "position": 7
+      },
+      {
+        "title": "pliability // #1 mobility, stretching + recovery app",
+        "link": "https://pliability.com/",
+        "snippet": "Daily mobility, stretching, and recovery routines built by experts. Move better, recover faster, and feel at home in your body. Try pliability free today.",
+        "position": 8
+      },
+      {
+        "title": "I Could Never Stick to My Stretching Routine. Then I Found This App.",
+        "link": "https://www.nytimes.com/wirecutter/reviews/bend-app-review/",
+        "snippet": "The Bend app offers an impressive library of guided stretching routines tailored to specific areas of the body, such as your neck, lower back, or hips.",
+        "date": "Jan 12, 2026",
+        "position": 9
+      }
+    ],
+    "peopleAlsoAsk": [
+      {
+        "question": "What's better, GOWOD or pliability?"
+      },
+      {
+        "question": "What is the best daily mobility routine?"
+      },
+      {
+        "question": "What are some good mobility apps for seniors?",
+        "snippet": "Staying fit and active is one of the best ways to maintain your health, energy and independence as you age.\n___SilverSneakers GO. This app is perfect for seniors who are part of the SilverSneakers program. ...\n___FitOn. ...\n___Map My Walk. ...\n___Tai Chi for Beginners. ...\n___MyFitnessPal. ...\n___Pacer Pedometer. ...\n___Better5. ...\n___Headspace.\n\nJan 20, 2025"
+      },
+      {
+        "question": "Is there a 100% free walking app?"
+      }
+    ],
+    "relatedSearches": [
+      {
+        "query": "Mobility routine app free"
+      },
+      {
+        "query": "Best mobility routine app"
+      },
+      {
+        "query": "Best mobility app free"
+      },
+      {
+        "query": "Mobility exercises app free"
+      },
+      {
+        "query": "GOWOD"
+      },
+      {
+        "query": "Mobility apps"
+      }
+    ],
+    "credits": 1
+  }
+}

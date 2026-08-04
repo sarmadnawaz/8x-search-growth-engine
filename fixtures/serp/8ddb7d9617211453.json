@@ -1,0 +1,123 @@
+{
+  "requestKey": "what to wear today nyc|us|en",
+  "fetchedAt": "2026-08-04T17:30:27.874Z",
+  "payload": {
+    "searchParameters": {
+      "q": "what to wear today nyc",
+      "gl": "us",
+      "hl": "en",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "Daily Dress Me",
+        "link": "https://dailydressme.com/",
+        "snippet": "Daily Dress Me breaks down the weather forecast into style inspiration that actually makes sense. All you need to do is type in your city!",
+        "position": 1
+      },
+      {
+        "title": "Outfit Of The Day New York 10 | ootdnewyork10 ...",
+        "link": "https://www.instagram.com/ootdnewyork10/?hl=en",
+        "snippet": "18K followers · 925 following · 1344 posts · @ootdnewyork10: “minimal wardrobe essentials, daily outfit ideas, street style buy less buy better, new york”",
+        "position": 2
+      },
+      {
+        "title": "Those who have been to NYC in spring or summer, what ...",
+        "link": "https://www.reddit.com/r/HerOneBag/comments/13qtbto/those_who_have_been_to_nyc_in_spring_or_summer/",
+        "snippet": "Headed there for 8 days on Friday. The temperature ranges from 20-30 Celsius/68-86F during the day or 13-16 Celsius/55-63F at night. Low ish chance of ...",
+        "date": "3 years ago",
+        "sitelinks": [
+          {
+            "title": "86 answers",
+            "link": "https://www.reddit.com/r/HerOneBag/comments/13qtbto/those_who_have_been_to_nyc_in_spring_or_summer/jlgqyo8/"
+          },
+          {
+            "title": "What to wear to Newyork : r/womensfashion - Reddit",
+            "link": "https://www.reddit.com/r/womensfashion/comments/1r88jy8/what_to_wear_to_newyork/",
+            "date": "44 answersFeb 18, 2026"
+          },
+          {
+            "title": "Going to NYC in two weeks- help! : r ...",
+            "link": "https://www.reddit.com/r/fashionwomens35/comments/1cvde65/going_to_nyc_in_two_weeks_help/",
+            "date": "25 answersMay 19, 2024"
+          }
+        ],
+        "position": 3
+      },
+      {
+        "title": "What to Wear Today in New York City",
+        "link": "https://whattowear.now/united-states/new-york-city/new-york-city",
+        "snippet": "What to wear in New York City right now: 26°C, feels like 27°C. Jacket, layers, shoes and umbrella — see today's outfit.",
+        "position": 4
+      },
+      {
+        "title": "Dress Like a Local: What To Wear in New York City",
+        "link": "https://www.viator.com/blog/Dress-Like-a-Local-What-To-Wear-in-New-York-City/l98947",
+        "snippet": "1. How you travel informs how you should dress · 2. Functional clothing is your friend · 3. Wherever you go, bring a tote · 4. Dress for the season · 5. Embrace ...",
+        "position": 5
+      },
+      {
+        "title": "What People Are Wearing in Nyc Today",
+        "link": "https://www.tiktok.com/discover/what-people-are-wearing-in-nyc-today",
+        "snippet": "NYC Summer Style: Leopard, Nautical, White Midi, Baseball Caps. NYC cool girls are wearing — red accents, thong sandals, long shorts, butter yellow, sporty ...",
+        "position": 6
+      },
+      {
+        "title": "What to Wear in NYC in Summer",
+        "link": "https://charmedbycamille.com/what-to-wear-in-nyc-in-summer/",
+        "snippet": "NYC Summer Outfits · Midi Dress and Leather Flip Flops · Tailored Vest and Shorts with a Sporty Twist · Black Slip Dress with Strappy Sandals.",
+        "date": "May 1, 2026",
+        "position": 7
+      },
+      {
+        "title": "What to Wear in New York: Packing Guide for All Seasons",
+        "link": "https://www.travelfashiongirl.com/what-to-wear-in-new-york/",
+        "snippet": "As for what to wear specifically, stick to comfortable yet polished clothing that is versatile and in darker neutral tones. You could also dress even a bit more ...",
+        "position": 8
+      }
+    ],
+    "peopleAlsoAsk": [
+      {
+        "question": "What are people wearing in New York City today?"
+      },
+      {
+        "question": "What is the 3-3-3 rule for clothes?"
+      },
+      {
+        "question": "How should I dress today in New York City?"
+      },
+      {
+        "question": "What to wear in current NYC weather?"
+      }
+    ],
+    "relatedSearches": [
+      {
+        "query": "What to wear today nyc men"
+      },
+      {
+        "query": "What type of clothes should I wear today weather"
+      },
+      {
+        "query": "What to wear today nyc female"
+      },
+      {
+        "query": "What to wear today nyc women's"
+      },
+      {
+        "query": "What to wear today nyc casual"
+      },
+      {
+        "query": "What to wear today nyc summer"
+      },
+      {
+        "query": "What to wear today weather female"
+      },
+      {
+        "query": "What should i Wear today Teen Girl"
+      }
+    ],
+    "credits": 1
+  }
+}

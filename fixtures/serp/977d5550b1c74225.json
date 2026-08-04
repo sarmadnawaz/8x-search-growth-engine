@@ -1,0 +1,84 @@
+{
+  "requestKey": "stretching app reddit|us|en",
+  "fetchedAt": "2026-08-04T17:32:06.005Z",
+  "payload": {
+    "searchParameters": {
+      "q": "stretching app reddit",
+      "gl": "us",
+      "hl": "en",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "Best FREE stretching apps? : r/flexibility",
+        "link": "https://www.reddit.com/r/flexibility/comments/1j1go5c/best_free_stretching_apps/",
+        "snippet": "Hi all!\n\nI want to get into stretching (super beginner!) and would love to eventually do the splits.\n\nWhat are the best free apps?\n\nI want an app because ...",
+        "sitelinks": [
+          {
+            "title": "More",
+            "link": "https://www.reddit.com/r/flexibility/comments/1j1go5c/best_free_stretching_apps/mfjiz5b/"
+          },
+          {
+            "title": "More",
+            "link": "https://www.reddit.com/r/flexibility/comments/1j1go5c/best_free_stretching_apps/mfjli7e/"
+          }
+        ],
+        "position": 1
+      },
+      {
+        "title": "Stretching Apps : r/flexibility",
+        "link": "https://www.reddit.com/r/flexibility/comments/16bchmp/stretching_apps/",
+        "snippet": "The Movement Vault app helped me significantly improve my flexibility and mobility. I made more progress in a month than in the previous year combined using ...",
+        "position": 2
+      },
+      {
+        "title": "r/flexibility on Reddit",
+        "link": "https://www.reddit.com/r/flexibility/comments/1ne3jky/bend_stretchit_pliability_gowod_etc_anyone_tried/",
+        "snippet": "I paid for Pliability and I actually like their Yin Yoga style. I am not looking to sweat more, this I have enough in my workouts. I want to improve ...",
+        "position": 3
+      },
+      {
+        "title": "r/flexibility on Reddit",
+        "link": "https://www.reddit.com/r/flexibility/comments/1shwvar/is_there_actually_a_good_app_specifically_for/",
+        "snippet": "I've tried a few fitness apps but they're all either full workout programmes, generic yoga flows, or so complicated to set up that I give up before I even ...",
+        "position": 4
+      },
+      {
+        "title": "Best free stretching apps",
+        "link": "https://www.reddit.com/r/flexibility/comments/1htrrof/are_the_apps_for_stretching_actually_worth_it_can/",
+        "snippet": "I really like imuscle2. You click on or go through a list of muscles and it gives you moves to strengthen and stretch.",
+        "position": 5
+      },
+      {
+        "title": "The 7 Best Stretching Apps of 2025",
+        "link": "https://dieringe.com/blog/stretching-apps",
+        "snippet": "We tested the 7 best stretching apps for 2025 – from free options to premium solutions. Here, you'll find out which app fits your training style.",
+        "date": "Feb 18, 2025",
+        "position": 6
+      }
+    ],
+    "relatedSearches": [
+      {
+        "query": "Best stretching app reddit"
+      },
+      {
+        "query": "Free stretching app reddit"
+      },
+      {
+        "query": "Best app for stretching free"
+      },
+      {
+        "query": "Beginner stretching app reddit"
+      },
+      {
+        "query": "Free stretching apps for Android"
+      },
+      {
+        "query": "Free apps for stretching and flexibility"
+      }
+    ],
+    "credits": 1
+  }
+}

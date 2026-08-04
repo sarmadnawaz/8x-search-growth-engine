@@ -1,0 +1,101 @@
+{
+  "requestKey": "ai stylist app india|us|en",
+  "fetchedAt": "2026-08-04T17:30:11.216Z",
+  "payload": {
+    "searchParameters": {
+      "q": "ai stylist app india",
+      "gl": "us",
+      "hl": "en",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "Alta | Your personal AI stylist that truly gets you",
+        "link": "https://www.altadaily.com/",
+        "snippet": "Alta is your personal AI stylist elevates your style and generates personalized outfits based on your closet, lifestyle, budget, and weather, for any day",
+        "position": 1
+      },
+      {
+        "title": "India's first AI-powered personal styling app is coming soon ...",
+        "link": "https://www.instagram.com/reel/DShghJEjzoj/",
+        "snippet": "India's first AI-powered personal styling app is coming soon. Stylz is built for Indian body types, budgets, and wardrobes from daily wear ...",
+        "date": "7 months ago",
+        "position": 2
+      },
+      {
+        "title": "Acloset - AI Fashion Assistant - Apps on Google Play",
+        "link": "https://play.google.com/store/apps/details?id=com.looko.acloset&hl=en_US",
+        "snippet": "Acloset is your all-in-one digital wardrobe and personal stylist. Digitize your clothes and discover your unique style by chatting with our AI.",
+        "rating": 4.5,
+        "ratingCount": 27455,
+        "position": 3
+      },
+      {
+        "title": "AI Styling & Wardrobe App : r/capsulewardrobe",
+        "link": "https://www.reddit.com/r/capsulewardrobe/comments/1d95s2t/ai_styling_wardrobe_app/",
+        "snippet": "PerObe AI is a smart tool that uses AI to recommend outfits tailored to your occasions, all while making the most of the clothes you already ...",
+        "date": "2 years ago",
+        "position": 4
+      },
+      {
+        "title": "Your Personal AI Stylist App",
+        "link": "https://styledna.ai/",
+        "snippet": "Get an AI-powered personal stylist that offers advice to keep you looking sharp. Need wardrobe updates or personalized clothing suggestions? Discover your ...",
+        "position": 5
+      },
+      {
+        "title": "Your AI Stylist✨ (@monova.in)",
+        "link": "https://www.instagram.com/monova.in/?hl=en",
+        "snippet": "Monova – Your AI Stylist Quick Wardrobe planning with AI ✨ Personal styling companion + AI fashion Tap to start FREE styling suggestions.",
+        "position": 6
+      },
+      {
+        "title": "Aiuta – AI Stylist - App Store - Apple",
+        "link": "https://apps.apple.com/in/app/aiuta-ai-stylist/id6447555778",
+        "snippet": "With Aiuta, you can express your personality through fashion, virtually try on new outfits, discover inspiration ideas, get feedback from AI stylists, and",
+        "position": 7
+      },
+      {
+        "title": "AI Stylist | Try everything on — instantly",
+        "link": "https://higgsfield.ai/apps/ai-stylist",
+        "snippet": "Your personal AI Stylist. Upload your own clothes or mix and match from presets. Change poses, backgrounds, and try on complete outfits instantly.",
+        "position": 8
+      },
+      {
+        "title": "Best AI Stylists in 2026 – Top 5 free & paid services",
+        "link": "https://www.fits-app.com/posts/best-ai-stylists-in-2025-top-5-free-paid-services",
+        "snippet": "Fits started out as a digital closet app in 2023 but has since become a social network for fashion enthusiasts with impressive AI styling tools.",
+        "position": 9
+      }
+    ],
+    "relatedSearches": [
+      {
+        "query": "Ai stylist app india free"
+      },
+      {
+        "query": "Ai stylist app india review"
+      },
+      {
+        "query": "Ai stylist app india free download"
+      },
+      {
+        "query": "Ai stylist app india login"
+      },
+      {
+        "query": "Ai stylist app india for android"
+      },
+      {
+        "query": "AI stylist app free"
+      },
+      {
+        "query": "Ai stylist app india download"
+      },
+      {
+        "query": "Ai stylist app india apk"
+      }
+    ],
+    "credits": 1
+  }
+}

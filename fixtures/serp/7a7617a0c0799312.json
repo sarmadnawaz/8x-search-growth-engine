@@ -1,0 +1,120 @@
+{
+  "requestKey": "paycheck budgeting spreadsheet|us|en",
+  "fetchedAt": "2026-08-04T17:31:22.389Z",
+  "payload": {
+    "searchParameters": {
+      "q": "paycheck budgeting spreadsheet",
+      "gl": "us",
+      "hl": "en",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "Free budget template spreadsheets to customize",
+        "link": "https://excel.cloud.microsoft/create/en/budget-templates/",
+        "snippet": "Find customizable budget templates for Microsoft Excel to simplify budgeting that helps monitor spending, plan savings, and stay on track financially.",
+        "position": 1
+      },
+      {
+        "title": "I made a spreadsheet for people who don't know how to budget! V5",
+        "link": "https://www.reddit.com/r/personalfinance/comments/umis3h/i_made_a_spreadsheet_for_people_who_dont_know_how/",
+        "snippet": "This spreadsheet is made so you only focus on ONE number. it focuses on a daily budget that supports long term goals-",
+        "position": 2
+      },
+      {
+        "title": "Free and customizable budget templates",
+        "link": "https://www.canva.com/templates/s/budget/",
+        "snippet": "Plan and manage your finances with visual trackers from free budget templates you can customize.",
+        "position": 3
+      },
+      {
+        "title": "Free Budget Templates for Google Sheets",
+        "link": "https://www.smartsheet.com/content/monthly-budget-template-google-sheets?srsltid=AfmBOooDPAruF_dYkxzKzjv1WTKubqYCYngtfxW-tTUhU-aVbSksJY5j",
+        "snippet": "Download budget templates in monthly personal, weekly, zero-based, and 50/30/20 formats for Google Sheets.",
+        "date": "Jul 26, 2025",
+        "position": 4
+      },
+      {
+        "title": "Make a Budget",
+        "link": "https://consumer.gov/sites/default/files/pdf-1020-make-budget-worksheet_form.pdf",
+        "snippet": "Use this worksheet to see how much money you spend this month. Monthly total Paychecks (salary after taxes, benefits, and check cashing fees)",
+        "position": 5
+      },
+      {
+        "title": "How to Use Budget by Paycheck Template | Budget for Beginners ...",
+        "link": "https://www.youtube.com/watch?v=16HrBWlIwYc",
+        "snippet": "In this video I will be sharing how to use the Budget by Paycheck Template. This video will help you understand what each tab does and how the ...",
+        "position": 6
+      },
+      {
+        "title": "Free Budget Spreadsheets and Tools",
+        "link": "https://www.nerdwallet.com/finance/learn/free-budget-spreadsheets-templates",
+        "snippet": "We picked our favorite free budget spreadsheets, including tools from Microsoft, Google Docs, Canva and our own 50/30/20 worksheet.",
+        "date": "Jan 1, 2026",
+        "position": 7
+      },
+      {
+        "title": "FREE Budget Template Tutorial 2025! | Works with Google Sheets, Excel ...",
+        "link": "https://www.youtube.com/watch?v=64RjK5Ju_lA",
+        "snippet": "In this video we are going to be doing a full complete tutorial of a budget spreadsheet that works inside of Google Sheets and Excel.",
+        "position": 8
+      }
+    ],
+    "peopleAlsoAsk": [
+      {
+        "question": "How to budget your paycheck spreadsheet?"
+      },
+      {
+        "question": "What is the 50 30 20 rule in budgeting spreadsheet?"
+      },
+      {
+        "question": "What's the best way to budget a paycheck?",
+        "snippet": "In the 50/20/30 budget, 50% of your net income should go to your needs, 20% should go to savings, and 30% should go to your wants. If you've read the Essentials of Budgeting, you're already familiar with the idea of wants and needs. This budget recommends a specific balance for your spending on wants and needs."
+      },
+      {
+        "question": "How to make a biweekly budget spreadsheet?"
+      }
+    ],
+    "relatedSearches": [
+      {
+        "query": "Paycheck budgeting spreadsheet template free"
+      },
+      {
+        "query": "Paycheck budgeting spreadsheet free download"
+      },
+      {
+        "query": "Paycheck budgeting spreadsheet excel"
+      },
+      {
+        "query": "Paycheck budgeting spreadsheet free"
+      },
+      {
+        "query": "Paycheck budgeting spreadsheet pdf"
+      },
+      {
+        "query": "Simple budget template Excel free"
+      },
+      {
+        "query": "Budget spreadsheet template free"
+      },
+      {
+        "query": "Monthly expenses template Excel"
+      },
+      {
+        "query": "Yearly budget template Excel free download"
+      },
+      {
+        "query": "Household budget template Excel"
+      },
+      {
+        "query": "Monthly budget spreadsheet"
+      },
+      {
+        "query": "Weekly budget template Excel"
+      }
+    ],
+    "credits": 1
+  }
+}

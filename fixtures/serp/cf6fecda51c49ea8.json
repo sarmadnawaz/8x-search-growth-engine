@@ -1,0 +1,75 @@
+{
+  "requestKey": "ai stylist app free|mx|es",
+  "fetchedAt": "2026-08-04T17:30:35.009Z",
+  "payload": {
+    "searchParameters": {
+      "q": "ai stylist app free",
+      "gl": "mx",
+      "hl": "es",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "AI Styling & Wardrobe App : r/capsulewardrobe",
+        "link": "https://www.reddit.com/r/capsulewardrobe/comments/1d95s2t/ai_styling_wardrobe_app/",
+        "snippet": "You can try https://www.outfitgenerator.xyz, you can upload your wardrobe let the AI choose your outfit and also give new suggestions.",
+        "position": 1
+      },
+      {
+        "title": "AIUTA Editorial - Apps on Google Play",
+        "link": "https://play.google.com/store/apps/details?id=com.aiuta.fashion",
+        "snippet": "AIUTA Editorial helps social teams, marketers, and creative departments create campaign-ready fashion imagery without waiting on a photoshoot or ...",
+        "date": "24 jul 2026",
+        "rating": 4.2,
+        "ratingCount": 43878,
+        "position": 2
+      },
+      {
+        "title": "Nouva — Best Free AI Stylist & Wardrobe App | AI Outfit ...",
+        "link": "https://www.nouva.app/",
+        "snippet": "Upload your wardrobe, get AI-generated outfits in seconds — scored for colour harmony and styled for any occasion. The free closet organizer and outfit ...",
+        "position": 3
+      },
+      {
+        "title": "Best AI Stylists in 2026 – Top 5 free & paid services",
+        "link": "https://www.fits-app.com/posts/best-ai-stylists-in-2025-top-5-free-paid-services",
+        "snippet": "Fits started out as a digital closet app in 2023 but has since become a social network for fashion enthusiasts with impressive AI styling tools.",
+        "position": 4
+      },
+      {
+        "title": "Dressly: AI Outfit Stylist - App Store - Apple",
+        "link": "https://apps.apple.com/us/app/dressly-ai-outfit-stylist/id6738174180",
+        "snippet": "Want to always look stylish, confident, and attractive? Meet Dressly, your personal AI-powered fashion stylist and outfit expert. From finding your perfect ...",
+        "position": 5
+      },
+      {
+        "title": "Best Styling Apps 2025 – Whering",
+        "link": "https://whering.co.uk/best-styling-apps-2025",
+        "snippet": "The Best Styling Apps in 2025 · Whering App Pros. ✓ Completely free, no hidden costs, no ads · Whering App Cons. ❌ Bright colours of the app ...",
+        "date": "7 mar 2025",
+        "position": 6
+      },
+      {
+        "title": "Style.ai: Outfit Maker | Your AI Stylist App (@styleaiapp)",
+        "link": "https://www.instagram.com/styleaiapp/?hl=es-la",
+        "snippet": "AI that styles YOUR clothes and learns YOUR taste. At last, the Cher Clueless Closet comes to real life. Download NOW on the App Store.",
+        "position": 7
+      },
+      {
+        "title": "Your Personal AI Stylist App",
+        "link": "https://styledna.ai/",
+        "snippet": "Your AI Stylist is always here for you! Ask any questions in regards to your style or clothing recommendations, and receive instant answers in the chat.",
+        "position": 8
+      },
+      {
+        "title": "Alta | Your personal AI stylist that truly gets you",
+        "link": "https://www.altadaily.com/",
+        "snippet": "Alta is your personal AI stylist elevates your style and generates personalized outfits based on your closet, lifestyle, budget, and weather, for any day or ...",
+        "position": 9
+      }
+    ],
+    "credits": 1
+  }
+}

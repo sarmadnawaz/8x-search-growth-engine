@@ -1,0 +1,90 @@
+{
+  "requestKey": "ai stylist app for men|mx|es",
+  "fetchedAt": "2026-08-04T17:30:36.526Z",
+  "payload": {
+    "searchParameters": {
+      "q": "ai stylist app for men",
+      "gl": "mx",
+      "hl": "es",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "7 Best Wardrobe Apps for Men | Beauty AI Blog",
+        "link": "https://beautyai.app/blog/best-wardrobe-apps-for-men",
+        "snippet": "Looking for the best wardrobe app for men? Compare Beauty AI, Acloset, Cladwell, Whering, OpenWardrobe, GetWardrobe, and Indyx.",
+        "date": "24 jun 2026",
+        "position": 1
+      },
+      {
+        "title": "Acloset - AI Fashion Assistant - App Store - Apple",
+        "link": "https://apps.apple.com/us/app/acloset-ai-fashion-assistant/id1542311809",
+        "snippet": "From organizing your closet to getting daily outfit ideas, Acloset is your all-in-one digital wardrobe and personal stylist. Digitize your clothes and ...",
+        "position": 2
+      },
+      {
+        "title": "Lookastic: Your Personal AI Stylist",
+        "link": "https://lookastic.com/",
+        "snippet": "How Your AI Stylist Works in 3 Easy Steps · 1. Add Your Clothes to Build Your Virtual Wardrobe · 2. Get Instant AI-Generated Outfit Suggestions You Can Wear Today.",
+        "position": 3
+      },
+      {
+        "title": "Is there anything like an AI stylist? : r/mensfashion",
+        "link": "https://www.reddit.com/r/mensfashion/comments/14sdzf8/is_there_anything_like_an_ai_stylist/",
+        "snippet": "I just did the Stitch Fix intro where you tell the app what clothes you like. After telling the app what I like a few times, I noticed it learned my style ...",
+        "sitelinks": [
+          {
+            "title": "31 respuestas",
+            "link": "https://www.reddit.com/r/mensfashion/comments/14sdzf8/is_there_anything_like_an_ai_stylist/jqwr62h/"
+          },
+          {
+            "title": "New AI Fashion App (FashionMax AI) : r/mensfashion",
+            "link": "https://www.reddit.com/r/mensfashion/comments/1h0q22t/new_ai_fashion_app_fashionmax_ai/",
+            "date": "7 respuestas27 nov 2024"
+          },
+          {
+            "title": "Would guys actually use an AI personal stylist?",
+            "link": "https://www.reddit.com/r/malefashionadvice/comments/1ohu54y/would_guys_actually_use_an_ai_personal_stylist/",
+            "date": "19 respuestas27 oct 2025"
+          }
+        ],
+        "position": 4
+      },
+      {
+        "title": "Daily Male - The style app for men",
+        "link": "https://dailymale.app/",
+        "snippet": "Our AI checks if the item matches your personal color palette, so you can build a wardrobe that always works together.",
+        "position": 5
+      },
+      {
+        "title": "Alta | Your personal AI stylist that truly gets you",
+        "link": "https://www.altadaily.com/",
+        "snippet": "Alta is your personal AI stylist elevates your style and generates personalized outfits based on your closet, lifestyle, budget, and weather, for any day or ...",
+        "position": 6
+      },
+      {
+        "title": "AI Personal Stylist for Men | Best Outfit Generator 2026",
+        "link": "https://dlook.app/blog/post/ai-personal-stylist-men-2026-guide-dlook",
+        "snippet": "Top AI Stylist Apps for Men in 2026 · 1. Lookastic · 2. Alice – AI Style for Men · 3. Alta · 4. StylistIQ · 5. Daily Male · 6. xlook · 7. Style DNA.",
+        "date": "7 may 2026",
+        "position": 7
+      },
+      {
+        "title": "The Essential AI Stylist for Men | Beauty AI Blog",
+        "link": "https://beautyai.app/blog/essential-ai-stylist-for-men",
+        "snippet": "Learn how an AI stylist for men helps with grooming, fit, and capsule wardrobe basics while reducing daily style friction.",
+        "date": "16 may 2026",
+        "position": 8
+      },
+      {
+        "title": "BeSpoke AI Stylist: AI Stylist & Outfit Planner",
+        "link": "https://www.bespokeaistylist.com/",
+        "snippet": "Plan outfits, organise your wardrobe and preview looks with BeSpoke, the AI personal stylist with virtual try-on, daily outfit ideas and smarter shopping.",
+        "position": 9
+      }
+    ],
+    "credits": 1
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "requestKey": "ai stylist app india|mx|es",
+  "fetchedAt": "2026-08-04T17:30:37.810Z",
+  "payload": {
+    "searchParameters": {
+      "q": "ai stylist app india",
+      "gl": "mx",
+      "hl": "es",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "India's first AI-powered personal styling app is coming soon ...",
+        "link": "https://www.instagram.com/reel/DShghJEjzoj/",
+        "snippet": "India's first AI-powered personal styling app is coming soon. Stylz is built for Indian body types, budgets, and wardrobes from daily wear ...",
+        "date": "hace 7 meses",
+        "position": 1
+      },
+      {
+        "title": "Your Personal AI Stylist App",
+        "link": "https://styledna.ai/",
+        "snippet": "Your AI Stylist is always here for you! Ask any questions in regards to your style or clothing recommendations, and receive instant answers in the chat.",
+        "position": 2
+      },
+      {
+        "title": "Aiuta – AI Stylist - App Store - Apple",
+        "link": "https://apps.apple.com/in/app/aiuta-ai-stylist/id6447555778",
+        "snippet": "The fashion-tech app built on cutting-edge AI that takes your style to the next level. With Aiuta, you can express your personality through fashion.",
+        "position": 3
+      },
+      {
+        "title": "Stylz App: Personal AI Stylist App for Your Perfect Style - Stylz.in",
+        "link": "https://stylz.in/",
+        "snippet": "Stylz is your AI styling app made for Indians. It understands your body, skin tone, and vibe to plan outfits and remove daily fashion confusion. Is Stylz free ...",
+        "position": 4
+      },
+      {
+        "title": "Alta | Your personal AI stylist that truly gets you",
+        "link": "https://www.altadaily.com/",
+        "snippet": "Alta is your personal AI stylist elevates your style and generates personalized outfits based on your closet, lifestyle, budget, and weather, for any day or ...",
+        "position": 5
+      },
+      {
+        "title": "Your AI Stylist✨ (@monova.in)",
+        "link": "https://www.instagram.com/monova.in/?hl=es",
+        "snippet": "Monova – Your AI Stylist Quick Wardrobe planning with AI ✨ Personal styling companion + AI fashion Tap to start FREE styling suggestions.",
+        "position": 6
+      },
+      {
+        "title": "Style DNA: Fashion AI Stylist - Apps on Google Play",
+        "link": "https://play.google.com/store/apps/details?id=style.dna.app",
+        "snippet": "Our AI personal stylist combines the expertise of world-renowned image consultants with cutting-edge styling technology to analyze your unique features and ...",
+        "date": "10 mar 2026",
+        "rating": 3.1,
+        "ratingCount": 6454,
+        "position": 7
+      },
+      {
+        "title": "AI Stylist | Try everything on — instantly",
+        "link": "https://higgsfield.ai/apps/ai-stylist",
+        "snippet": "Your personal AI Stylist. Upload your own clothes or mix and match from presets. Change poses, backgrounds, and try on complete outfits instantly.",
+        "position": 8
+      },
+      {
+        "title": "No More ENDLESS scrolling on shopping apps! 🕺 Stop ...",
+        "link": "https://www.instagram.com/reel/DF2YFMotTTz/",
+        "snippet": "@monova.in is India's first & only Al-driven personal styling platform, where their team of experienced stylists has sampled thousands of inputs ...",
+        "position": 9
+      }
+    ],
+    "credits": 1
+  }
+}

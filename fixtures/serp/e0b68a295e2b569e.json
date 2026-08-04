@@ -1,0 +1,105 @@
+{
+  "requestKey": "ai stylist app|us|en",
+  "fetchedAt": "2026-08-04T17:29:55.481Z",
+  "payload": {
+    "searchParameters": {
+      "q": "ai stylist app",
+      "gl": "us",
+      "hl": "en",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "AI Styling & Wardrobe App : r/capsulewardrobe",
+        "link": "https://www.reddit.com/r/capsulewardrobe/comments/1d95s2t/ai_styling_wardrobe_app/",
+        "snippet": "PerObe AI is a smart tool that uses AI to recommend outfits tailored to your occasions, all while making the most of the clothes you already ...",
+        "sitelinks": [
+          {
+            "title": "Best AI stylist and digital closet app in town? : r/Luxuryr/Luxury·10+ comments·7mo",
+            "link": "https://www.reddit.com/r/Luxury/comments/1puna1c/best_ai_stylist_and_digital_closet_app_in_town/"
+          },
+          {
+            "title": "AI Styling & Wardrobe App : r/fashionwomens35r/fashionwomens35·10+ comments·2y",
+            "link": "https://www.reddit.com/r/fashionwomens35/comments/1d95r8r/ai_styling_wardrobe_app/"
+          }
+        ],
+        "position": 1
+      },
+      {
+        "title": "Alta | Your personal AI stylist that truly gets you",
+        "link": "https://www.altadaily.com/",
+        "snippet": "Alta is your personal AI stylist elevates your style and generates personalized outfits based on your closet, lifestyle, budget, and weather, for any day",
+        "position": 2
+      },
+      {
+        "title": "Best AI Stylists in 2026 – Top 5 free & paid services",
+        "link": "https://www.fits-app.com/posts/best-ai-stylists-in-2025-top-5-free-paid-services",
+        "snippet": "Fits started out as a digital closet app in 2023 but has since become a social network for fashion enthusiasts with impressive AI styling tools.",
+        "position": 3
+      },
+      {
+        "title": "Best Styling Apps 2025 – Whering",
+        "link": "https://whering.co.uk/best-styling-apps-2025",
+        "snippet": "AI stylists are revolutionising the styling game. These are the best personal stylist apps to suit different needs: Whering Acloset Indyx Style ...",
+        "date": "Mar 7, 2025",
+        "position": 4
+      },
+      {
+        "title": "Your Personal AI Stylist App",
+        "link": "https://styledna.ai/",
+        "snippet": "Your AI Stylist is always here for you! Ask any questions in regards to your style or clothing recommendations, and receive instant answers in the chat.",
+        "position": 5
+      }
+    ],
+    "peopleAlsoAsk": [
+      {
+        "question": "Is there a free AI stylist available?"
+      },
+      {
+        "question": "Can you use AI as a personal stylist?",
+        "snippet": "An AI personal shopper or virtual stylist can make some nice suggestions, but it can't take into consideration your life experiences and nuanced reasons for dressing how you do. Your House of Colour image consultant will learn about you as a person and how your clothes need to fit your everyday life and budget.Oct 29, 2025"
+      },
+      {
+        "question": "Which AI is good for styling?"
+      },
+      {
+        "question": "What is the AI app that puts outfits together?"
+      }
+    ],
+    "relatedSearches": [
+      {
+        "query": "Ai stylist app free"
+      },
+      {
+        "query": "Ai stylist app review"
+      },
+      {
+        "query": "Ai stylist app download"
+      },
+      {
+        "query": "Best ai stylist app free"
+      },
+      {
+        "query": "AI stylist free online"
+      },
+      {
+        "query": "AI stylist app Reddit"
+      },
+      {
+        "query": "AI stylist app for men"
+      },
+      {
+        "query": "AI wardrobe app"
+      },
+      {
+        "query": "Apps for styling outfits free"
+      },
+      {
+        "query": "Best AI stylist app for men"
+      }
+    ],
+    "credits": 1
+  }
+}

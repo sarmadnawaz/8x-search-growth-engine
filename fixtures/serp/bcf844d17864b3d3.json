@@ -1,0 +1,110 @@
+{
+  "requestKey": "paycheck budgeting|us|en",
+  "fetchedAt": "2026-08-04T17:31:14.259Z",
+  "payload": {
+    "searchParameters": {
+      "q": "paycheck budgeting",
+      "gl": "us",
+      "hl": "en",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "Budget Calculator",
+        "link": "https://www.voya.com/individuals/learn/budget-calculator",
+        "snippet": "It's a simple rule of thumb that suggests you put up to 50% of your after-tax income toward things you need, 30% toward things you want, and 20% toward savings.",
+        "position": 1
+      },
+      {
+        "title": "Budgeting by Paycheck Instead of Monthly",
+        "link": "https://www.reddit.com/r/budget/comments/1eo3b19/budgeting_by_paycheck_instead_of_monthly/",
+        "snippet": "I'm starting to attempt to budget per paycheck (I get paid every 2 weeks) rather than just setting a monthly budget. I've found it pretty beneficial so far.",
+        "date": "1 year ago",
+        "position": 2
+      },
+      {
+        "title": "Monthly Budget Planner",
+        "link": "https://www.schwabmoneywise.com/tools-resources/monthly-budget-planner",
+        "snippet": "Planner Budgeting is one of the best ways to keep your finances on track. This budget planner makes it easy to get started.",
+        "position": 3
+      },
+      {
+        "title": "Making a Budget",
+        "link": "https://consumer.gov/your-money/making-budget",
+        "snippet": "Step 1: Make a list of your bills and other expenses and the amounts. · Step 2: Use your pay stubs to write down how much money you make each month. · Step 3: ...",
+        "position": 4
+      },
+      {
+        "title": "The Power of Paycheck and Half Payment Budgeting",
+        "link": "https://www.peachstatefcu.org/blog/the-power-of-paycheck-and-half-payment-budgeting",
+        "snippet": "Paycheck budgeting is a simple way to manage your money based on your pay schedule. these methods evenly distributes cash flow and stabilizes ...",
+        "date": "Nov 25, 2025",
+        "position": 5
+      },
+      {
+        "title": "Money Morning Routine | Budget By Paycheck Method",
+        "link": "https://www.youtube.com/watch?v=TFiHtnJJ4uo",
+        "snippet": "The budget by paycheck workbook is a method and this the worksheets in the book are lined up to give you the best plan of action.",
+        "date": "1 year ago",
+        "position": 6
+      },
+      {
+        "title": "How To Create A Biweekly Budget In 5 Simple Steps",
+        "link": "https://www.finedgecu.org/blogs?blog_id=91",
+        "snippet": "A biweekly budget considers a person getting paid every 14 days. So, you will usually get a first paycheck and then a second paycheck in the ...",
+        "date": "Jun 1, 2024",
+        "position": 7
+      },
+      {
+        "title": "The Budget By Paycheck Method",
+        "link": "https://www.weinsteinspira.com/the-budget-by-paycheck-method/",
+        "snippet": "The Budget By Paycheck Method is a type of budgeting in which every dollar is accounted for. This blog outlines and explains this method.",
+        "date": "Jan 17, 2024",
+        "position": 8
+      }
+    ],
+    "peopleAlsoAsk": [
+      {
+        "question": "What is the best way to budget your paycheck?"
+      },
+      {
+        "question": "What is the 70 10 10 10 budget rule?"
+      },
+      {
+        "question": "Is saving $1000 every paycheck good?"
+      },
+      {
+        "question": "What is the 50 30 20 rule for biweekly pay?"
+      }
+    ],
+    "relatedSearches": [
+      {
+        "query": "Paycheck budgeting template"
+      },
+      {
+        "query": "Paycheck budgeting template free"
+      },
+      {
+        "query": "Paycheck budgeting excel"
+      },
+      {
+        "query": "Monthly budget calculator free"
+      },
+      {
+        "query": "How to budget your paycheck calculator"
+      },
+      {
+        "query": "Paycheck budget template free PDF"
+      },
+      {
+        "query": "Free online monthly budget planner"
+      },
+      {
+        "query": "How to budget money for beginners"
+      }
+    ],
+    "credits": 1
+  }
+}

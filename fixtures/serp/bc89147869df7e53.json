@@ -1,0 +1,76 @@
+{
+  "requestKey": "ai stylist app|mx|es",
+  "fetchedAt": "2026-08-04T17:30:04.831Z",
+  "payload": {
+    "searchParameters": {
+      "q": "ai stylist app",
+      "gl": "mx",
+      "hl": "es",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "AI Styling & Wardrobe App : r/capsulewardrobe",
+        "link": "https://www.reddit.com/r/capsulewardrobe/comments/1d95s2t/ai_styling_wardrobe_app/",
+        "snippet": "You can try https://www.outfitgenerator.xyz, you can upload your wardrobe let the AI choose your outfit and also give new suggestions.",
+        "position": 1
+      },
+      {
+        "title": "AIUTA Editorial - Apps on Google Play",
+        "link": "https://play.google.com/store/apps/details?id=com.aiuta.fashion",
+        "snippet": "AIUTA Editorial helps social teams, marketers, and creative departments create campaign-ready fashion imagery without waiting on a photoshoot or ...",
+        "date": "24 jul 2026",
+        "rating": 4.2,
+        "ratingCount": 43878,
+        "position": 2
+      },
+      {
+        "title": "Acloset - AI Fashion Assistant - App Store - Apple",
+        "link": "https://apps.apple.com/us/app/acloset-ai-fashion-assistant/id1542311809",
+        "snippet": "From organizing your closet to getting daily outfit ideas, Acloset is your all-in-one digital wardrobe and personal stylist. Digitize your clothes and ...",
+        "position": 3
+      },
+      {
+        "title": "Best AI Stylists in 2026 – Top 5 free & paid services",
+        "link": "https://www.fits-app.com/posts/best-ai-stylists-in-2025-top-5-free-paid-services",
+        "snippet": "Style DNA is an app that focuses on creating a color palette and clothes that work for you. You start by taking a selfie and it analyses your facial features ...",
+        "position": 4
+      },
+      {
+        "title": "Nouva — Best Free AI Stylist & Wardrobe App | AI Outfit ...",
+        "link": "https://www.nouva.app/",
+        "snippet": "Upload your wardrobe, get AI-generated outfits in seconds — scored for colour harmony and styled for any occasion. The free closet organizer and outfit ...",
+        "position": 5
+      },
+      {
+        "title": "An AI VIRTUAL Fashion Stylist?! Dressly App Review 2026",
+        "link": "https://www.youtube.com/watch?v=_wk3cSmwFgU&vl=es",
+        "snippet": "#styletips #womensfashion #fashionstyle In this video, I share my honest Dressly app review after testing its AI styling and virtual try-on ...",
+        "date": "hace 4 meses",
+        "position": 6
+      },
+      {
+        "title": "Best Styling Apps 2025 – Whering",
+        "link": "https://whering.co.uk/best-styling-apps-2025",
+        "snippet": "If you're looking to buy new clothes, Acloset offers AI-driven outfit suggestions and style advice for new items and new brands. Unfortunately, ...",
+        "date": "7 mar 2025",
+        "position": 7
+      },
+      {
+        "title": "AI Stylist | Try everything on — instantly",
+        "link": "https://higgsfield.ai/apps/ai-stylist",
+        "snippet": "Your personal AI Stylist. Upload your own clothes or mix and match from presets. Change poses, backgrounds, and try on complete outfits instantly.",
+        "position": 8
+      },
+      {
+        "title": "Alta | Your personal AI stylist that truly gets you",
+        "link": "https://www.altadaily.com/",
+        "snippet": "Alta is your personal AI stylist elevates your style and generates personalized outfits based on your closet, lifestyle, budget, and weather, for any day or ...",
+        "position": 9
+      }
+    ],
+    "credits": 1
+  }
+}

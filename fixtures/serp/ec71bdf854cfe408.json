@@ -1,0 +1,94 @@
+{
+  "requestKey": "outfit planner app for vacation|mx|es",
+  "fetchedAt": "2026-08-04T17:30:19.743Z",
+  "payload": {
+    "searchParameters": {
+      "q": "outfit planner app for vacation",
+      "gl": "mx",
+      "hl": "es",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "app used for styling outfits and planning? : r/HerOneBag",
+        "link": "https://www.reddit.com/r/HerOneBag/comments/1f3qyze/app_used_for_styling_outfits_and_planning/",
+        "snippet": "please remove if this isn’t allowed but i love seeing everyone’s well organized outfits planned out for their trips and im wondering what apps you guys ...",
+        "sitelinks": [
+          {
+            "title": "26 respuestas",
+            "link": "https://www.reddit.com/r/HerOneBag/comments/1f3qyze/app_used_for_styling_outfits_and_planning/lkfvbog/"
+          },
+          {
+            "title": "App for visualising outfits : r/HerOneBag",
+            "link": "https://www.reddit.com/r/HerOneBag/comments/12vvtn0/app_for_visualising_outfits/",
+            "date": "44 respuestas23 abr 2023"
+          },
+          {
+            "title": "Apps for viewing packing item combos and options?",
+            "link": "https://www.reddit.com/r/HerOneBag/comments/1f1bv94/apps_for_viewing_packing_item_combos_and_options/",
+            "date": "7 respuestas26 ago 2024"
+          }
+        ],
+        "position": 1
+      },
+      {
+        "title": "Fits – Outfit Planner & Closet",
+        "link": "https://www.fits-app.com/",
+        "snippet": "Fits is the ultimate styling app – track, create and plan outfits and have your wardrobe with you at all times. Download the app on iOS or Android for free.",
+        "position": 2
+      },
+      {
+        "title": "Stylebook Closet App: How I Pack with ...",
+        "link": "https://www.stylebookapp.com/stories/tropical_packing.html",
+        "snippet": "Stylebook is my favorite travel essential for planning super efficient packing lists. I was able to fit 4 weeks of outfits in my carry-on using the app.",
+        "position": 3
+      },
+      {
+        "title": "Is there an app that can help you plan out your travel outfits ...",
+        "link": "https://www.facebook.com/groups/457573074653783/posts/2347157085695363/",
+        "snippet": "1. The first one is Whering. You can take pictures of each of your clothing items, build outfits, pick which day you'll wear them on your ...",
+        "date": "hace 4 meses",
+        "position": 4
+      },
+      {
+        "title": "GetWardrobe Outfit Planner - App Store - Apple",
+        "link": "https://apps.apple.com/us/app/getwardrobe-outfit-planner/id656212466",
+        "snippet": "Vacation Outfits. Create vacation outfits from your own closet based on the weather. Pack only what you'll wear. Ratings & Reviews. 4.3. out of 5. 762 Ratings ...",
+        "rating": 4.3,
+        "ratingCount": 762,
+        "position": 5
+      },
+      {
+        "title": "The Best 6 Closet & Outfit Planning Apps Reviewed - Laurieloo",
+        "link": "https://thelaurieloo.com/ultimate-closet-app-roundup/",
+        "snippet": "The Best 6 Closet & Outfit Planning Apps Reviewed · 1 | Stylebook · 2 | Cladwell · 4 | ClosetSpace.",
+        "position": 6
+      },
+      {
+        "title": "Fits – Outfit Planner & Closet - Apps on Google Play",
+        "link": "https://play.google.com/store/apps/details?id=de.lhenne.fits&hl=en",
+        "snippet": "Fits is a closet planner designed to organize your daily outfits. The closet app let's you create stunning outfits from your clothes or just log outfits with a ...",
+        "rating": 4.5,
+        "ratingCount": 8121,
+        "position": 7
+      },
+      {
+        "title": "Best Outfit Planning Apps 2026: Digital Closet Organizers ...",
+        "link": "https://clueless.clothing/blog/best-outfit-planning-apps-comparison-2026/",
+        "snippet": "The Best Outfit Planning Apps (2026) · 1. Clueless Clothing: Best Overall for Daily Outfit Planning · 2. Whering: Best for Sustainability Tracking.",
+        "date": "2 feb 2026",
+        "position": 8
+      },
+      {
+        "title": "Best Travel Outfit Planner Apps in 2026 | Beauty AI Blog",
+        "link": "https://beautyai.app/blog/best-travel-outfit-planner-apps",
+        "snippet": "What does a travel outfit planner app do? It helps you build outfits around destination weather, trip length, activities, and rewear logic ...",
+        "date": "24 jun 2026",
+        "position": 9
+      }
+    ],
+    "credits": 1
+  }
+}

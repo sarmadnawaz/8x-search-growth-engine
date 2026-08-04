@@ -1,0 +1,131 @@
+{
+  "requestKey": "what to wear today|us|en",
+  "fetchedAt": "2026-08-04T17:30:01.543Z",
+  "payload": {
+    "searchParameters": {
+      "q": "what to wear today",
+      "gl": "us",
+      "hl": "en",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "Daily Dress Me",
+        "link": "https://dailydressme.com/",
+        "snippet": "Daily Dress Me breaks down the weather forecast into style inspiration that actually makes sense. All you need to do is type in your city!",
+        "position": 1
+      },
+      {
+        "title": "What to Wear Today",
+        "link": "https://www.pinterest.com/ideas/what-to-wear-today/907533396626/",
+        "snippet": "Discover Pinterest's best ideas and inspiration for What to wear today. Casual Curvy Jeans Outfits New Model Outfits … endless city break outfits. Explore ...",
+        "position": 2
+      },
+      {
+        "title": "900+ Best WHAT TO WEAR TODAY ideas in 2026",
+        "link": "https://www.pinterest.com/thestyleshaker/what-to-wear-today/",
+        "snippet": "WHAT TO WEAR TODAY. Figure out what you're going to wear today by checking out the latest looks out there. Get inspired and click through to shop these pins.",
+        "position": 3
+      },
+      {
+        "title": "What are you guys wearing today, and what's your day looking like?",
+        "link": "https://www.reddit.com/r/AskMenOver30/comments/1rk4cev/what_are_you_guys_wearing_today_and_whats_your/",
+        "snippet": "Share a pic of whatever you’re wearing today if you want. Doesn’t have to be full body. Shirt, shoes, work clothes, lazy clothes, whatever counts. Feel ...",
+        "sitelinks": [
+          {
+            "title": "More",
+            "link": "https://www.reddit.com/r/AskMenOver30/comments/1rk4cev/what_are_you_guys_wearing_today_and_whats_your/o8hwzef/"
+          },
+          {
+            "title": "More",
+            "link": "https://www.reddit.com/r/AskMenOver30/comments/1rk4cev/what_are_you_guys_wearing_today_and_whats_your/o8hyx0u/"
+          }
+        ],
+        "position": 4
+      },
+      {
+        "title": "Who What Wear: Celebrity Style and Fashion Trend Coverage",
+        "link": "https://www.whowhatwear.com/",
+        "snippet": "Get the latest and greatest celebrity style, runway trends, and shopping suggestions from the fashion and beauty experts at whowhatwear.com!",
+        "position": 5
+      },
+      {
+        "title": "What to Wear Today, Based on the Weather – Weather Fit iOS App",
+        "link": "https://weatherfit.com/",
+        "snippet": "Weather Fit picks the right layers for the day: t-shirt or sweater, shorts or pants, jacket or none. It tunes them to your personal comfort level",
+        "position": 6
+      },
+      {
+        "title": "A weather app that knows my capsule wardrobe and tells me what to wear. Yay or Nay?",
+        "link": "https://www.reddit.com/r/capsulewardrobe/comments/1ldvng6/a_weather_app_that_knows_my_capsule_wardrobe_and/",
+        "sitelinks": [
+          {
+            "title": "More",
+            "link": "https://www.reddit.com/r/capsulewardrobe/comments/1ldvng6/a_weather_app_that_knows_my_capsule_wardrobe_and/mybbyg1/"
+          },
+          {
+            "title": "More",
+            "link": "https://www.reddit.com/r/capsulewardrobe/comments/1ldvng6/a_weather_app_that_knows_my_capsule_wardrobe_and/mybc182/"
+          }
+        ],
+        "position": 7
+      },
+      {
+        "title": "What should I wear today? I can't decide.",
+        "link": "https://www.quora.com/What-should-I-wear-today-I-cant-decide?no_redirect=1",
+        "position": 8
+      },
+      {
+        "title": "What clothes should you wear now?",
+        "link": "https://www.quora.com/What-clothes-should-you-wear-now",
+        "position": 9
+      }
+    ],
+    "peopleAlsoAsk": [
+      {
+        "question": "What's the best outfit to wear today?"
+      },
+      {
+        "question": "What is the 3 3 3 rule for outfits?"
+      },
+      {
+        "question": "How to look 10 pounds thinner?"
+      },
+      {
+        "question": "What is everyone wearing today?"
+      }
+    ],
+    "relatedSearches": [
+      {
+        "query": "What to wear today women"
+      },
+      {
+        "query": "What to wear today men"
+      },
+      {
+        "query": "What type of clothes should I wear today weather"
+      },
+      {
+        "query": "What to wear today weather female"
+      },
+      {
+        "query": "What To Wear today kids"
+      },
+      {
+        "query": "What to Wear today casual"
+      },
+      {
+        "query": "What to wear today for work"
+      },
+      {
+        "query": "What to wear today quiz"
+      },
+      {
+        "query": "What to wear today app"
+      }
+    ],
+    "credits": 1
+  }
+}
