@@ -100,8 +100,8 @@ Four rules the code enforces:
 
 ## What I'd do next
 
-1. **SERP + AI-visibility probes at full strength** — keyword and GEO/AEO detectors are written but under-fed without API keys.
-2. **LLM asset makers behind the existing seam** — Haiku for extraction, Sonnet for drafts, Opus as evaluator, each output validated by the Zod schemas already in place, gated by the review queue that already exists.
+1. **Feed the SERP and AI-visibility detectors** — both are written, typechecked and tested, but under-fed: SERP sampling needs a `SERPER_API_KEY` (free tier), and the AI probe needs an OpenAI account with active billing (the key on hand returns `429 — account is not active`). Neither invents data in the meantime; the evidence family is simply absent and the snapshot is marked degraded.
+2. **LLM asset makers behind the existing seam** — `lib/engine/llm.ts` already exposes schema-constrained generation; drafts would be validated by the Zod schemas in place and gated by the review queue that already exists. Model tiering (cheap for extraction, mid for drafting, top for evaluation) is a routing policy inside a provider, not a different shape of call.
 3. **Measurement windows** — the `Measurement` entity and verdict vocabulary (`improving / flat / declining / too_early`) are modelled; the scheduled re-measure job is not yet written.
 4. **The learn loop** — per-tactic win-rate priors feeding the `tacticPrior` factor, which currently defaults to 1.0.
 

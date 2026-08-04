@@ -57,7 +57,7 @@
 | Charts | **Recharts** (~50M weekly downloads, maintained, SVG/React-native API) | visx (power we don't need, steeper curve) · Nivo (bundle size) |
 | Schemas | **Zod** (de-facto standard; validates LLM structured outputs and UI props; Prisma types the DB layer — the two meet in `lib/schemas.ts`) | — |
 | Jobs | see §4a — decided in three stages by scale | — |
-| LLM | **Anthropic SDK**, tiered models, structured outputs, Batch −50% | multi-vendor hedge via a thin internal `llm()` seam noted as future work; abstraction layers (AI SDK) deferred until a second vendor is real |
+| LLM | **A narrow in-house provider seam** (`grounded answer` + `schema-constrained object`), implemented against OpenAI's Responses API with `web_search`. Grounding is the deciding requirement, not the vendor: properties younger than a model's training cutoff can only be cited if the model actually searches | A vendor SDK used directly (locks the call shape to one provider for no gain at two methods) · a general abstraction layer such as the AI SDK (more surface than two methods justify). Model tiering — cheap for extraction, mid for drafting, top for evaluation — is a routing policy *inside* a provider, so it survives the swap |
 
 ## 4a. Jobs / scheduling — decided in three stages, because "best" changes with scale
 
