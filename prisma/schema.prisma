@@ -180,6 +180,10 @@ model Action {
   opportunityId String
   domain        String
   kind          String
+  /// what the action is about (a query, a path, a locale). Together with
+  /// domain+kind this is the action's identity across runs — titles carry
+  /// measurements that change, so they cannot be the key.
+  subject       String   @default("")
   title         String
   /// the instruction handed to a human or an asset maker
   spec          String

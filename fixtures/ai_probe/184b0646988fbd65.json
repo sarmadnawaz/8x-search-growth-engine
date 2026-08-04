@@ -1,0 +1,18 @@
+{
+  "requestKey": "Best app to organise my closet digitally|cherly.app|sample1",
+  "fetchedAt": "2026-08-04T19:05:30.741Z",
+  "payload": {
+    "text": "Great options depend on your phone, budget, and whether you want pure organizing or AI styling. Here are the best picks right now, with what makes each stand out:\n\n- Stylebook (iPhone, one‑time purchase): Deep organizing, cost‑per‑wear analytics, AI background removal, and an “Outfit Shuffle” to auto‑mix pieces. Rock‑solid if you like full control. ([apps.apple.com](https://apps.apple.com/us/app/stylebook/id335709058?utm_source=openai))\n- GetWardrobe (iOS, Android, Mac, Web; generous free tier): Cross‑platform, easy photo import with AI background removal, calendar with local weather, stats, and excellent packing lists; you can expand with premium/AI credits later. ([apps.apple.com](https://apps.apple.com/us/app/getwardrobe-outfit-planner/id656212466?utm_source=openai))\n- Acloset (iOS/Android): Strong AI outfit recommendations and a clean digital closet; good if you want ideas generated from what you already own. ([acloset.app](https://www.acloset.app/?utm_source=openai))\n- Whering (iOS/Android): Social wardrobe—share closets, style friends, and use its “shuffle” for new outfit ideas; nice community feel plus packing and insights. ([whering.co](https://www.whering.co/))\n- Cladwell (iOS/Android): Capsule‑wardrobe focus with daily outfit suggestions and fast adding of items without taking photos; great if you want minimal setup and everyday picks. ([cladwell.com](https://cladwell.com/app?utm_source=openai))\n- Save Your Wardrobe (iOS/Android): Best if you want care services alongside organization—book repairs, alterations, and eco‑cleaning from inside the app. ([saveyourwardrobe.com](https://www.saveyourwardrobe.com/for-consumers/?utm_source=openai))\n- Indyx (iOS/Android): Digital closet plus optional human stylist features; free core use with paid “Insider”/styling upgrades; also supports receipt‑forwarding to auto‑catalog purchases. ([myindyx.com](https://www.myindyx.com/contact-us))\n\nQuick start recommendations\n- Want a free, cross‑platform organizer with travel tools? Try GetWardrobe. ([apps.apple.com](https://apps.apple.com/us/app/getwardrobe-outfit-planner/id656212466?utm_source=openai))\n- On iPhone and prefer a one‑time buy with powerful organizing/analytics? Stylebook. ([stylebookapp.com](https://www.stylebookapp.com/features.html?pp=0&utm_source=openai))\n- Want AI to suggest outfits for your day? Acloset or Whering. ([acloset.app](https://www.acloset.app/?utm_source=openai))\n- Care/repair services matter? Save Your Wardrobe. ([saveyourwardrobe.com](https://www.saveyourwardrobe.com/for-consumers/?utm_source=openai))\n\nIf you tell me:\n1) iPhone or Android,\n2) free/one‑time/subscription preference,\n3) must‑have features (AI suggestions, packing lists, stats, community, repair services, privacy),\nI’ll narrow this to one or two best fits and a 5‑minute setup plan.",
+    "citations": [
+      "https://apps.apple.com/us/app/stylebook/id335709058?utm_source=openai",
+      "https://apps.apple.com/us/app/getwardrobe-outfit-planner/id656212466?utm_source=openai",
+      "https://www.acloset.app/?utm_source=openai",
+      "https://www.whering.co/",
+      "https://cladwell.com/app?utm_source=openai",
+      "https://www.saveyourwardrobe.com/for-consumers/?utm_source=openai",
+      "https://www.myindyx.com/contact-us",
+      "https://www.stylebookapp.com/features.html?pp=0&utm_source=openai"
+    ],
+    "model": "gpt-5-2025-08-07"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "requestKey": "What is the best stretching app?|sway.day|sample0",
+  "fetchedAt": "2026-08-04T19:20:38.619Z",
+  "payload": {
+    "text": "“Best” depends on your goal. Here are strong, up-to-date picks by need:\n\n- Best for building a simple daily habit: Bend — quick, preset stretch routines by body area; easy to stick with on iOS. ([apps.apple.com](https://apps.apple.com/us/app/bend-stretching-flexibility/id1513988468?utm_source=openai))\n- Best for flexibility goals (splits, backbends, posture): StretchIt — structured video classes and programs on iOS/Android. ([apps.apple.com](https://apps.apple.com/us/app/stretching-mobility-stretchit/id1124278517?utm_source=openai))\n- Best for athlete-style mobility sessions: Pliability (formerly ROMWOD) — daily guided mobility/yin flows with sport-minded programming. ([pliability.com](https://pliability.com/romwod?utm_source=openai))\n- Best for personalized mobility via assessment: GOWOD — tests your range of motion, then builds warm‑ups/cool‑downs for your weak spots. ([gowod.app](https://www.gowod.app/how-it-works?utm_source=openai))\n- Best free, general option with lots of mobility/yoga/recovery: Nike Training Club — large library of trainer‑led sessions. ([apps.apple.com](https://apps.apple.com/us/app/nike-training-club/id301521403?utm_source=openai))\n- Best for desk‑break stretching: StretchMinder — nudges you to do 3–5 minute “exercise snacks” during the workday. ([apps.apple.com](https://apps.apple.com/us/story/id1615455982?utm_source=openai))\n\nIf you tell me your goal (general flexibility, pain relief, athletic mobility, splits), how much time you have, your phone type, and whether you prefer free vs paid, I’ll pick one “best” app for you.",
+    "citations": [
+      "https://apps.apple.com/us/app/bend-stretching-flexibility/id1513988468?utm_source=openai",
+      "https://apps.apple.com/us/app/stretching-mobility-stretchit/id1124278517?utm_source=openai",
+      "https://pliability.com/romwod?utm_source=openai",
+      "https://www.gowod.app/how-it-works?utm_source=openai",
+      "https://apps.apple.com/us/app/nike-training-club/id301521403?utm_source=openai",
+      "https://apps.apple.com/us/story/id1615455982?utm_source=openai"
+    ],
+    "model": "gpt-5-2025-08-07"
+  }
+}

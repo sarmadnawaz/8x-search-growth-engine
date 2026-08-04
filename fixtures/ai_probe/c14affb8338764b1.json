@@ -1,0 +1,15 @@
+{
+  "requestKey": "What is the best stretching app?|sway.day|sample2",
+  "fetchedAt": "2026-08-04T19:23:18.104Z",
+  "payload": {
+    "text": "Short answer: there’s no single “best” stretching app—pick based on your goal and how you like to follow along. Here are the standouts right now:\n\n- Best for assessment‑driven mobility and quick pre/post‑workout routines: GOWOD. It gives you a free mobility test, personalized protocols, and sport‑specific sessions; free to download with in‑app purchases on iOS/Android. ([play.google.com](https://play.google.com/store/apps/details/?hl=en&id=eu.gowod&utm_source=openai))\n- Best guided follow‑along mobility with a built‑in Mobility Test (iPhone/iPad): pliability (formerly ROMWOD). Strong daily programs and goal‑based “paths;” free to download with subscription for the full library. ([apps.apple.com](https://apps.apple.com/us/app/pliability-stretch-mobility/id1175346453?utm_source=openai))\n- Best for flexibility goals like splits/backbends: STRETCHIT. Lots of follow‑along classes and challenges focused on range‑of‑motion milestones; free to download with in‑app purchases. ([play.google.com](https://play.google.com/store/apps/details?hl=en-US&id=com.stretchitapp.stretchit&utm_source=openai))\n- Best for customizable, yoga‑style stretching sessions (great variety, very tweakable): Down Dog. You set time, level, and body focus; free to download with subscription options. ([downdogapp.com](https://www.downdogapp.com/download?utm_source=openai))\n- Best for “I just need reminders to get up and stretch” at a desk: StretchMinder. Schedules short, guided movement breaks you can sprinkle through the workday. ([apps.apple.com](https://apps.apple.com/us/story/id1615455982?utm_source=openai))\n\nIf you share your goal (e.g., general mobility vs. splits, easing back/neck tightness, pre‑run warmups), platform, and budget, I can narrow this to one or two perfect picks and set you up with a starter plan.",
+    "citations": [
+      "https://play.google.com/store/apps/details/?hl=en&id=eu.gowod&utm_source=openai",
+      "https://apps.apple.com/us/app/pliability-stretch-mobility/id1175346453?utm_source=openai",
+      "https://play.google.com/store/apps/details?hl=en-US&id=com.stretchitapp.stretchit&utm_source=openai",
+      "https://www.downdogapp.com/download?utm_source=openai",
+      "https://apps.apple.com/us/story/id1615455982?utm_source=openai"
+    ],
+    "model": "gpt-5-2025-08-07"
+  }
+}

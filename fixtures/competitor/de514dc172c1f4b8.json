@@ -1,0 +1,8 @@
+{
+  "requestKey": "https://goodbudget.com/robots.txt",
+  "fetchedAt": "2026-08-04T19:09:40.361Z",
+  "payload": {
+    "status": 200,
+    "body": "User-agent: *\nDisallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php\n\nSitemap: https://goodbudget.com/sitemap.xml\n"
+  }
+}

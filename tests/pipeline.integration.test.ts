@@ -19,6 +19,9 @@ loadEnv()
 
 // Integration tests must never touch the database a human is looking at.
 process.env.DATABASE_URL = process.env.DATABASE_URL_TEST ?? process.env.DATABASE_URL
+// ...nor make paid network calls. A developer's key in the environment must
+// not turn a deterministic suite into a non-deterministic, billable one.
+process.env.LLM_PROVIDER = 'none'
 
 const FIXTURE_DIR = join(process.cwd(), 'fixture-site')
 const GENERATED = ['robots.txt', 'sitemap.xml'].map((f) => join(FIXTURE_DIR, f))
@@ -121,14 +124,22 @@ describe('the full loop on a property we control', () => {
     expect(robots!.criteria[0].observed).toContain('200')
   }, 60_000)
 
-  it('does not recreate work across runs', async () => {
-    const before = await prisma.action.count({ where: { domain: DOMAIN } })
-
+  it('never raises the same finding twice, while still finding new work', async () => {
+    // Not "no new actions": once generated pages ship, the next run audits
+    // them and legitimately finds work on pages that did not exist before.
+    // The invariant that matters is that one finding produces one action —
+    // otherwise a nightly run re-opens work already shipped.
     const summary = await collect({ domain: DOMAIN, mode: 'replay', log: () => {} })
     await detect(summary.snapshotId)
     await make(summary.snapshotId)
 
-    expect(await prisma.action.count({ where: { domain: DOMAIN } })).toBe(before)
+    const actions = await prisma.action.findMany({
+      where: { domain: DOMAIN },
+      select: { kind: true, subject: true },
+    })
+    const identities = actions.map((a) => `${a.kind}|${a.subject}`)
+
+    expect(new Set(identities).size).toBe(identities.length)
   }, 60_000)
 })
 

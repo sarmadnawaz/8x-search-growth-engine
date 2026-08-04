@@ -108,15 +108,18 @@ export async function make(snapshotId: string): Promise<MakeSummary> {
     )
     if (!draft) continue
 
-    // Actions are keyed to the *finding*, not to the snapshot that observed it.
-    // Opportunity rows are recreated each run (snapshots are immutable), so
-    // matching on opportunityId alone would spawn a duplicate action every
-    // night for a gap that has not changed — and re-open work already shipped.
+    // Actions are keyed to the *finding*: domain + kind + subject.
+    //
+    // Not the title, which embeds current measurements ("0/3 samples",
+    // "8 tracked queries"). Those move between runs, so a title-keyed action
+    // spawns a duplicate every time the number changes and re-opens work
+    // already shipped. Not opportunityId either — snapshots are immutable, so
+    // opportunity rows are recreated every run by construction.
     const existing = await prisma.action.findFirst({
       where: {
         domain: snapshot.domain,
         kind: draft.suggestedAction.kind,
-        title: draft.suggestedAction.title,
+        subject: draft.subject,
       },
     })
     if (existing) continue
@@ -129,6 +132,7 @@ export async function make(snapshotId: string): Promise<MakeSummary> {
         opportunityId: opportunity.id,
         domain: snapshot.domain,
         kind: draft.suggestedAction.kind,
+        subject: draft.subject,
         title: draft.suggestedAction.title,
         spec: draft.suggestedAction.spec,
         criteria: draft.suggestedAction.criteria,

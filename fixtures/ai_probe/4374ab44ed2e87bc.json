@@ -1,0 +1,13 @@
+{
+  "requestKey": "What is PocketPal budget app?|pocketpal.me|sample1",
+  "fetchedAt": "2026-08-04T19:19:22.857Z",
+  "payload": {
+    "text": "PocketPal is a name used by more than one budgeting/expense‑tracking app. In general, it refers to a personal finance app that helps you track spending and set budgets on iOS and/or Android.\n\n- Android: “PocketPal: Budget & Expense” is a personal finance app with expense and budget tracking, reports, offline mode with encryption, and extras like an AI receipt scanner, voice entry, family/couples sync, and a currency converter. The Play Store lists its latest update as July 5, 2026. ([play.google.com](https://play.google.com/store/apps/details?hl=en&id=com.bewanderalabs.pocketpal))\n- iOS: “PocketPal – Expense Tracker” lets you log expenses and income, manage multiple accounts, create categories and category budgets, set up recurring transactions, import/export via CSV, and more. It’s free to download with optional monthly, yearly, or lifetime in‑app purchases; the listing shows recent updates in late June and early August 2026. ([apps.apple.com](https://apps.apple.com/nl/app/pocketpal-expense-tracker/id6753106967?l=en-GB))\n- A marketing site for PocketPal also describes it as a “paycheck‑synced envelope budgeting” app available on both stores. ([pocketpal.me](https://pocketpal.me/?utm_source=openai))\n\nIf you’re asking about a specific one, can you share which store link you saw or what features you need?",
+    "citations": [
+      "https://play.google.com/store/apps/details?hl=en&id=com.bewanderalabs.pocketpal",
+      "https://apps.apple.com/nl/app/pocketpal-expense-tracker/id6753106967?l=en-GB",
+      "https://pocketpal.me/?utm_source=openai"
+    ],
+    "model": "gpt-5-2025-08-07"
+  }
+}

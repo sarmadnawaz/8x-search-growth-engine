@@ -1,0 +1,15 @@
+{
+  "requestKey": "What is the best envelope budgeting app?|pocketpal.me|sample2",
+  "fetchedAt": "2026-08-04T19:14:40.652Z",
+  "payload": {
+    "text": "Short answer: For most people today, YNAB is the best all‑around envelope/zero‑based budgeting app. It nails true envelope behavior, has excellent goal/target tools and credit‑card handling, and offers a 34‑day free trial; pricing is $109/year or $14.99/month and one subscription can be shared by up to six people. ([ynab.com](https://www.ynab.com/pricing/))\n\nGreat alternatives depending on what you want\n- Goodbudget: Classic, simple envelopes with a solid free tier (10 regular + 10 annual/goal envelopes, 1 account, 2 devices). Premium adds automatic bank sync, unlimited envelopes/accounts, 5 devices, and 7 years of history for $10/month or $80/year. Best if you like manual-first budgeting or want the least expensive path with optional sync. (US bank sync only.) ([goodbudget.com](https://goodbudget.com/signup?source=supermoney-reviews-reviews&utm_source=openai))\n- EveryDollar: Dave Ramsey’s official zero‑based tool. Free version works well for manual budgeting; Premium adds bank sync and extras for $17.99/month or $79.99/year. Good fit if you’re following the Ramsey “Baby Steps” and want the matching workflow. ([everydollar.help.ramseysolutions.com](https://everydollar.help.ramseysolutions.com/hc/en-us/articles/21544207900685-EveryDollar-Premium-Subscription-Cost))\n- Actual Budget: Privacy‑focused and envelope‑based; open‑source with optional cloud sync, so you can run it locally if you prefer. Great for tinkerers or anyone who wants maximum control and minimal data sharing. ([actualbudget.org](https://actualbudget.org/?utm_source=openai))\n\nNotes\n- If you’re coming from older apps: Mvelopes has been discontinued since 2022, so consider Goodbudget or YNAB as like‑for‑like replacements. ([goodbudget.com](https://goodbudget.com/blog/2022/10/looking-for-an-mvelopes-alternative-try-goodbudget/?utm_source=openai))\n\nWant a tailored pick? Tell me:\n- Do you want automatic bank sync or prefer manual entry?\n- Solo or budgeting with a partner/family?\n- Must be free, or okay with a subscription?\n- iOS, Android, desktop—any platform preferences?",
+    "citations": [
+      "https://www.ynab.com/pricing/",
+      "https://goodbudget.com/signup?source=supermoney-reviews-reviews&utm_source=openai",
+      "https://everydollar.help.ramseysolutions.com/hc/en-us/articles/21544207900685-EveryDollar-Premium-Subscription-Cost",
+      "https://actualbudget.org/?utm_source=openai",
+      "https://goodbudget.com/blog/2022/10/looking-for-an-mvelopes-alternative-try-goodbudget/?utm_source=openai"
+    ],
+    "model": "gpt-5-2025-08-07"
+  }
+}

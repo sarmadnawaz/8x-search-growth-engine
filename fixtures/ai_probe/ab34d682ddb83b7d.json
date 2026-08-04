@@ -1,0 +1,12 @@
+{
+  "requestKey": "What is Cherly app?|cherly.app|sample1",
+  "fetchedAt": "2026-08-04T19:08:27.542Z",
+  "payload": {
+    "text": "Do you mean:\n\n- Cherly (AI outfit/closet app): I can’t find an official site, but a recent hiring post describes Cherly as an app where you photograph your closet and get AI-built outfits from the clothes you already own. ([reddit.com](https://www.reddit.com/r/UGCconnect/comments/1v82xdr/looking_for_content_creators_in_india_turkey_to/))\n- Cheerly (with two e’s): an AI habit and mood coach app for iPhone that combines habit tracking, mood insights, and AI chat. ([apps.apple.com](https://apps.apple.com/us/app/cheerly-ai-habit-mood-coach/id1516210099?utm_source=openai))\n\nIf you can share a link or where you saw “Cherly,” I can confirm the exact app.",
+    "citations": [
+      "https://www.reddit.com/r/UGCconnect/comments/1v82xdr/looking_for_content_creators_in_india_turkey_to/",
+      "https://apps.apple.com/us/app/cheerly-ai-habit-mood-coach/id1516210099?utm_source=openai"
+    ],
+    "model": "gpt-5-2025-08-07"
+  }
+}

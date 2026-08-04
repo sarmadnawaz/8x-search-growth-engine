@@ -1,0 +1,8 @@
+{
+  "requestKey": "https://everydollar.com/robots.txt",
+  "fetchedAt": "2026-08-04T19:09:47.273Z",
+  "payload": {
+    "status": 200,
+    "body": "Sitemap: https://www.everydollar.com/sitemap.xml\n\nUser-agent: *\nAllow: /app/sign-in\nDisallow: /app\nDisallow: /apple-app-site-association\n"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "requestKey": "What is the best stretching app?|sway.day|sample1",
+  "fetchedAt": "2026-08-04T19:22:25.048Z",
+  "payload": {
+    "text": "Short answer: there isn’t one “best” stretching app for everyone. It depends on your goal and budget. My quick picks (as of August 4, 2026):\n\n- Build a simple daily habit, low cost: Bend. Clean timers and premade routines for AM/PM, posture, hips, hamstrings; free to download with inexpensive memberships shown in‑app (e.g., Monthly $4.99–$13.99; occasional discounted annuals). The App Store also shows 4.8★ with ~172K ratings, and Bend says 15M+ users. ([apps.apple.com](https://apps.apple.com/us/app/bend-stretching-flexibility/id1513988468))\n- Structured, coached flexibility (splits, deeper backbends): StretchIt. Instructor‑led video classes, programs, and a 7‑day trial. Current list price: $24.99/month or $179.99/year. ([blog.stretchitapp.com](https://blog.stretchitapp.com/?utm_source=openai))\n- Athlete‑style mobility and recovery with daily guided sessions: pliability (formerly ROMWOD). Daily 12–20 min routines, big video library, and an on‑device mobility test; available on iOS/Android/web/Apple TV. Current price: $22.95/month or $199.95/year. ([pliability.com](https://pliability.com/targets/mobility?utm_source=openai))\n- Personalized protocols after an assessment: GOWOD. Starts with a free mobility test and builds routines around your weak points; premium unlocks the full library (pricing varies by region/in‑app). ([gowod.app](https://www.gowod.app/faq?utm_source=openai))\n- 100% free library with mobility and yoga: Nike Training Club. Large catalogue of free workouts including mobility, recovery, and yoga sessions. ([nike.com](https://www.nike.com/hr/ntc-app?lang=en&utm_source=openai))\n\nHow to choose fast:\n- Want coached, video‑class feel and don’t mind a higher price? Pick pliability.\n- Want a simple, low‑friction daily stretch you’ll actually stick with? Try Bend.\n- Training for clear flexibility goals (e.g., front/middle splits)? StretchIt.\n- Want an assessment‑driven plan? GOWOD.\n- Want free and good enough? Nike Training Club.\n\nIf you tell me your main goal (e.g., back‑pain relief, desk stiffness, splits, CrossFit support), your device (iOS/Android), and free vs paid, I’ll narrow it to one or two best fits for you.",
+    "citations": [
+      "https://apps.apple.com/us/app/bend-stretching-flexibility/id1513988468",
+      "https://blog.stretchitapp.com/?utm_source=openai",
+      "https://pliability.com/targets/mobility?utm_source=openai",
+      "https://www.gowod.app/faq?utm_source=openai",
+      "https://www.nike.com/hr/ntc-app?lang=en&utm_source=openai"
+    ],
+    "model": "gpt-5-2025-08-07"
+  }
+}
