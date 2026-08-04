@@ -11,3 +11,4 @@ venv/
 # NOTE: fixtures/ and prisma/dev.db are committed on purpose —
 # they give reviewers a populated dashboard and an offline --replay path with no API keys.
 *.db-journal
+tsconfig.tsbuildinfo
