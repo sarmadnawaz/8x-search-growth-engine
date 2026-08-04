@@ -1,10 +1,30 @@
 @import 'tailwindcss';
+
+/* Matches the written brief and the submission document: Roboto, #434343 ink,
+   #1155CC accent. Kept as tokens so the dashboard and the document cannot
+   drift apart. */
+:root {
+  --brand-ink: #434343;
+  --foreground: #434343;
+  --brand-muted: #767676;
+  --brand-accent: #1155cc;
+  --brand-rule: #dddddd;
+  --brand-band: #f5f7fa;
+}
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+    /* Brand tokens shared with the written brief and the submission document,
+       so the dashboard and the paperwork cannot drift apart. */
+    --color-brand-ink: var(--brand-ink);
+    --color-brand-muted: var(--brand-muted);
+    --color-brand-accent: var(--brand-accent);
+    --color-brand-rule: var(--brand-rule);
+    --color-brand-band: var(--brand-band);
+
     --font-heading: var(--font-sans);
     --font-sans: var(--font-sans);
     --color-sidebar-ring: var(--sidebar-ring);

@@ -21,7 +21,7 @@ interface FetchedDoc {
   status: number
   body: string
   contentType: string
-  /** set when the request produced no usable body — not the same as "absent" */
+  /** set when the request produced no usable body, not the same as "absent" */
   failure?: FetchResult['failure']
 }
 
@@ -129,7 +129,7 @@ export const crawlerAdapter: Adapter = {
   name: 'crawler',
 
   unavailableReason() {
-    return null // needs no credentials — always runs
+    return null // needs no credentials, always runs
   },
 
   async collect(ctx: AdapterContext): Promise<CollectResult> {
@@ -168,7 +168,7 @@ export const crawlerAdapter: Adapter = {
           detail: { status: robots.status, failure: robots.failure ?? 'blocked' },
         },
       })
-      ctx.log(`could not observe robots.txt (status ${robots.status}${robots.failure ? ', ' + robots.failure : ''}) — recording as unobserved, not missing`)
+      ctx.log(`could not observe robots.txt (status ${robots.status}${robots.failure ? ', ' + robots.failure : ''}), recording as unobserved, not missing`)
       return { evidence, pages }
     }
     const robotsPresent = robots.status === 200 && robots.body.trim().length > 0

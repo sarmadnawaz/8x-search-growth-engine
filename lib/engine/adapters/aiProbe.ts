@@ -66,7 +66,7 @@ export const aiProbeAdapter: Adapter = {
       // the probe would report a permanent zero that looks like a measurement.
       // Refusing is the honest outcome.
       if (!provider.supportsGrounding()) {
-        return `${provider.name} cannot ground answers in live search — an ungrounded probe measures training data, not visibility`
+        return `${provider.name} cannot ground answers in live search, an ungrounded probe measures training data, not visibility`
       }
     }
     return null
@@ -129,7 +129,7 @@ export const aiProbeAdapter: Adapter = {
         },
       })
 
-      ctx.log(`"${prompt.slice(0, 48)}" — mentioned in ${mentionCount}/${samples} samples`)
+      ctx.log(`"${prompt.slice(0, 48)}", mentioned in ${mentionCount}/${samples} samples`)
     }
 
     return { evidence }

@@ -71,7 +71,7 @@ export const keywordGapDetector: Detector = {
         title:
           serp.ownPosition === null
             ? `Not ranking for "${serp.query}" (${serp.market})`
-            : `Ranking #${serp.ownPosition} for "${serp.query}" — achievable #${target}`,
+            : `Ranking #${serp.ownPosition} for "${serp.query}", achievable #${target}`,
         subject: serp.query,
         evidenceIds: [row.id, ...(demandRow ? [demandRow.id] : [])],
         isBlocker: false,

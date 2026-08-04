@@ -372,7 +372,7 @@ export async function evaluateCheck(
   if (DELIVERY[kind]) return DELIVERY[kind](rest, scoped)
   if (OUTCOME[kind]) return OUTCOME[kind](rest, ctx, daysElapsed)
 
-  return { passed: false, observed: `unsupported check "${kind}" — not evaluated` }
+  return { passed: false, observed: `unsupported check "${kind}", not evaluated` }
 }
 
 export const SUPPORTED_CHECKS = [...Object.keys(DELIVERY), ...Object.keys(OUTCOME)].sort()

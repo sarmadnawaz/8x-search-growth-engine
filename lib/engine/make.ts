@@ -220,19 +220,19 @@ export async function apply(domain: string): Promise<{ applied: string[]; refuse
   for (const action of actions) {
     for (const asset of action.assets) {
       if (action.status !== 'approved') {
-        refused.push(`${action.title} — awaiting approval (${action.status})`)
+        refused.push(`${action.title}, awaiting approval (${action.status})`)
         continue
       }
       if (!config.deployAccess || !config.localSite || !asset.path) {
-        refused.push(`${action.title} — no deploy access for ${domain}`)
+        refused.push(`${action.title}, no deploy access for ${domain}`)
         continue
       }
       if (config.publishingPolicy !== 'auto_low_risk') {
-        refused.push(`${action.title} — ${domain} publishes review-first`)
+        refused.push(`${action.title}, ${domain} publishes review-first`)
         continue
       }
       if (asset.reviewState !== 'approved') {
-        refused.push(`${action.title} — asset is ${asset.reviewState}, not approved`)
+        refused.push(`${action.title}, asset is ${asset.reviewState}, not approved`)
         continue
       }
 
@@ -241,7 +241,7 @@ export async function apply(domain: string): Promise<{ applied: string[]; refuse
       const root = resolve(process.cwd(), config.localSite.dir)
       const target = resolve(root, asset.path)
       if (!target.startsWith(root + sep)) {
-        refused.push(`${action.title} — asset path escapes the site root`)
+        refused.push(`${action.title}, asset path escapes the site root`)
         continue
       }
       mkdirSync(dirname(target), { recursive: true })

@@ -92,7 +92,7 @@ export function ActionCard({
                   </span>
                   <span>
                     {c.description}
-                    {c.observed && <span className="opacity-70"> — observed: {c.observed}</span>}
+                    {c.observed && <span className="opacity-70"> (observed: {c.observed})</span>}
                     {c.verdict && (
                       <Badge variant="outline" className="ml-1.5 text-[10px]">
                         {c.verdict.replace('_', ' ')}

@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import { getPortfolio } from '@/lib/engine/queries'
 import { listPropertyDomains } from '@/lib/engine/config'
-import { Sparkline } from './components/Sparkline'
+import { MiniTrend } from './components/MiniTrend'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { Callout, SectionHeader } from './components/Section'
 
 export const dynamic = 'force-dynamic'
 
@@ -14,13 +15,11 @@ export default async function PortfolioPage() {
 
   return (
     <main className="space-y-6">
-      <header>
-        <h1 className="text-xl font-semibold tracking-tight">Search Growth Engine</h1>
-        <p className="text-muted-foreground mt-1 text-sm">
-          {configured.length} configured properties · one pipeline · every number links to the
-          evidence that produced it
-        </p>
-      </header>
+      <SectionHeader
+        eyebrow="Portfolio"
+        title="Search Growth Engine"
+        note={`${configured.length} properties, one pipeline. Every number links to the evidence that produced it.`}
+      />
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {portfolio.map((p) => (
@@ -29,7 +28,7 @@ export default async function PortfolioPage() {
               <CardHeader className="pb-3">
                 <div className="flex items-center justify-between gap-2">
                   <CardTitle className="text-base group-hover:underline">{p.domain}</CardTitle>
-                  <Sparkline values={p.series.map((s) => s.indexablePages)} />
+                  <MiniTrend values={p.series.map((s) => s.indexablePages)} />
                 </div>
                 <p className="text-muted-foreground text-xs">{p.name}</p>
               </CardHeader>
@@ -44,9 +43,9 @@ export default async function PortfolioPage() {
                 <p className="text-muted-foreground text-xs">
                   {p.snapshotCount} snapshot{p.snapshotCount === 1 ? '' : 's'}
                   {p.latestSnapshot
-                    ? ` · last run ${p.latestSnapshot.startedAt.toISOString().slice(0, 16).replace('T', ' ')}`
+                    ? `, last run ${p.latestSnapshot.startedAt.toISOString().slice(0, 16).replace('T', ' ')}`
                     : ''}
-                  {p.latestSnapshot?.status === 'partial' ? ' · partial run' : ''}
+                  {p.latestSnapshot?.status === 'partial' ? ', partial run' : ''}
                 </p>
               </CardContent>
             </Card>
@@ -56,7 +55,7 @@ export default async function PortfolioPage() {
 
       {notYetRun.length > 0 && (
         <p className="text-muted-foreground text-sm">
-          Configured but not yet run: {notYetRun.join(', ')} —{' '}
+          Configured but not yet run: {notYetRun.join(', ')}. Run{' '}
           <code className="bg-muted rounded px-1.5 py-0.5 text-xs">
             npm run pipeline -- {notYetRun[0]}
           </code>

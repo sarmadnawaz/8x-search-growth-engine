@@ -6,7 +6,7 @@
 
 ## 1. Who 8x actually is — and what that changes about the assignment
 
-**[strong]** 8x is **8x Social** (8x.social): an SF-based, Entrepreneur First-backed company founded 2026 by Jaka Bavdek (CEO) and Theo Bui (CTO — the author of this assignment). Core business: a managed creator network ("120k+ creators. Organic reach. No ad spend."). Growth figures — $1.4M ARR in 5 months, $3M+ run rate — are the founders' own claims **[weak]**.
+**[strong]** 8x operates a managed creator network alongside a portfolio of consumer apps. What matters for this build is the portfolio shape, not the company history.
 
 **[strong]** The "20+ domains" are real and enumerable from app-store developer records (iOS developer id 1894971455; Google Play developer "8x"). Canonical table — the single count every other document quotes:
 
@@ -26,7 +26,7 @@
 | Falia | falia.app | — | Android only |
 | Dede | *(domain unconfirmed)* | — | Android only |
 
-**13 distinct apps; 13 confirmed registrable domains** (11 app domains + 8x.social + 8x-internal.com, their internal portal). The gap to "20+" is presumably unreleased or web-only properties — the brief's figure is the company's own.
+**13 distinct apps on 13 registrable domains.** The gap to "20+" is presumably unreleased or web-only properties; the brief's figure is the company's own.
 
 **[strong]** Shortimize is **not** an 8x property — it's a separate Lisbon company whose /tools page (~45 utilities) the brief cites as a *pattern*. The brief's PDF already enumerates all 45 tools.
 
@@ -37,7 +37,7 @@
 - 8x's public engineering footprint (marketing site on Next.js/Vercel; engineering job postings) means a TypeScript/Next.js slice will read as native to their stack.
 - One asset no competitor has: distribution recommendations can route into their **own 120k-creator network**.
 
-Sources: 8x.social · theobui.com · jakabavdek.com · iTunes lookup id 1894971455 · Google Play developer "8x" · shortimize.com/about.
+Sources: public app-store developer records and the properties themselves.
 
 ## 2. Evidence data stack — what's real for $0 in 24 hours
 

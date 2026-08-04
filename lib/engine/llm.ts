@@ -14,7 +14,7 @@ import { z } from 'zod'
 
 export interface GroundedAnswer {
   text: string
-  /** URLs the provider actually cited — the signal the probe measures */
+  /** URLs the provider actually cited, the signal the probe measures */
   citations: string[]
   model: string
 }

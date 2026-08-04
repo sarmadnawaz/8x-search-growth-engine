@@ -53,7 +53,7 @@ function extractLocs(xml: string): string[] {
   return [...xml.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/gi)].map((m) => m[1])
 }
 
-/** Group URLs by their first path segment — the site's own sectioning. */
+/** Group URLs by their first path segment, the site's own sectioning. */
 function profile(urls: string[]): SectionProfile[] {
   const sections = new Map<string, string[]>()
 
