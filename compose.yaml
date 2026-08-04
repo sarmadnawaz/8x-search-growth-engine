@@ -1,0 +1,64 @@
+# Runs with either `docker compose` or `podman compose`.
+#
+#   compose up -d db          # database only, app runs on the host (dev)
+#   compose --profile app up  # everything containerised (closest to production)
+#
+# The app image is a multi-stage build producing a standalone Next.js server,
+# so the runtime image carries no toolchain and no source.
+
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: sge
+      POSTGRES_PASSWORD: sge_local_dev
+      POSTGRES_DB: sge
+    ports:
+      # Host port is configurable: 5432/5433 are commonly already taken by a
+      # local Postgres or another project's stack.
+      - '${POSTGRES_PORT:-5433}:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    # The app waits for this rather than racing the database on startup.
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U sge -d sge']
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  # Applies migrations once, then exits. Keeping this out of the app's start
+  # command means N app replicas cannot race each other running migrations.
+  migrate:
+    profiles: ['app']
+    build:
+      context: .
+      target: builder
+    environment:
+      DATABASE_URL: postgresql://sge:sge_local_dev@db:5432/sge?schema=public
+    command: sh -c "npx prisma migrate deploy && npx tsx prisma/seed.ts"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  app:
+    profiles: ['app']
+    build:
+      context: .
+      target: runner
+    environment:
+      DATABASE_URL: postgresql://sge:sge_local_dev@db:5432/sge?schema=public
+      # Adapter credentials are optional: a missing key degrades one evidence
+      # family and is reported, rather than failing the run.
+      SERPER_API_KEY: ${SERPER_API_KEY:-}
+      PSI_API_KEY: ${PSI_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+    ports:
+      - '${APP_PORT:-3000}:3000'
+    depends_on:
+      db:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+
+volumes:
+  pgdata:

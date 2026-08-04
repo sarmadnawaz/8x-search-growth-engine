@@ -1,3 +1,4 @@
+import type { Prisma } from '@prisma/client'
 import type { Server } from 'node:http'
 import { prisma } from '../db'
 import { EvidenceInput, PropertyConfig } from '../schemas'
@@ -55,14 +56,14 @@ async function upsertProperty(config: PropertyConfig) {
       goal: config.goal,
       conversionRoute: config.conversionRoute,
       publishingPolicy: config.publishingPolicy,
-      configJson: JSON.stringify(config),
+      config,
     },
     update: {
       name: config.name,
       goal: config.goal,
       conversionRoute: config.conversionRoute,
       publishingPolicy: config.publishingPolicy,
-      configJson: JSON.stringify(config),
+      config,
     },
   })
 }
@@ -139,7 +140,7 @@ export async function collect(options: RunOptions): Promise<RunSummary> {
               h1: page.h1,
               canonical: page.canonical,
               robotsMeta: page.robotsMeta,
-              schemaTypesJson: JSON.stringify(page.schemaTypes),
+              schemaTypes: page.schemaTypes,
               internalLinks: page.internalLinks,
               wordCount: page.wordCount,
               rawTextLength: page.rawTextLength,
@@ -182,7 +183,7 @@ export async function collect(options: RunOptions): Promise<RunSummary> {
               source: parsed.source,
               tier: parsed.tier,
               subject: parsed.subject,
-              valueJson: JSON.stringify(parsed.value),
+              value: parsed.value as Prisma.InputJsonValue,
               clusterId: parsed.clusterId ?? cluster?.id,
               rawRef: parsed.rawRef,
             },
@@ -215,7 +216,7 @@ export async function collect(options: RunOptions): Promise<RunSummary> {
     data: {
       status: degraded.length > 0 ? 'partial' : 'complete',
       finishedAt: new Date(),
-      degradedJson: JSON.stringify(degraded),
+      degradedAdapters: degraded,
     },
   })
 

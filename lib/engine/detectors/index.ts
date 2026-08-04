@@ -74,7 +74,7 @@ export async function detect(snapshotId: string): Promise<DetectSummary> {
         detectorVersion: draft.detectorVersion,
         title: draft.title,
         subject: draft.subject,
-        evidenceIdsJson: JSON.stringify(draft.evidenceIds),
+        evidenceIds: draft.evidenceIds,
         impact: breakdown.impact,
         confidence: breakdown.confidence,
         fit: breakdown.fit,

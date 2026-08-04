@@ -8,19 +8,31 @@ The design constraint everything else follows from: **adding the next domain is 
 
 ## Run it
 
+Needs Node 22+ and a container runtime (Docker or Podman — `compose` works with either).
+
 ```bash
-npm install
 cp .env.example .env
-npm run dev            # dashboard on http://localhost:3000, seeded with real data
+compose up -d db          # Postgres 17
+npm install
+npm run db:migrate        # apply committed migrations
+npm run seed              # replays recorded API responses through the real pipeline
+npm run dev               # dashboard on http://localhost:3000
 ```
 
-No API keys needed to browse: the SQLite database is committed with four properties already run.
+No API keys needed: the seed replays recorded responses through the same code path a live run uses, so the demo data cannot drift from what the engine actually produces.
 
-To run the pipeline yourself:
+Fully containerised, closest to production:
 
 ```bash
-npm run pipeline -- cherly.app --replay     # offline, replays recorded API responses (0.1s)
+compose --profile app up  # db + migrations + app, multi-stage build, non-root
+```
+
+Then:
+
+```bash
+npm run pipeline -- cherly.app --replay     # offline, replays recorded responses
 npm run pipeline -- cherly.app              # live (keys optional; missing ones degrade cleanly)
+npm test                                    # unit + contract + golden + integration
 npm run check:onboarding                    # the repeatability test
 ```
 
@@ -35,6 +47,7 @@ npm run check:onboarding                    # the repeatability test
 | **Verification by observation** | An action reaches `verified` only when a re-check passes |
 | **Config-only onboarding** | Enforced by `npm run check:onboarding` |
 | **Offline replay** | Full pipeline from cached fixtures, no keys |
+| **Tested** | 34 tests: unit, contract, golden detector, and a full-loop integration test against real Postgres |
 
 ### Verified end to end
 

@@ -34,10 +34,8 @@ export function ActionCard({
   action: ActionWithRelations
   deployAccess: boolean
 }) {
-  const criteria = JSON.parse(action.criteriaJson) as CriterionResult[]
-  const lastCheck = action.lastCheckJson
-    ? (JSON.parse(action.lastCheckJson) as CriterionResult[])
-    : null
+  const criteria = action.criteria as unknown as CriterionResult[]
+  const lastCheck = (action.lastCheck as unknown as CriterionResult[] | null) ?? null
   const results = lastCheck ?? criteria
   const passed = results.filter((c) => c.passed).length
 

@@ -1,3 +1,4 @@
+import type { Prisma } from '@prisma/client'
 import { prisma } from '../db'
 import { loadProperty } from './config'
 import { startLocalSite } from './localSite'
@@ -122,7 +123,7 @@ export async function verifyActions(domain: string): Promise<VerifyResult[]> {
 
   try {
     for (const action of actions) {
-      const criteria = JSON.parse(action.criteriaJson) as {
+      const criteria = action.criteria as unknown as {
         id: string
         description: string
         check: string
@@ -146,7 +147,7 @@ export async function verifyActions(domain: string): Promise<VerifyResult[]> {
         where: { id: action.id },
         data: {
           status,
-          lastCheckJson: JSON.stringify(evaluated),
+          lastCheck: evaluated as unknown as Prisma.InputJsonValue,
           verifiedAt: allPassed ? new Date() : null,
         },
       })

@@ -127,7 +127,7 @@ export async function make(snapshotId: string): Promise<MakeSummary> {
         kind: draft.suggestedAction.kind,
         title: draft.suggestedAction.title,
         spec: draft.suggestedAction.spec,
-        criteriaJson: JSON.stringify(draft.suggestedAction.criteria),
+        criteria: draft.suggestedAction.criteria,
         // Without deploy access an action can never honestly progress past
         // `proposed`, so it does not pretend to.
         status: autoApply ? 'approved' : 'proposed',
@@ -150,7 +150,7 @@ export async function make(snapshotId: string): Promise<MakeSummary> {
         body: asset.body,
         reviewState: autoApply ? 'approved' : 'in_review',
         producedBy: 'template',
-        qaJson: JSON.stringify({ generator: draft.suggestedAction.kind }),
+        qa: { generator: draft.suggestedAction.kind },
       },
     })
     summary.assetsGenerated++

@@ -6,15 +6,16 @@
 //  2. Snapshots are immutable. Trends, "what changed" and verification are all
 //     diffs between snapshots — nothing is updated in place.
 //
-// Enums live in lib/schemas.ts (Zod) rather than here: SQLite has no enum type,
-// and keeping one source of truth for entity shapes is the point.
+// Status and kind vocabularies live in lib/schemas.ts (Zod), which validates them
+// at every write. Keeping one source of truth beats duplicating them as database
+// enums, where every added value becomes a migration.
 
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -26,7 +27,7 @@ model Property {
   goal            String
   conversionRoute String
   publishingPolicy String  @default("review_first")
-  configJson      String // full validated config, for provenance
+  config          Json   // full validated config, for provenance
   createdAt       DateTime @default(now())
 
   snapshots     Snapshot[]
@@ -48,7 +49,7 @@ model Snapshot {
   /// engine version that produced it, so evidence semantics stay attributable
   engineVersion String
   /// adapters that failed or were skipped this run (degradation is recorded, not hidden)
-  degradedJson  String  @default("[]")
+  degradedAdapters  Json  @default("[]")
 
   property     Property      @relation(fields: [domain], references: [domain], onDelete: Cascade)
   pages        Page[]
@@ -73,7 +74,7 @@ model Page {
   h1         String?
   canonical  String?
   robotsMeta String?
-  schemaTypesJson String @default("[]")
+  schemaTypes Json @default("[]")
   internalLinks   Int    @default(0)
   wordCount       Int    @default(0)
   /// initial-HTML text length: AI crawlers do not execute JS, so this is the
@@ -119,7 +120,7 @@ model Evidence {
   /// measured | modeled | fixture — confidence multiplier in scoring
   tier       String
   /// the datum itself, shape depends on kind (validated by Zod on write)
-  valueJson  String
+  value  Json
   /// what it is about: a URL, a query, or the domain itself
   subject    String
   clusterId  String?
@@ -150,7 +151,7 @@ model Opportunity {
   title      String
   subject    String
   /// evidence ids that justify this row
-  evidenceIdsJson String
+  evidenceIds Json
   /// stored scoring factors — the UI renders the breakdown, nothing is a bare number
   impact     Float
   confidence Float
@@ -183,11 +184,11 @@ model Action {
   /// the instruction handed to a human or an asset maker
   spec          String
   /// [{ id, description, check }] — evaluated by collectors, not by a human ticking a box
-  criteriaJson  String
+  criteria  Json
   /// proposed | approved | executed | verified | failed | stopped
   status        String   @default("proposed")
   /// result of the last verification pass
-  lastCheckJson String?
+  lastCheck Json?
   verifiedAt    DateTime?
   createdAt     DateTime @default(now())
 
@@ -210,7 +211,7 @@ model Asset {
   reviewState String @default("draft")
   /// which model produced it, so learn-loop priors stay comparable
   producedBy String @default("template")
-  qaJson    String  @default("{}")
+  qa        Json    @default("{}")
   createdAt DateTime @default(now())
 
   action Action @relation(fields: [actionId], references: [id], onDelete: Cascade)

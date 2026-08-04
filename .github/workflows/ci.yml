@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    # The same Postgres the app runs against, so tests exercise real dialect
+    # behaviour (jsonb, cascades) rather than an approximation of it.
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: sge
+          POSTGRES_PASSWORD: sge_ci
+          POSTGRES_DB: sge_test
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U sge"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 20
+
+    env:
+      DATABASE_URL: postgresql://sge:sge_ci@localhost:5432/sge_test?schema=public
+      DATABASE_URL_TEST: postgresql://sge:sge_ci@localhost:5432/sge_test?schema=public
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npx prisma migrate deploy
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      # "Adding a property is config, not code" is a claim the build enforces.
+      - name: Onboarding guard
+        run: npm run check:onboarding
+
+      # Unit, contract, golden detector and full-loop integration tests.
+      # No network: every external response is replayed from a fixture.
+      - name: Tests
+        run: npm test
+
+      - name: Build
+        run: npm run build
