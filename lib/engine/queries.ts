@@ -109,7 +109,7 @@ export async function getProperty(domain: string) {
 
   return {
     property,
-    config: JSON.parse(property.configJson) as Record<string, unknown>,
+    config: property.config as Record<string, unknown>,
     latest,
     snapshots,
     opportunities,
@@ -126,7 +126,7 @@ export async function getProperty(domain: string) {
 export async function getEvidenceFor(opportunityId: string) {
   const opportunity = await prisma.opportunity.findUnique({ where: { id: opportunityId } })
   if (!opportunity) return null
-  const ids = JSON.parse(opportunity.evidenceIdsJson) as string[]
+  const ids = opportunity.evidenceIds as string[]
   const evidence = await prisma.evidence.findMany({ where: { id: { in: ids } } })
   return { opportunity, evidence }
 }

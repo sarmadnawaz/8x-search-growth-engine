@@ -26,5 +26,5 @@ export interface Detector {
 
 /** Evidence value payloads are stored as JSON; read them with the kind in hand. */
 export function value<T>(row: Evidence): T {
-  return JSON.parse(row.valueJson) as T
+  return row.value as T
 }

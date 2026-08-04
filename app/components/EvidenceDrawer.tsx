@@ -39,7 +39,7 @@ export async function EvidenceDrawer({ opportunityId }: { opportunityId: string 
             </div>
             <p className="text-muted-foreground mt-1.5 text-[11px] break-all">{e.subject}</p>
             <pre className="text-muted-foreground mt-2 max-h-40 overflow-auto text-[10px] whitespace-pre-wrap">
-              {JSON.stringify(JSON.parse(e.valueJson), null, 2)}
+              {JSON.stringify(e.value, null, 2)}
             </pre>
           </div>
         ))}

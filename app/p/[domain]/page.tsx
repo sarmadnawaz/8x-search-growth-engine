@@ -34,7 +34,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ domai
     changes,
     series,
   } = data
-  const degraded = latest ? (JSON.parse(latest.degradedJson) as string[]) : []
+  const degraded = latest ? ((latest.degradedAdapters as string[] | null) ?? []) : []
   const deployAccess = Boolean((config as { deployAccess?: boolean }).deployAccess)
   const markets = ((config as { markets?: unknown[] }).markets ?? []).length
 
