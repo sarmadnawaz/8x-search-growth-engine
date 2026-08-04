@@ -1,0 +1,12 @@
+{
+  "requestKey": "What is Cherly app?|cherly.app|sample2",
+  "fetchedAt": "2026-08-04T19:09:12.015Z",
+  "payload": {
+    "text": "Do you mean “Cherly,” the AI styling app? From what’s publicly visible, Cherly is an early-stage wardrobe app that lets you photograph your own clothes and then uses AI to build outfits from what you already own (no shopping feed). It’s been recruiting creators to make short-form videos about closet uploads, an “AI stylist” chat, and daily look reveals. ([reddit.com](https://www.reddit.com/r/UGCconnect/comments/1v82xdr/looking_for_content_creators_in_india_turkey_to/))\n\nIf you meant “Cheerly” (with two e’s), that’s a different app: an AI habit and mood coach focused on wellbeing. ([apps.apple.com](https://apps.apple.com/us/app/cheerly-ai-habit-mood-coach/id1516210099?utm_source=openai))\n\nWhich one were you asking about?",
+    "citations": [
+      "https://www.reddit.com/r/UGCconnect/comments/1v82xdr/looking_for_content_creators_in_india_turkey_to/",
+      "https://apps.apple.com/us/app/cheerly-ai-habit-mood-coach/id1516210099?utm_source=openai"
+    ],
+    "model": "gpt-5-2025-08-07"
+  }
+}

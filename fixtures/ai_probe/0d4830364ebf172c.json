@@ -1,0 +1,18 @@
+{
+  "requestKey": "Best app to organise my closet digitally|cherly.app|sample0",
+  "fetchedAt": "2026-08-04T19:04:46.077Z",
+  "payload": {
+    "text": "Great options depend on your phone, budget, and how much “auto-magic” you want. Quick picks:\n\n- iPhone, one-time purchase, rock‑solid basics: Stylebook. Mature, no subscription, strong outfit builder, packing lists, and stats. iOS only. ($4.99 one‑time.) ([apps.apple.com](https://apps.apple.com/us/app/stylebook/id335709058?utm_source=openai))\n- Best AI suggestions + big community (iOS/Android): Whering. Strong outfit generator, shuffle ideas, social feed; very active user base. Free to download; optional in‑app purchases. ([apps.apple.com](https://apps.apple.com/us/app/whering-your-digital-closet/id1519461680?platform=ipad&utm_source=openai))\n- Cross‑platform with web app and easy sync (free to start): GetWardrobe. Works on iOS, Android, web, and even macOS; good item cataloging, planner, and packing. ([getwardrobe.com](https://getwardrobe.com/?utm_source=openai))\n- Sustainability/care services built in: Save Your Wardrobe. Digitize clothes and book repairs, alterations, and eco‑cleaning from inside the app. (iOS/Android.) ([play.google.com](https://play.google.com/store/apps/details?hl=en_US&id=com.saveyourwardrobe.syw&utm_source=openai))\n- Fast setup + auto background removal: Smart Closet. Simple UI, stats, calendar; Pro adds backup/sync. (iOS/Android; Pro $0.99/mo or $9.99/yr on iOS.) ([apps.apple.com](https://apps.apple.com/us/app/smart-closet-your-stylist/id1198057728?utm_source=openai))\n- AI‑first with a generous free tier: Acloset. Great auto‑tagging and outfit ideas; free up to about 100 items, then premium plans for larger closets. (iOS/Android.) Pricing varies by country. ([apps.apple.com](https://apps.apple.com/by/app/acloset-ai-fashion-assistant/id1542311809?utm_source=openai))\n- Another solid cross‑platform option: OpenWardrobe. iOS, Android, and web access, with AI styling and sustainability features. ([openwardrobe.co](https://www.openwardrobe.co/faq?utm_source=openai))\n\nHow to choose fast\n- Add 10–15 items to two apps and see which one makes tagging, background removal, and outfit building feel easiest.\n- Check export/backup options before committing, and whether it works on all your devices (some are iOS‑only). ([stylebookapp.com](https://stylebookapp.com/faq.html?utm_source=openai))\n\nWant me to narrow it down? Tell me:\n1) iPhone or Android (or both)? \n2) Preference: one‑time purchase vs. subscription? \n3) Must‑haves (AI outfit ideas, calendar, packing lists, sustainability services, web access, etc.)?",
+    "citations": [
+      "https://apps.apple.com/us/app/stylebook/id335709058?utm_source=openai",
+      "https://apps.apple.com/us/app/whering-your-digital-closet/id1519461680?platform=ipad&utm_source=openai",
+      "https://getwardrobe.com/?utm_source=openai",
+      "https://play.google.com/store/apps/details?hl=en_US&id=com.saveyourwardrobe.syw&utm_source=openai",
+      "https://apps.apple.com/us/app/smart-closet-your-stylist/id1198057728?utm_source=openai",
+      "https://apps.apple.com/by/app/acloset-ai-fashion-assistant/id1542311809?utm_source=openai",
+      "https://www.openwardrobe.co/faq?utm_source=openai",
+      "https://stylebookapp.com/faq.html?utm_source=openai"
+    ],
+    "model": "gpt-5-2025-08-07"
+  }
+}

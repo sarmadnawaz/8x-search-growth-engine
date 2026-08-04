@@ -1,0 +1,17 @@
+{
+  "requestKey": "Best app to organise my closet digitally|cherly.app|sample2",
+  "fetchedAt": "2026-08-04T19:06:34.936Z",
+  "payload": {
+    "text": "Here are the best closet-organizer apps right now, with quick “pick this if…” guidance:\n\n- Stylebook (iPhone/iPad)\n  - Best for power users who want a mature, no‑nonsense toolkit: fast import with AI background removal, outfit builder, calendar, packing lists, and style stats. Recently updated (“Stylebook 10”), now with iCloud sync. Pick if you’re OK with a paid iOS app and want reliability over social features. ([apps.apple.com](https://apps.apple.com/us/app/stylebook/id335709058))\n\n- Acloset (iOS + Android)\n  - Best free-to-start, AI‑heavy option: auto‑tags items (color, category, season), generates outfits, and helps track your wardrobe habits. Cross‑platform, modern UI. Pick if you want strong automation and minimal manual entry. ([acloset.app](https://www.acloset.app/?utm_source=openai))\n\n- Whering (iOS + Android)\n  - Best for sustainability + community: digital closet, AI outfit ideas, cost‑per‑wear and planning, plus a social/inspo feel. Pick if you like moodboards, sharing, and a “Cher from Clueless” vibe. ([whering.co](https://www.whering.co/?utm_source=openai))\n\n- Cladwell (iOS, Android)\n  - Best for capsule‑wardrobe fans: daily outfits from your pieces, weather‑aware suggestions, dedicated “capsules” for seasons and trips. Subscription model. Pick if you want to simplify dressing with curated capsules. ([apps.apple.com](https://apps.apple.com/us/app/cladwell-outfit-planner/id1140550878?utm_source=openai))\n\n- Smart Closet (iOS + Android)\n  - Best simple and budget‑friendly: straightforward cataloging, outfit planning, and backup/sync; inexpensive Pro subscription if you want cross‑device sync. Pick if you want basic features with minimal cost. ([apps.apple.com](https://apps.apple.com/us/app/smart-closet-your-stylist/id1198057728?utm_source=openai))\n\n- OpenWardrobe (iOS + Android)\n  - Best for care and longevity: organizes your closet and outfits, and uniquely integrates alterations/repairs you can request in‑app. Pick if extending garment life is a priority. ([apps.apple.com](https://apps.apple.com/us/app/openwardrobe/id1549029468?utm_source=openai))\n\nIf you want a desktop/web companion too, GetWardrobe is worth a look; it supports web importing and weather‑aware planning in addition to the mobile apps. ([help.getwardrobe.com](https://help.getwardrobe.com/latest/features/?utm_source=openai))\n\nWant me to narrow this to 1–2 perfect picks? Tell me:\n- iPhone or Android?\n- Prefer free or OK with a paid/subscription app?\n- Must‑have features (AI outfit suggestions, packing lists, cost‑per‑wear, calendar/weather, resale/repair integration)?",
+    "citations": [
+      "https://apps.apple.com/us/app/stylebook/id335709058",
+      "https://www.acloset.app/?utm_source=openai",
+      "https://www.whering.co/?utm_source=openai",
+      "https://apps.apple.com/us/app/cladwell-outfit-planner/id1140550878?utm_source=openai",
+      "https://apps.apple.com/us/app/smart-closet-your-stylist/id1198057728?utm_source=openai",
+      "https://apps.apple.com/us/app/openwardrobe/id1549029468?utm_source=openai",
+      "https://help.getwardrobe.com/latest/features/?utm_source=openai"
+    ],
+    "model": "gpt-5-2025-08-07"
+  }
+}

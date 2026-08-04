@@ -1,0 +1,18 @@
+{
+  "requestKey": "What is the best envelope budgeting app?|pocketpal.me|sample1",
+  "fetchedAt": "2026-08-04T19:13:43.282Z",
+  "payload": {
+    "text": "Short answer: there isn’t one “best” for everyone, but for most people who want true envelope/zero‑based budgeting with automation, YNAB is the best overall pick. It’s built around the envelope method (“give every dollar a job”), has excellent goal/credit‑card handling and education, and is actively maintained. Pricing as of today: $14.99/month or $109/year after a 34‑day free trial. ([ynab.com](https://www.ynab.com/guide/where-does-my-money-go?utm_source=openai))\n\nGreat alternatives depending on what you value\n- Best free/manual envelopes: Goodbudget. Classic envelope workflow; generous forever‑free tier and an inexpensive Plus plan (adds bank sync and unlimited envelopes). Free: 10 envelopes/1 account; Plus: $10/month or $80/year. ([goodbudget.com](https://goodbudget.com/signup?source=supermoney-reviews-reviews&utm_source=openai))  \n- Most “cash‑envelope” feel without switching banks: Qube Money (Qube+). Uses digital “qubes” and a “pre‑qube” step so you decide before you spend; note the current product is an app that works with your existing accounts (the old Qube Checking debit‑card setup is legacy/not available). ([qubemoney.com](https://qubemoney.com/faqs/))\n- Privacy‑first, local‑first envelopes (open‑source feel): Actual Budget. Envelope/zero‑based method, works offline, optional self‑hosted sync; supports bank sync via SimpleFIN/GoCardless. ([actualbudget.org](https://actualbudget.org/))\n- Cheapest paid app that still does envelopes well: Buckets. Straightforward envelope (“bucket”) system with very low pricing (Free tier to try; Unlimited is $4/month billed annually, or $149 lifetime). ([buckets.money](https://buckets.money/))\n- Zero‑based “Ramsey” style with a simpler UI: EveryDollar. Free plan for manual entry; Premium adds bank sync/automation ($17.99/month or $79.99/year). ([apps.apple.com](https://apps.apple.com/us/app/everydollar-budget-management/id942571931?platform=ipad&utm_source=openai))\n\nIf you tell me your priorities (free vs. paid, manual vs. auto‑sync, sharing with a partner, privacy, or “decide‑before‑spending” rigor), I can narrow this to the single best choice for you. For a quick rule of thumb: pick YNAB if you want the most polished, automated envelope experience; pick Goodbudget if you want free, simple envelopes; pick Qube if you want that intentional “approve before you buy” habit; pick Actual if you want control and privacy; pick Buckets if you want the lowest long‑term cost. ([ynab.com](https://www.ynab.com/pricing/))\n\nIndependent roundups still highlight envelope‑style apps like Goodbudget and YNAB among the best budgeting tools in 2026, which can help if you want third‑party overviews. ([nerdwallet.com](https://www.nerdwallet.com/finance/learn/best-budget-apps?msockid=3e50c2b8a94865f60f97d4c5a8e2647d&utm_source=openai))",
+    "citations": [
+      "https://www.ynab.com/guide/where-does-my-money-go?utm_source=openai",
+      "https://goodbudget.com/signup?source=supermoney-reviews-reviews&utm_source=openai",
+      "https://qubemoney.com/faqs/",
+      "https://actualbudget.org/",
+      "https://buckets.money/",
+      "https://apps.apple.com/us/app/everydollar-budget-management/id942571931?platform=ipad&utm_source=openai",
+      "https://www.ynab.com/pricing/",
+      "https://www.nerdwallet.com/finance/learn/best-budget-apps?msockid=3e50c2b8a94865f60f97d4c5a8e2647d&utm_source=openai"
+    ],
+    "model": "gpt-5-2025-08-07"
+  }
+}

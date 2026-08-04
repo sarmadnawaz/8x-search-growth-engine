@@ -1,0 +1,9 @@
+{
+  "requestKey": "What is Sway app?|sway.day|sample1",
+  "fetchedAt": "2026-08-04T19:25:06.137Z",
+  "payload": {
+    "text": "“Sway” could refer to a few different apps. Which one do you mean?\n\n- Microsoft Sway (most common): A browser-based presentation/storytelling tool in Microsoft 365 for making interactive reports, newsletters, and web pages you share via a link. It auto-formats content and supports collaboration.\n- Sway Medical: A health app used by clinicians/athletes to assess balance and reaction time using a phone’s motion sensors.\n- Something else (e.g., the Linux “sway” window manager isn’t an app but a desktop compositor).\n\nIf you tell me which Sway you’re asking about, I can give details or how-to steps.",
+    "citations": [],
+    "model": "gpt-5-2025-08-07"
+  }
+}

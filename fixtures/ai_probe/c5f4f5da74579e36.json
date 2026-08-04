@@ -1,0 +1,18 @@
+{
+  "requestKey": "Best budgeting app for irregular income|pocketpal.me|sample0",
+  "fetchedAt": "2026-08-04T19:16:28.275Z",
+  "payload": {
+    "text": "A great budgeting app for irregular income should let you budget only the money you have, handle “lumpy” cash flow, and make it easy to roll money forward. Top picks, with why:\n\n- YNAB (You Need A Budget): Zero‑based “give every dollar a job,” excellent for sinking funds and budgeting only the cash on hand; they even publish an irregular‑income playbook. ([ynab.com](https://www.ynab.com/features?utm_source=openai))\n- PocketSmith: Powerful cash‑flow calendar and long‑range forecasts; supports rollover budgets to smooth good and lean months. ([learn.pocketsmith.com](https://learn.pocketsmith.com/article/506-calendar-forecasting?utm_source=openai))\n- Tiller: Spreadsheet‑based and ultra‑flexible—great if your income sources vary and you want custom sheets for freelance/seasonal work; auto‑feeds into Google Sheets/Excel. ([tiller.com](https://tiller.com/how-tiller-works/?utm_source=openai))\n- Monarch Money: Modern, shared budgeting with rollover and “flex” budgets plus goals—helpful when income isn’t consistent. ([help.monarch.com](https://help.monarch.com/hc/en-us/articles/4411119762196?utm_source=openai))\n- Quicken Simplifi: Clear projected cash‑flow view so you can see future balances by date—useful when paychecks are unpredictable. ([support.simplifi.quicken.com](https://support.simplifi.quicken.com/en/articles/3357429-using-projected-cash-flow?utm_source=openai))\n- Goodbudget: Simple envelope budgeting; works well even without bank linking (manual entry), with optional sync on paid plans. ([goodbudget.com](https://goodbudget.com/help/?utm_source=openai))\n- Copilot Money: Apple‑centric with strong cash‑flow and auto‑categorization—nice if you want quick visibility plus basic budgets. ([help.copilot.money](https://help.copilot.money/en/articles/9682232-cash-flow-tab-overview?utm_source=openai))\n\nQuick chooser:\n- Want the strongest system for variable pay? Pick YNAB. ([ynab.com](https://www.ynab.com/guide/irregular-income?utm_source=openai))\n- Prefer forecasting “what will my balance be on X date?” Try PocketSmith or Simplifi. ([learn.pocketsmith.com](https://learn.pocketsmith.com/article/506-calendar-forecasting?utm_source=openai))\n- Love spreadsheets and total control? Go with Tiller. ([tiller.com](https://tiller.com/how-tiller-works/?utm_source=openai))\n- Budgeting with a partner and like rollovers? Try Monarch. ([help.monarch.com](https://help.monarch.com/hc/en-us/articles/4411119762196?utm_source=openai))\n- Need manual, envelope‑style on a budget? Goodbudget. ([goodbudget.com](https://goodbudget.com/help/?utm_source=openai))\n\nIf you share your platform (iOS/Android/web), whether you want automatic bank sync, and if you’re budgeting solo or with a partner, I can narrow it to one best fit and a quick setup plan.",
+    "citations": [
+      "https://www.ynab.com/features?utm_source=openai",
+      "https://learn.pocketsmith.com/article/506-calendar-forecasting?utm_source=openai",
+      "https://tiller.com/how-tiller-works/?utm_source=openai",
+      "https://help.monarch.com/hc/en-us/articles/4411119762196?utm_source=openai",
+      "https://support.simplifi.quicken.com/en/articles/3357429-using-projected-cash-flow?utm_source=openai",
+      "https://goodbudget.com/help/?utm_source=openai",
+      "https://help.copilot.money/en/articles/9682232-cash-flow-tab-overview?utm_source=openai",
+      "https://www.ynab.com/guide/irregular-income?utm_source=openai"
+    ],
+    "model": "gpt-5-2025-08-07"
+  }
+}

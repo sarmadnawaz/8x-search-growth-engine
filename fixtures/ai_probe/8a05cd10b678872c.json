@@ -1,0 +1,12 @@
+{
+  "requestKey": "What is PocketPal budget app?|pocketpal.me|sample0",
+  "fetchedAt": "2026-08-04T19:18:54.300Z",
+  "payload": {
+    "text": "PocketPal is the name of more than one budgeting app. The two you’re most likely seeing are:\n\n- PocketPal Budget (iOS, by 8x Social, Inc.)\n  - Envelope-style budgeting: you put money into “envelopes” (e.g., Groceries), then log spending against each.\n  - Receipt scanning to auto‑capture merchant, amount, and date; designed for manual tracking rather than bank linking.\n  - Pay‑cycle budgeting, reminders for bills, widgets, dark mode; iPhone only.\n  - Pricing listed in‑app: Weekly $2.99, Monthly $5.99, Annual $39.99 with a 7‑day trial on the annual plan. ([apps.apple.com](https://apps.apple.com/us/app/pocketpal-budget/id6771015224))\n\n- PocketPal: Budget & Expense (Android, by Bright Wizard)\n  - General money manager with budget planning, expense tracking, reports, multi‑currency support, an AI receipt scanner, voice expense entry, and optional family/couples sync.\n  - Works offline with data encrypted in transit; last updated July 5, 2026 (v4.0.8). ([play.google.com](https://play.google.com/store/apps/details?hl=en&id=com.bewanderalabs.pocketpal))\n\nIf you had a specific one in mind, tell me iOS or Android and I can dive into features or how it compares to other budgeting apps.",
+    "citations": [
+      "https://apps.apple.com/us/app/pocketpal-budget/id6771015224",
+      "https://play.google.com/store/apps/details?hl=en&id=com.bewanderalabs.pocketpal"
+    ],
+    "model": "gpt-5-2025-08-07"
+  }
+}

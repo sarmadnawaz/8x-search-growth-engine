@@ -1,0 +1,14 @@
+{
+  "requestKey": "What is Cherly app?|cherly.app|sample0",
+  "fetchedAt": "2026-08-04T19:07:04.760Z",
+  "payload": {
+    "text": "Do you mean Cherly (C‑H‑E‑R‑L‑Y)? Public info is sparse, but Cherly appears to be an early AI wardrobe app that has you photograph your own clothes and then builds outfits from your existing closet (no shopping ads). ([reddit.com](https://www.reddit.com/r/UGCconnect/comments/1v82xdr/looking_for_content_creators_in_india_turkey_to/))\n\nIf you meant something else with a similar name:\n- Cheerly (with two e’s) is an AI wellbeing app for habits, mood tracking, and reflections. ([cheerly.app](https://www.cheerly.app/?utm_source=openai))\n- Cherry AI is an “unfiltered” AI companion/chat app. ([cherry.ai](https://cherry.ai/?utm_source=openai))\n- Cherii (on iOS) is another AI wardrobe/outfit app. ([apps.apple.com](https://apps.apple.com/us/app/cherii/id6758729812?utm_source=openai))\n\nWhich one were you asking about?",
+    "citations": [
+      "https://www.reddit.com/r/UGCconnect/comments/1v82xdr/looking_for_content_creators_in_india_turkey_to/",
+      "https://www.cheerly.app/?utm_source=openai",
+      "https://cherry.ai/?utm_source=openai",
+      "https://apps.apple.com/us/app/cherii/id6758729812?utm_source=openai"
+    ],
+    "model": "gpt-5-2025-08-07"
+  }
+}

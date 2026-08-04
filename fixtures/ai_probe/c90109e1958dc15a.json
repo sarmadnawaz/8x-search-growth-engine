@@ -1,0 +1,9 @@
+{
+  "requestKey": "What is Sway app?|sway.day|sample0",
+  "fetchedAt": "2026-08-04T19:24:53.822Z",
+  "payload": {
+    "text": "Do you mean Microsoft Sway? If so:\n\n- What it is: A web-based storytelling/presentation tool from Microsoft 365 for creating interactive reports, newsletters, portfolios, and presentations that look good on phones and desktops.\n- How it works: You add “cards” of text, images, video, or embeds; Sway’s design engine handles layout and styling automatically, so you focus on content.\n- Sharing: You share a web link (with view/edit permissions you choose) instead of emailing files.\n- How it differs from PowerPoint: It’s web-first and scrollable/responsive rather than slide-by-slide; great for digital reports and quick, polished narratives.\n- How to use: Sign in with a Microsoft account in a browser (the old mobile apps were retired).\n\nIf you meant a different “Sway” (for example, the Linux “sway” window manager, or another mobile app named Sway), tell me which one and I’ll tailor the answer.",
+    "citations": [],
+    "model": "gpt-5-2025-08-07"
+  }
+}

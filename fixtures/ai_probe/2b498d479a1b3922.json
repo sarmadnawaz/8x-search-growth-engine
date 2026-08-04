@@ -1,0 +1,15 @@
+{
+  "requestKey": "What is the best AI stylist app?|cherly.app|sample2",
+  "fetchedAt": "2026-08-04T19:02:22.146Z",
+  "payload": {
+    "text": "Short answer: there isn’t one “best” AI stylist for everyone—the right pick depends on whether you want help styling what you already own, getting a color/fit analysis, or shopping new pieces.\n\n- ACloset (best all‑around for styling what you own): digitize your closet, chat with an AI stylist for weather/occasion‑aware outfits, and use a built‑in virtual try‑on; the team ships frequent updates. ([play.google.com](https://play.google.com/store/apps/details?hl=en-US&id=com.looko.acloset&utm_source=openai))\n- StyleDNA (best for color/body analysis + guidance): offers personal color and body‑type analysis with a style guide and daily outfit ideas generated from your closet. ([apps.apple.com](https://apps.apple.com/us/app/style-dna-ai-color-analysis/id1358319821?utm_source=openai))\n- Whering (best for social wardrobe + sustainability vibes): a “social wardrobe and styling app” with a Dress‑Me outfit builder and a large user base cited in mainstream press. ([whering.co](https://www.whering.co/?utm_source=openai))\n- Pronti (best for quick daily outfits): fast closet uploads (photos, gallery, store images) and an AI outfit planner/diary; available on iOS and Android. ([apps.apple.com](https://apps.apple.com/us/app/pronti-style-ai-outfit-maker/id1560004583?utm_source=openai))\n- Cladwell (best for capsule wardrobe routines): built around capsules with AI suggestions and endless outfit recommendations. ([apps.apple.com](https://apps.apple.com/us/app/cladwell-outfit-planner/id1140550878?platform=ipad&utm_source=openai))\n\nIf you tell me which you care about most—closet digitizing, color/fit analysis, or shopping recs—and whether you’re on iPhone or Android, I can narrow this to one or two “best for you” picks.",
+    "citations": [
+      "https://play.google.com/store/apps/details?hl=en-US&id=com.looko.acloset&utm_source=openai",
+      "https://apps.apple.com/us/app/style-dna-ai-color-analysis/id1358319821?utm_source=openai",
+      "https://www.whering.co/?utm_source=openai",
+      "https://apps.apple.com/us/app/pronti-style-ai-outfit-maker/id1560004583?utm_source=openai",
+      "https://apps.apple.com/us/app/cladwell-outfit-planner/id1140550878?platform=ipad&utm_source=openai"
+    ],
+    "model": "gpt-5-2025-08-07"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "requestKey": "What is the best AI stylist app?|cherly.app|sample0",
+  "fetchedAt": "2026-08-04T19:00:09.778Z",
+  "payload": {
+    "text": "Short answer: “Best” depends on what you want the stylist to do. Here are strong, current picks by goal:\n\n- Style what you already own (closet-first, free-friendly): Acloset. Digitize your wardrobe, get AI outfit ideas, and use Style Chat; recent updates added color/fit analysis and expanded shop-imports. iOS/Android. ([apps.apple.com](https://apps.apple.com/us/app/acloset-ai-fashion-assistant/id1542311809?utm_source=openai))\n- Closet + social inspiration: Whering. A “social wardrobe” with styling tools and community looks. iOS/Android. ([whering.co](https://www.whering.co/?utm_source=openai))\n- Color/body/style analysis with daily outfits: Style DNA. Emphasizes personal color and body-type profiling plus AI-styled daily looks. iOS/Android. ([apps.apple.com](https://apps.apple.com/us/app/style-dna-ai-color-analysis/id1358319821?utm_source=openai))\n- Capsule wardrobe planning and weather-aware outfits: Cladwell. Capsule-focused app; shows daily recommendations and now touts AI-assisted advice. iOS/Android. ([cladwell.com](https://cladwell.com/app?utm_source=openai))\n- Quick AI outfit maker + chat: Pronti. Closet-aware outfit generator with an in-app AI stylist (PAI). iOS/Android. ([pronti.com](https://www.pronti.com/outfit-maker-with-your-clothes/?utm_source=openai))\n- If you want new pieces shipped, not just advice: Stitch Fix pairs algorithms and human stylists; added GenAI-assisted tools in 2025. US-focused. ([en.wikipedia.org](https://en.wikipedia.org/wiki/Stitch_Fix?utm_source=openai))\n\nHow to choose fast\n- Will you photograph your clothes? If not, pick shopping-first options (e.g., Stitch Fix). If yes, closet-first apps (Acloset, Whering, Cladwell, Pronti) shine.\n- Must-have features: weather/context-aware outfits, color/body analysis, or community inspiration.\n- Cost and data: check free tiers and what photos or purchase data you’ll share in each app’s settings.\n\nTell me:\n1) Do you want outfits from your own closet, new shopping recommendations, or both?\n2) iOS or Android, and any budget limits?\nI’ll narrow it to one or two “best for you” picks.",
+    "citations": [
+      "https://apps.apple.com/us/app/acloset-ai-fashion-assistant/id1542311809?utm_source=openai",
+      "https://www.whering.co/?utm_source=openai",
+      "https://apps.apple.com/us/app/style-dna-ai-color-analysis/id1358319821?utm_source=openai",
+      "https://cladwell.com/app?utm_source=openai",
+      "https://www.pronti.com/outfit-maker-with-your-clothes/?utm_source=openai",
+      "https://en.wikipedia.org/wiki/Stitch_Fix?utm_source=openai"
+    ],
+    "model": "gpt-5-2025-08-07"
+  }
+}
