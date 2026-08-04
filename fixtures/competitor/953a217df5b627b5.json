@@ -1,0 +1,8 @@
+{
+  "requestKey": "https://acloset.app/robots.txt",
+  "fetchedAt": "2026-08-04T18:35:19.759Z",
+  "payload": {
+    "status": 200,
+    "body": "User-agent: *\nAllow: /\n\n# AI Crawlers — explicitly allowed for LLM training and retrieval\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nUser-agent: Googlebot\nAllow: /\n\nUser-agent: Bingbot\nAllow: /\n\nUser-agent: anthropic-ai\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: Bytespider\nAllow: /\n\nUser-agent: cohere-ai\nAllow: /\n\nSitemap: https://www.acloset.app/sitemap-index.xml\n"
+  }
+}

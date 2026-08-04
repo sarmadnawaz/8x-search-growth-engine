@@ -1,0 +1,322 @@
+{
+  "generatedAt": "2026-08-04T18:46:51.471Z",
+  "mode": "live",
+  "crawl": {
+    "maxPages": 6,
+    "requestsPerSecond": 1
+  },
+  "reports": [
+    {
+      "domain": "8x.social",
+      "name": "8x Creators",
+      "note": "flagship — managed creator network, ships 18 locales",
+      "reachable": true,
+      "pagesCrawled": 6,
+      "facts": {
+        "robots_txt_present": 1,
+        "sitemap_present": 1,
+        "title_too_long": 2
+      },
+      "robots": {
+        "present": true,
+        "referencesSitemap": true,
+        "blocksAiSearchBots": false
+      },
+      "sitemapUrls": 1104,
+      "findings": [
+        {
+          "title": "title over 60 characters on 2 of 6 crawled pages",
+          "score": 0.13,
+          "blocker": false
+        }
+      ]
+    },
+    {
+      "domain": "heyluma.app",
+      "name": "Luma: Talk it Out",
+      "reachable": true,
+      "pagesCrawled": 6,
+      "facts": {
+        "robots_txt_present": 1,
+        "sitemap_present": 1,
+        "canonical_missing": 6,
+        "h1_missing": 4,
+        "schema_missing": 4
+      },
+      "robots": {
+        "present": true,
+        "referencesSitemap": true,
+        "blocksAiSearchBots": false
+      },
+      "sitemapUrls": 18,
+      "findings": [
+        {
+          "title": "canonical link missing on 6 of 6 crawled pages",
+          "score": 0.75,
+          "blocker": false
+        },
+        {
+          "title": "structured data missing on 4 of 6 crawled pages",
+          "score": 0.5,
+          "blocker": false
+        },
+        {
+          "title": "h1 missing on 4 of 6 crawled pages",
+          "score": 0.4,
+          "blocker": false
+        }
+      ]
+    },
+    {
+      "domain": "steadiapp.co",
+      "name": "Steadi: Freelancer Budget",
+      "note": "same category as pocketpal.me — arbitration candidate",
+      "reachable": true,
+      "pagesCrawled": 6,
+      "facts": {
+        "robots_txt_present": 1,
+        "sitemap_present": 1,
+        "h1_missing": 6,
+        "canonical_missing": 6,
+        "schema_missing": 6
+      },
+      "robots": {
+        "present": true,
+        "referencesSitemap": true,
+        "blocksAiSearchBots": false
+      },
+      "sitemapUrls": 7,
+      "findings": [
+        {
+          "title": "canonical link missing on 6 of 6 crawled pages",
+          "score": 0.75,
+          "blocker": false
+        },
+        {
+          "title": "structured data missing on 6 of 6 crawled pages",
+          "score": 0.75,
+          "blocker": false
+        },
+        {
+          "title": "h1 missing on 6 of 6 crawled pages",
+          "score": 0.6,
+          "blocker": false
+        }
+      ]
+    },
+    {
+      "domain": "ingatikrecall.com",
+      "name": "Ingatik: Recall",
+      "reachable": true,
+      "pagesCrawled": 6,
+      "facts": {
+        "robots_txt_missing": 1,
+        "sitemap_missing": 1,
+        "schema_missing": 6,
+        "h1_missing": 1
+      },
+      "robots": {
+        "present": false,
+        "referencesSitemap": false,
+        "blocksAiSearchBots": false
+      },
+      "sitemapUrls": 0,
+      "findings": [
+        {
+          "title": "robots.txt missing",
+          "score": 2.5,
+          "blocker": false
+        },
+        {
+          "title": "XML sitemap missing",
+          "score": 2.5,
+          "blocker": false
+        },
+        {
+          "title": "structured data missing on 6 of 6 crawled pages",
+          "score": 0.75,
+          "blocker": false
+        },
+        {
+          "title": "h1 missing on 1 of 6 crawled pages",
+          "score": 0.1,
+          "blocker": false
+        }
+      ]
+    },
+    {
+      "domain": "getlaut.app",
+      "name": "Laut: PDF Text to Speech",
+      "reachable": true,
+      "pagesCrawled": 6,
+      "facts": {
+        "robots_txt_present": 1,
+        "sitemap_present": 1,
+        "h1_missing": 6,
+        "canonical_missing": 6,
+        "schema_missing": 6
+      },
+      "robots": {
+        "present": true,
+        "referencesSitemap": true,
+        "blocksAiSearchBots": false
+      },
+      "sitemapUrls": 6,
+      "findings": [
+        {
+          "title": "canonical link missing on 6 of 6 crawled pages",
+          "score": 0.75,
+          "blocker": false
+        },
+        {
+          "title": "structured data missing on 6 of 6 crawled pages",
+          "score": 0.75,
+          "blocker": false
+        },
+        {
+          "title": "h1 missing on 6 of 6 crawled pages",
+          "score": 0.6,
+          "blocker": false
+        }
+      ]
+    },
+    {
+      "domain": "brawnix.fitness",
+      "name": "Brawnix",
+      "reachable": true,
+      "pagesCrawled": 5,
+      "facts": {
+        "robots_txt_present": 1,
+        "sitemap_present": 1,
+        "canonical_missing": 5,
+        "schema_missing": 5
+      },
+      "robots": {
+        "present": true,
+        "referencesSitemap": true,
+        "blocksAiSearchBots": false
+      },
+      "sitemapUrls": 5,
+      "findings": [
+        {
+          "title": "canonical link missing on 5 of 5 crawled pages",
+          "score": 0.75,
+          "blocker": false
+        },
+        {
+          "title": "structured data missing on 5 of 5 crawled pages",
+          "score": 0.75,
+          "blocker": false
+        }
+      ]
+    },
+    {
+      "domain": "ledgxa.com",
+      "name": "Ledgexa: Invoice & Get Paid",
+      "reachable": true,
+      "pagesCrawled": 6,
+      "facts": {
+        "robots_txt_present": 1,
+        "sitemap_present": 1,
+        "h1_missing": 6,
+        "canonical_missing": 6,
+        "schema_missing": 6
+      },
+      "robots": {
+        "present": true,
+        "referencesSitemap": true,
+        "blocksAiSearchBots": false
+      },
+      "sitemapUrls": 6,
+      "findings": [
+        {
+          "title": "canonical link missing on 6 of 6 crawled pages",
+          "score": 0.75,
+          "blocker": false
+        },
+        {
+          "title": "structured data missing on 6 of 6 crawled pages",
+          "score": 0.75,
+          "blocker": false
+        },
+        {
+          "title": "h1 missing on 6 of 6 crawled pages",
+          "score": 0.6,
+          "blocker": false
+        }
+      ]
+    },
+    {
+      "domain": "alaria.app",
+      "name": "Alaria",
+      "note": "launched 2026-08-03, the day before the assignment — the cold-start case",
+      "reachable": true,
+      "pagesCrawled": 6,
+      "facts": {
+        "robots_txt_present": 1,
+        "sitemap_present": 1,
+        "h1_missing": 6,
+        "canonical_missing": 6,
+        "schema_missing": 6
+      },
+      "robots": {
+        "present": true,
+        "referencesSitemap": true,
+        "blocksAiSearchBots": false
+      },
+      "sitemapUrls": 6,
+      "findings": [
+        {
+          "title": "canonical link missing on 6 of 6 crawled pages",
+          "score": 0.75,
+          "blocker": false
+        },
+        {
+          "title": "structured data missing on 6 of 6 crawled pages",
+          "score": 0.75,
+          "blocker": false
+        },
+        {
+          "title": "h1 missing on 6 of 6 crawled pages",
+          "score": 0.6,
+          "blocker": false
+        }
+      ]
+    },
+    {
+      "domain": "falia.app",
+      "name": "Falia",
+      "note": "Android only",
+      "reachable": true,
+      "pagesCrawled": 6,
+      "facts": {
+        "robots_txt_missing": 1,
+        "sitemap_missing": 1,
+        "schema_missing": 6
+      },
+      "robots": {
+        "present": false,
+        "referencesSitemap": false,
+        "blocksAiSearchBots": false
+      },
+      "sitemapUrls": 0,
+      "findings": [
+        {
+          "title": "robots.txt missing",
+          "score": 2.5,
+          "blocker": false
+        },
+        {
+          "title": "XML sitemap missing",
+          "score": 2.5,
+          "blocker": false
+        },
+        {
+          "title": "structured data missing on 6 of 6 crawled pages",
+          "score": 0.75,
+          "blocker": false
+        }
+      ]
+    }
+  ]
+}

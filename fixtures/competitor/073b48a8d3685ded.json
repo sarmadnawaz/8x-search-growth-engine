@@ -1,0 +1,8 @@
+{
+  "requestKey": "https://indyx.com/robots.txt",
+  "fetchedAt": "2026-08-04T18:35:20.814Z",
+  "payload": {
+    "status": 200,
+    "body": "User-agent: *\nAllow: /\nLLM-Policy: /llms.txt\nSitemap: /sitemap.xml"
+  }
+}

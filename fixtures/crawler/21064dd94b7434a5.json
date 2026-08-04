@@ -1,0 +1,10 @@
+{
+  "requestKey": "https://steadiapp.co/robots.txt",
+  "fetchedAt": "2026-08-04T18:42:00.280Z",
+  "payload": {
+    "url": "https://steadiapp.co/robots.txt",
+    "status": 200,
+    "body": "User-Agent: *\nAllow: /\nDisallow: /admin\nDisallow: /api\n\nSitemap: https://steadiapp.co/sitemap.xml\n",
+    "contentType": "text/plain"
+  }
+}

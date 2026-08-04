@@ -1,0 +1,10 @@
+{
+  "requestKey": "https://ledgxa.com/robots.txt",
+  "fetchedAt": "2026-08-04T18:44:39.725Z",
+  "payload": {
+    "url": "https://ledgxa.com/robots.txt",
+    "status": 200,
+    "body": "User-Agent: *\nAllow: /\nDisallow: /admin\nDisallow: /api\n\nSitemap: https://ledgxa.com/sitemap.xml\n",
+    "contentType": "text/plain"
+  }
+}

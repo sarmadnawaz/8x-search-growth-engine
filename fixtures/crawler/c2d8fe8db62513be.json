@@ -1,0 +1,10 @@
+{
+  "requestKey": "https://alaria.app/robots.txt",
+  "fetchedAt": "2026-08-04T18:46:29.921Z",
+  "payload": {
+    "url": "https://alaria.app/robots.txt",
+    "status": 200,
+    "body": "User-Agent: *\nAllow: /\nDisallow: /admin\nDisallow: /api\n\nSitemap: https://alaria.app/sitemap.xml\n",
+    "contentType": "text/plain"
+  }
+}

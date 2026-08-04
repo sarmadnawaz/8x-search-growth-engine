@@ -1,0 +1,8 @@
+{
+  "requestKey": "https://www.acloset.app/sitemap-index.xml",
+  "fetchedAt": "2026-08-04T18:35:19.924Z",
+  "payload": {
+    "status": 200,
+    "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"><sitemap><loc>https://www.acloset.app/sitemap-0.xml</loc></sitemap></sitemapindex>"
+  }
+}

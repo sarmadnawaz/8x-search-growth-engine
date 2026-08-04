@@ -24,11 +24,15 @@ export interface LlmProvider {
   /** null when usable, otherwise why it is not */
   unavailableReason(): string | null
   /**
-   * Answer with live web search. Grounding is not optional for the probe:
-   * every 8x property post-dates any model's training cutoff, so an ungrounded
-   * model cannot cite them however well the property performs. An ungrounded
-   * probe would measure parametric memory and report a permanent zero.
+   * Whether this provider can answer with live web search.
+   *
+   * The probe treats this as a hard requirement rather than a nice-to-have.
+   * Every property here launched after any model's training cutoff, so an
+   * ungrounded model cannot cite them however well they perform: the probe
+   * would report a permanent zero and look like a working metric. A provider
+   * that cannot ground is not a degraded probe, it is a wrong one.
    */
+  supportsGrounding(): boolean
   answerGrounded(prompt: string): Promise<GroundedAnswer>
   /** Draft against a schema; the caller validates and may reject. */
   generateObject<T>(args: {
@@ -40,151 +44,133 @@ export interface LlmProvider {
 }
 
 // ---------------------------------------------------------------------------
-// OpenAI (Responses API). `web_search` is what makes the probe meaningful.
+// Vercel AI Gateway — one key, many providers, OpenAI-compatible surface.
 // ---------------------------------------------------------------------------
 
-const OPENAI_URL = 'https://api.openai.com/v1/responses'
+const GATEWAY_URL = 'https://ai-gateway.vercel.sh/v1/chat/completions'
 
-interface ResponsesOutputContent {
-  type: string
-  text?: string
-  annotations?: { type: string; url?: string }[]
+/** Models are `provider/model`; the gateway routes on the prefix. */
+const DEFAULT_MODEL = 'google/gemini-2.5-flash'
+
+interface ChatChoice {
+  message?: {
+    content?: string
+    annotations?: { url_citation?: { url: string } }[]
+  }
 }
 
-interface ResponsesPayload {
+interface ChatResponse {
   model?: string
-  output?: { type: string; content?: ResponsesOutputContent[] }[]
-  output_text?: string
-  error?: { message: string }
+  choices?: ChatChoice[]
+  error?: { message: string; type?: string }
 }
 
-function extractText(payload: ResponsesPayload): string {
-  if (payload.output_text) return payload.output_text
-  const parts: string[] = []
-  for (const item of payload.output ?? []) {
-    for (const content of item.content ?? []) {
-      if (content.text) parts.push(content.text)
-    }
-  }
-  return parts.join('\n').trim()
+/** Pull URLs out of citation annotations, falling back to links in the prose. */
+function citationsFrom(payload: ChatResponse, text: string): string[] {
+  const annotated = (payload.choices ?? [])
+    .flatMap((c) => c.message?.annotations ?? [])
+    .map((a) => a.url_citation?.url)
+    .filter((u): u is string => Boolean(u))
+
+  if (annotated.length > 0) return [...new Set(annotated)]
+
+  // Grounded answers often carry sources inline; a URL in the text is weaker
+  // evidence than an annotation, but it is still something the model chose to
+  // surface rather than something we inferred.
+  const inline = text.match(/https?:\/\/[^\s)\]"']+/g) ?? []
+  return [...new Set(inline)]
 }
 
-function extractCitations(payload: ResponsesPayload): string[] {
-  const urls: string[] = []
-  for (const item of payload.output ?? []) {
-    for (const content of item.content ?? []) {
-      for (const annotation of content.annotations ?? []) {
-        if (annotation.url) urls.push(annotation.url)
-      }
-    }
-  }
-  return [...new Set(urls)]
-}
+export function gatewayProvider(): LlmProvider {
+  const model = process.env.LLM_MODEL ?? DEFAULT_MODEL
 
-export function openAiProvider(): LlmProvider {
-  const model = process.env.OPENAI_MODEL ?? 'gpt-5'
-
-  async function call(body: Record<string, unknown>): Promise<ResponsesPayload> {
-    const res = await fetch(OPENAI_URL, {
+  async function call(body: Record<string, unknown>): Promise<ChatResponse> {
+    const res = await fetch(GATEWAY_URL, {
       method: 'POST',
       headers: {
-        authorization: `Bearer ${process.env.OPENAI_API_KEY ?? ''}`,
+        authorization: `Bearer ${process.env.AI_GATEWAY_API_KEY ?? ''}`,
         'content-type': 'application/json',
       },
       body: JSON.stringify({ model, ...body }),
     })
-    const payload = (await res.json()) as ResponsesPayload
-    if (!res.ok) throw new Error(`openai ${res.status}: ${payload.error?.message ?? 'request failed'}`)
+    const payload = (await res.json()) as ChatResponse
+    if (!res.ok) {
+      throw new Error(`gateway ${res.status}: ${payload.error?.message ?? 'request failed'}`)
+    }
     return payload
   }
 
   return {
-    name: 'openai',
+    name: `gateway:${model}`,
 
     unavailableReason() {
-      return process.env.OPENAI_API_KEY ? null : 'OPENAI_API_KEY not set'
+      return process.env.AI_GATEWAY_API_KEY ? null : 'AI_GATEWAY_API_KEY not set'
+    },
+
+    supportsGrounding() {
+      // Opt-in, and off by default — deliberately.
+      //
+      // Google Search grounding is a Gemini capability, but the gateway's
+      // OpenAI-compatible chat surface rejects the grounding tool
+      // (`400 Invalid input: expected "function"`), so it is not reachable
+      // the way a plain tool call would suggest. Defaulting this to true would
+      // have the engine assert a capability nobody has observed — the same
+      // mistake it refuses to make about a domain's rankings.
+      //
+      // Set LLM_GROUNDING=on once grounded answers are confirmed to return
+      // citations on this route; until then the probe declines to run.
+      return process.env.LLM_GROUNDING === 'on'
     },
 
     async answerGrounded(prompt) {
       const payload = await call({
-        input: prompt,
-        tools: [{ type: 'web_search' }],
+        messages: [{ role: 'user', content: prompt }],
+        // Only sent when grounding is confirmed available: an unsupported tool
+        // makes the whole request invalid, which would take out the enrichment
+        // path as well.
+        ...(process.env.LLM_GROUNDING === 'on'
+          ? { tools: [{ type: 'google_search' }] }
+          : {}),
       })
-      return {
-        text: extractText(payload),
-        citations: extractCitations(payload),
-        model: payload.model ?? model,
-      }
+
+      const text = payload.choices?.[0]?.message?.content ?? ''
+      return { text, citations: citationsFrom(payload, text), model: payload.model ?? model }
     },
 
     async generateObject({ system, prompt, schema, schemaName }) {
       const payload = await call({
-        input: [
-          { role: 'system', content: system },
+        messages: [
+          {
+            role: 'system',
+            content: `${system}\n\nRespond with a single JSON object and nothing else.`,
+          },
           { role: 'user', content: prompt },
         ],
-        text: {
-          format: {
-            type: 'json_schema',
-            name: schemaName,
-            strict: false,
-            schema: toJsonSchema(schema),
-          },
-        },
+        response_format: { type: 'json_object' },
       })
 
-      const text = extractText(payload)
-      // The model is never trusted to have produced the right shape: parse and
-      // let the caller's QA gate reject on failure.
-      return schema.parse(JSON.parse(text))
+      const text = payload.choices?.[0]?.message?.content ?? ''
+      // Models wrap JSON in fences often enough that stripping them is cheaper
+      // than a retry, but the model is never trusted to have produced the
+      // right shape — the caller's schema decides.
+      const cleaned = text
+        .trim()
+        .replace(/^```(?:json)?\s*/i, '')
+        .replace(/```$/, '')
+      void schemaName
+      return schema.parse(JSON.parse(cleaned))
     },
   }
 }
 
 /**
- * Minimal Zod -> JSON Schema conversion covering the shapes the makers use.
- * A dependency would do more, but the asset schemas are small and explicit,
- * and this keeps the seam free of one.
- */
-function toJsonSchema(schema: z.ZodType<unknown>): Record<string, unknown> {
-  const def = (schema as unknown as { _def: { typeName: string } })._def
-
-  switch (def.typeName) {
-    case 'ZodObject': {
-      const shape = (schema as unknown as z.ZodObject<z.ZodRawShape>).shape
-      const properties: Record<string, unknown> = {}
-      const required: string[] = []
-      for (const [key, field] of Object.entries(shape)) {
-        properties[key] = toJsonSchema(field as z.ZodType<unknown>)
-        if (!(field as z.ZodTypeAny).isOptional()) required.push(key)
-      }
-      return { type: 'object', properties, required, additionalProperties: false }
-    }
-    case 'ZodArray':
-      return {
-        type: 'array',
-        items: toJsonSchema((def as unknown as { type: z.ZodType<unknown> }).type),
-      }
-    case 'ZodEnum':
-      return { type: 'string', enum: (def as unknown as { values: string[] }).values }
-    case 'ZodNumber':
-      return { type: 'number' }
-    case 'ZodBoolean':
-      return { type: 'boolean' }
-    case 'ZodOptional':
-    case 'ZodDefault':
-      return toJsonSchema((def as unknown as { innerType: z.ZodType<unknown> }).innerType)
-    default:
-      return { type: 'string' }
-  }
-}
-
-/**
- * Provider selection. Anthropic slots in behind the same interface — the
- * production tiering in the design (cheap model for extraction, mid for
- * drafting, top for evaluation) is a routing policy inside a provider, not a
- * different shape of call.
+ * Provider selection.
+ *
+ * One gateway, so model choice is configuration rather than a code path: a
+ * different model — or a different vendor behind the same gateway — is an env
+ * change. Model tiering (cheap for extraction, mid for drafting, top for
+ * evaluation) becomes a routing policy inside this function when it is needed.
  */
 export function getProvider(): LlmProvider {
-  return openAiProvider()
+  return gatewayProvider()
 }

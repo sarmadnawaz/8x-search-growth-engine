@@ -1,0 +1,10 @@
+{
+  "requestKey": "https://ingatikrecall.com/sitemap.xml",
+  "fetchedAt": "2026-08-04T18:44:05.781Z",
+  "payload": {
+    "url": "https://ingatikrecall.com/sitemap.xml",
+    "status": 404,
+    "body": "",
+    "contentType": "text/html; charset=utf-8"
+  }
+}

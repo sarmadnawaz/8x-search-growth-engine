@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "pipeline": "tsx scripts/pipeline.ts",
+    "recon": "tsx scripts/estate-recon.ts",
     "seed": "tsx prisma/seed.ts",
     "check:onboarding": "tsx scripts/check-onboarding.ts",
     "db:push": "prisma db push",

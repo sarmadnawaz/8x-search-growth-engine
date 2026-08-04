@@ -1,0 +1,8 @@
+{
+  "requestKey": "https://whering.co.uk/robots.txt",
+  "fetchedAt": "2026-08-04T18:35:17.816Z",
+  "payload": {
+    "status": 200,
+    "body": "# *\nUser-agent: *\nAllow: /\n\n# Host\nHost: https://whering.co.uk\n\n# Sitemaps\nSitemap: https://whering.co.uk/sitemap.xml\n"
+  }
+}
