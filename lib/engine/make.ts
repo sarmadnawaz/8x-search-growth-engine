@@ -329,9 +329,17 @@ function makerContext(
       ? async (prompt, schemaName) => {
           try {
             const result = await provider.generateObject({
+              // The page answers a "what is the best X" query, and a model asked
+              // that question will happily answer "we are". That claim is
+              // unsupportable, it is the exact pattern Google's scaled-content
+              // enforcement targets, and it contradicts what the rest of this
+              // system is for. Describing the job the product does is both more
+              // honest and better cited, per the Princeton GEO result.
               system:
-                'You write factual, plain marketing copy. No superlatives, no invented statistics, ' +
-                'no claims you cannot support. Return only the requested keys.',
+                'You write factual, plain product copy. Describe what the product does and who it ' +
+                'suits. Never claim the product is the best, leading, top or number one, and never ' +
+                'rank it against competitors. No superlatives, no invented statistics, no claims ' +
+                'you cannot support. Return only the requested keys.',
               prompt,
               schema: LooseCopy,
               schemaName,

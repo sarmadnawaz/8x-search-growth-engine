@@ -409,6 +409,40 @@ body.push(
 
   pageBreak(),
   eyebrow('05 / What I would do next'),
+  headline('The tactic portfolio, beyond blogs and free tools.'),
+
+  p('You asked for other ways to improve SEO, GEO and AEO. I researched eighteen and systematised sixteen as opportunity types. The bar for inclusion was not whether a tactic works. It was whether it has a machine detectable trigger and a verification metric, because a tactic without both cannot run across twenty properties without a human deciding each time.'),
+
+  table(
+    ['Tactic', 'Trigger, and how payoff is checked'],
+    [
+      ['GEO retrofit blocks', 'Page ranks top 20, an AI answer exists, we are not cited. Citation inclusion rate against an untreated cohort.'],
+      ['Original data statistics pages', 'Third party stat pages own the citations and we hold first party data. Citation appearances and referring domains.'],
+      ['Comparison and alternatives surfaces', 'Competitors co-occur with the category in sampled answers, we are absent. Brand inclusion rate before and after.'],
+      ['Freshness pipeline, real deltas only', 'A cited or ranking page has not substantively changed in 90 to 180 days. Citation retention against a stale cohort.'],
+      ['Earned listicle outreach', 'The same third party URL is cited repeatedly for money prompts, we are absent. Recommendation rate after placement.'],
+      ['Entity and knowledge graph work', 'No knowledge graph entity, and the "what is brand" probe returns wrong or empty. Branded answer accuracy.'],
+      ['PAA mined FAQ blocks', 'Unanswered or competitor owned People Also Ask questions inside a ranked cluster. Ownership per question.'],
+      ['Featured snippet capture', 'A snippet exists, we rank 2 to 10, a competitor owns it. Ownership flips on scheduled SERP pulls.'],
+      ['AI crawlability baseline', 'No JS parity fails, robots blocks search bots, or Bing coverage is missing. Re-crawl, and bot fetches in logs.'],
+      ['Brand answer pages', 'The prompt panel returns factual errors or competitor citations for branded prompts. Own domain citation share.'],
+      ['Free tools, AEO upgraded', 'Tool intent queries where assistants recommend competitor tools. Tool recommendation rate in the panel.'],
+      ['Programmatic glossaries', 'Definitional citations go to competitor glossaries. Ownership per term, and indexation rate.'],
+      ['Disclosed parent brand linking', 'A new domain cold start. Never an anchor text link mesh. Indexation velocity, referring domain diversity.'],
+      ['Distribution via the creator network', 'An authority gap blocks an otherwise high impact cluster. Mention volume and assisted citations.'],
+      ['Video and podcast co-occurrence', 'Answers cite video for target queries and ours is absent. Citation sampling in the references.'],
+      ['llms.txt and markdown mirrors', 'Developer audience property with observed agent fetches. Default off, and labelled folklore rather than a lever.'],
+    ],
+    [32, 68],
+  ),
+
+  gap(200),
+  p('Five of these run in the slice today: GEO retrofit, comparison surfaces, free tools, the crawlability baseline and brand answer pages. The rest are detectors over evidence the engine already collects, which is the point of separating collection from interpretation.'),
+
+  callout('A tactic that cannot be triggered and checked is advice, not a system.'),
+
+  pageBreak(),
+  eyebrow('05 / What I would do next'),
   headline('What I would want to ask you.'),
 
   bullet('Could any property grant Search Console access for a test?'),
@@ -417,7 +451,7 @@ body.push(
   bullet('Is human review mandatory everywhere, or can reversible fixes apply themselves on some properties?'),
 
   label('Where it stands'),
-  p('github.com/sarmadnawaz/8x-search-growth-engine. Nineteen pull requests, CI green, 57 tests. Six commands to run, no API keys needed to look at it.'),
+  p('github.com/sarmadnawaz/8x-search-growth-engine. Twenty pull requests, CI green, 57 tests. Six commands to run, no API keys needed to look at it.'),
 
   label('Said plainly'),
   bullet('I cannot deploy to domains I do not own, so findings there stop at a generated artifact.'),

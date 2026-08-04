@@ -68,6 +68,20 @@ export function answerBlock(question: string, answer: string): string {
   return `    <h2>${escapeHtml(question)}</h2>\n    <p class="answer">${escapeHtml(answer)}</p>`
 }
 
+/**
+ * Wrap a subject in a question template, unless it is already a question.
+ *
+ * Subjects reach the makers from two places: query clusters, which are noun
+ * phrases like "ai stylist app", and AI-citation gaps, whose subject is the
+ * prompt itself and already ends in a question mark. Applying the template
+ * blindly produces "How do you choose What is the best AI stylist app??" in
+ * the title, both headings and the schema block.
+ */
+export function asQuestion(subject: string, template: (s: string) => string): string {
+  const clean = subject.trim()
+  return /[?？]$/.test(clean) ? clean : template(clean)
+}
+
 export function jsonLd(node: Record<string, unknown>): string {
   // JSON.stringify does not escape `<`, so a value containing `</script>`
   // closes the block and everything after it becomes markup. The values here
@@ -100,9 +114,38 @@ export function internalLinks(config: PropertyConfig, current: string): string {
     .join('\n')}\n    </nav>`
 }
 
+/**
+ * A meta description cut to a word boundary.
+ *
+ * Slicing at a fixed character count leaves the text ending mid-word, which is
+ * what a search engine then shows in the result. Cutting at the last space
+ * costs a few characters and never produces a fragment.
+ */
+export function metaDescription(text: string, max = 155): string {
+  const clean = text.replace(/\s+/g, ' ').trim()
+  if (clean.length <= max) return clean
+
+  const cut = clean.slice(0, max)
+  const boundary = cut.lastIndexOf(' ')
+  return (boundary > 0 ? cut.slice(0, boundary) : cut).replace(/[\s,;:.]+$/, '') + '.'
+}
+
+/**
+ * The page's own absolute URL.
+ *
+ * A canonical pointing anywhere other than the page itself tells the engine to
+ * drop it as a duplicate. For a generated page that is the difference between
+ * publishing and publishing nothing, so it is derived from the asset path
+ * rather than defaulted.
+ */
+export function canonicalFor(domain: string, path: string): string {
+  return `https://${domain}/${path.replace(/^\/+/, '')}`
+}
+
 export function page(opts: {
   title: string
   description: string
+  canonical: string
   bodyParts: string[]
 }): string {
   return `<!doctype html>
@@ -112,7 +155,7 @@ export function page(opts: {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>${escapeHtml(opts.title)}</title>
     <meta name="description" content="${escapeHtml(opts.description)}" />
-    <link rel="canonical" href="/" />
+    <link rel="canonical" href="${escapeHtml(opts.canonical)}" />
   </head>
   <body>
 ${opts.bodyParts.join('\n')}
