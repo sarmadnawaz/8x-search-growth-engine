@@ -1,0 +1,267 @@
+// Physical schema for the shared engine.
+//
+// Two rules govern everything here:
+//  1. Analysis writes Evidence, never conclusions. Opportunities reference the
+//     evidence rows that produced them, so "show me why" is a join.
+//  2. Snapshots are immutable. Trends, "what changed" and verification are all
+//     diffs between snapshots — nothing is updated in place.
+//
+// Enums live in lib/schemas.ts (Zod) rather than here: SQLite has no enum type,
+// and keeping one source of truth for entity shapes is the point.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+/// One configured property. Mirrors properties/<domain>.yaml — the YAML is the
+/// source of truth, this row exists so evidence can key off it.
+model Property {
+  domain          String   @id
+  name            String
+  goal            String
+  conversionRoute String
+  publishingPolicy String  @default("review_first")
+  configJson      String // full validated config, for provenance
+  createdAt       DateTime @default(now())
+
+  snapshots     Snapshot[]
+  pages         Page[]
+  queryClusters QueryCluster[]
+  evidence      Evidence[]
+  opportunities Opportunity[]
+  measurements  Measurement[]
+}
+
+/// One pipeline run for one property. The unit of time in the system.
+model Snapshot {
+  id         String    @id @default(cuid())
+  domain     String
+  startedAt  DateTime  @default(now())
+  finishedAt DateTime?
+  /// pending | complete | partial — detectors only read complete/partial finalised snapshots
+  status     String    @default("pending")
+  /// engine version that produced it, so evidence semantics stay attributable
+  engineVersion String
+  /// adapters that failed or were skipped this run (degradation is recorded, not hidden)
+  degradedJson  String  @default("[]")
+
+  property     Property      @relation(fields: [domain], references: [domain], onDelete: Cascade)
+  pages        Page[]
+  evidence     Evidence[]
+  opportunities Opportunity[]
+  measurements Measurement[]
+  adapterCalls AdapterCall[]
+
+  @@index([domain, startedAt])
+}
+
+/// A crawled URL and the technical facts extracted from it.
+model Page {
+  id         String   @id @default(cuid())
+  domain     String
+  snapshotId String
+  url        String
+  status     Int
+  indexable  Boolean  @default(true)
+  title      String?
+  metaDescription String?
+  h1         String?
+  canonical  String?
+  robotsMeta String?
+  schemaTypesJson String @default("[]")
+  internalLinks   Int    @default(0)
+  wordCount       Int    @default(0)
+  /// initial-HTML text length: AI crawlers do not execute JS, so this is the
+  /// content an answer engine can actually see
+  rawTextLength   Int    @default(0)
+  fetchedAt  DateTime @default(now())
+
+  property Property @relation(fields: [domain], references: [domain], onDelete: Cascade)
+  snapshot Snapshot @relation(fields: [snapshotId], references: [id], onDelete: Cascade)
+
+  @@unique([snapshotId, url])
+  @@index([domain, url])
+}
+
+/// A topic: representative queries with intent and market.
+model QueryCluster {
+  id        String   @id @default(cuid())
+  domain    String
+  market    String
+  query     String
+  intent    String
+  /// modeled demand 0-10 (autocomplete richness in the slice; measured volume in production)
+  demand    Float    @default(0)
+  demandSource String @default("modeled")
+  createdAt DateTime @default(now())
+
+  property Property   @relation(fields: [domain], references: [domain], onDelete: Cascade)
+  evidence Evidence[]
+
+  @@unique([domain, market, query])
+}
+
+/// A typed datum. Every recommendation in the system traces back to these rows.
+model Evidence {
+  id         String   @id @default(cuid())
+  domain     String
+  snapshotId String
+  /// crawl_fact | serp_observation | demand_signal | competitor_fact |
+  /// ai_answer_probe | authority_fact | outcome_metric
+  kind       String
+  /// adapter that produced it: crawler | psi | serp | autocomplete | ai_probe | ...
+  source     String
+  /// measured | modeled | fixture — confidence multiplier in scoring
+  tier       String
+  /// the datum itself, shape depends on kind (validated by Zod on write)
+  valueJson  String
+  /// what it is about: a URL, a query, or the domain itself
+  subject    String
+  clusterId  String?
+  /// provenance: which detector version may consume this, and what produced it
+  schemaVersion Int    @default(1)
+  fetchedAt  DateTime @default(now())
+  /// pointer to the archived raw payload (object storage in production)
+  rawRef     String?
+
+  property Property      @relation(fields: [domain], references: [domain], onDelete: Cascade)
+  snapshot Snapshot      @relation(fields: [snapshotId], references: [id], onDelete: Cascade)
+  cluster  QueryCluster? @relation(fields: [clusterId], references: [id])
+
+  @@index([snapshotId, kind])
+  @@index([domain, kind, fetchedAt])
+}
+
+/// A scored gap. Produced by a detector, never by an LLM.
+model Opportunity {
+  id         String   @id @default(cuid())
+  domain     String
+  snapshotId String
+  /// technical | keyword | content | competitor | authority | geo_aeo
+  type       String
+  /// which detector fired, and its version — so priors stay comparable across releases
+  detectorId String
+  detectorVersion String
+  title      String
+  subject    String
+  /// evidence ids that justify this row
+  evidenceIdsJson String
+  /// stored scoring factors — the UI renders the breakdown, nothing is a bare number
+  impact     Float
+  confidence Float
+  fit        Float
+  tacticPrior Float @default(1.0)
+  effort     Float
+  rawScore   Float
+  priority   Int
+  isBlocker  Boolean @default(false)
+  /// open | blocked_by_portfolio | actioned | dismissed
+  status     String  @default("open")
+  createdAt  DateTime @default(now())
+
+  property Property @relation(fields: [domain], references: [domain], onDelete: Cascade)
+  snapshot Snapshot @relation(fields: [snapshotId], references: [id], onDelete: Cascade)
+  actions  Action[]
+
+  @@index([domain, priority])
+  @@index([snapshotId])
+}
+
+/// An executable step with machine-checkable acceptance criteria.
+/// Only the verify pass may move this to `verified`.
+model Action {
+  id            String   @id @default(cuid())
+  opportunityId String
+  domain        String
+  kind          String
+  title         String
+  /// the instruction handed to a human or an asset maker
+  spec          String
+  /// [{ id, description, check }] — evaluated by collectors, not by a human ticking a box
+  criteriaJson  String
+  /// proposed | approved | executed | verified | failed | stopped
+  status        String   @default("proposed")
+  /// result of the last verification pass
+  lastCheckJson String?
+  verifiedAt    DateTime?
+  createdAt     DateTime @default(now())
+
+  opportunity  Opportunity   @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+  assets       Asset[]
+  measurements Measurement[]
+
+  @@index([domain, status])
+}
+
+/// Something the engine generated: a fix, a page draft, a brief, a tool spec.
+model Asset {
+  id        String   @id @default(cuid())
+  actionId  String
+  /// technical_fix | landing_page | comparison_page | blog | tool_spec
+  type      String
+  path      String?
+  body      String
+  /// draft | in_review | approved | applied | rejected
+  reviewState String @default("draft")
+  /// which model produced it, so learn-loop priors stay comparable
+  producedBy String @default("template")
+  qaJson    String  @default("{}")
+  createdAt DateTime @default(now())
+
+  action Action @relation(fields: [actionId], references: [id], onDelete: Cascade)
+}
+
+/// Did it pay off? Kept separate from "did it get done" by design.
+model Measurement {
+  id         String   @id @default(cuid())
+  domain     String
+  snapshotId String
+  actionId   String?
+  metric     String
+  baseline   Float?
+  current    Float?
+  windowDays Int
+  /// improving | flat | declining | too_early
+  verdict    String   @default("too_early")
+  createdAt  DateTime @default(now())
+
+  property Property @relation(fields: [domain], references: [domain], onDelete: Cascade)
+  snapshot Snapshot @relation(fields: [snapshotId], references: [id], onDelete: Cascade)
+  action   Action?  @relation(fields: [actionId], references: [id])
+
+  @@index([domain, metric])
+}
+
+/// Job/run ledger. The slice executes in-process; this table is the seam that
+/// becomes a real queue (pg-boss) when workers split out.
+model Run {
+  id         String    @id @default(cuid())
+  domain     String
+  stage      String
+  status     String    @default("running")
+  detail     String?
+  startedAt  DateTime  @default(now())
+  finishedAt DateTime?
+}
+
+/// One receipt per external call: makes runs resumable without re-spending API
+/// credits, and doubles as the cost/quota ledger.
+model AdapterCall {
+  id         String   @id @default(cuid())
+  snapshotId String
+  adapter    String
+  requestKey String
+  status     String
+  cached     Boolean  @default(false)
+  latencyMs  Int      @default(0)
+  createdAt  DateTime @default(now())
+
+  snapshot Snapshot @relation(fields: [snapshotId], references: [id], onDelete: Cascade)
+
+  @@unique([snapshotId, adapter, requestKey])
+}

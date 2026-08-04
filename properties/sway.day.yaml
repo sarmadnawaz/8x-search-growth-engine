@@ -1,0 +1,43 @@
+# The repeatability test: this file is the entire cost of onboarding the next
+# property. It was added after the engine was built, with no code change.
+domain: sway.day
+name: "Sway"
+description: >-
+  Guided stretching and mobility app with short daily routines for desk workers.
+goal: app_installs
+conversionRoute: app_store_link
+
+markets:
+  - { market: us, language: en }
+
+competitors:
+  - stretchit.app
+  - bendapp.com
+
+seedQueries:
+  - stretching app
+  - desk stretches
+  - mobility routine app
+
+promptPanel:
+  - "What is the best stretching app?"
+  - "Daily stretches for people who sit all day"
+  - "What is Sway app?"
+
+contentTypes: [landing_page, blog]
+publishingPolicy: review_first
+
+fitWeights:
+  tool_intent: 1.2
+  commercial: 1.3
+  informational: 1.0
+  navigational: 0.7
+
+# "Sway" collides with Microsoft Sway among others.
+entityCollision: true
+
+crawl:
+  maxPages: 20
+  requestsPerSecond: 1
+
+deployAccess: false

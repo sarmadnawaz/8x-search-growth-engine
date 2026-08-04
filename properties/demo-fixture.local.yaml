@@ -1,0 +1,43 @@
+# A property we actually control, served from fixture-site/ over real HTTP
+# during a run.
+#
+# Why it exists: the engine cannot deploy fixes to 8x's domains, so an action
+# there can never honestly reach `verified`. This property closes the loop for
+# real — the crawler finds the same missing-robots/sitemap condition, the
+# engine generates the fix, `--apply` writes it, and the next run's verify pass
+# flips the action to verified because the criteria now pass. Nothing is
+# asserted that a re-crawl would contradict.
+domain: demo-fixture.local
+name: "Fixture property"
+description: >-
+  A small static site used to demonstrate the executed -> verified lifecycle
+  end to end on infrastructure we control.
+goal: app_installs
+conversionRoute: app_store_link
+
+markets:
+  - { market: us, language: en }
+
+competitors: []
+seedQueries: []
+promptPanel: []
+
+contentTypes: [landing_page]
+publishingPolicy: auto_low_risk
+
+fitWeights:
+  commercial: 1.0
+  informational: 1.0
+
+entityCollision: false
+
+crawl:
+  maxPages: 10
+  requestsPerSecond: 20
+
+# The only property where this is true.
+deployAccess: true
+
+localSite:
+  dir: fixture-site
+  port: 3100

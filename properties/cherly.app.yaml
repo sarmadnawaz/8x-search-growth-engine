@@ -1,0 +1,52 @@
+# Adding a property means adding a file like this one. Nothing in lib/engine/
+# knows this domain exists — `npm run check:onboarding` fails if that changes.
+domain: cherly.app
+name: "Cherly"
+description: >-
+  AI personal stylist app. Users photograph their wardrobe and get outfit
+  suggestions, packing lists and shopping gaps.
+goal: app_installs
+conversionRoute: app_store_link
+
+markets:
+  - { market: us, language: en }
+  - { market: mx, language: es }
+
+competitors:
+  - whering.co.uk
+  - acloset.app
+  - indyx.com
+
+seedQueries:
+  - ai stylist app
+  - outfit planner app
+  - what to wear today
+  - digital wardrobe app
+
+promptPanel:
+  - "What is the best AI stylist app?"
+  - "How do I plan outfits from my own wardrobe?"
+  - "Best app to organise my closet digitally"
+  - "What is Cherly app?"
+
+contentTypes: [landing_page, comparison_page, blog, free_tool]
+publishingPolicy: review_first
+
+# How much this property values each intent class (scoring `fit` factor).
+fitWeights:
+  tool_intent: 1.4
+  commercial: 1.3
+  informational: 0.9
+  navigational: 0.7
+
+# "Cherly" is not a strongly distinct brand string; probe matching requires
+# brand + category, not a bare substring match.
+entityCollision: true
+
+crawl:
+  maxPages: 30
+  requestsPerSecond: 1
+
+# We do not control deploys for this domain: findings stay at `proposed` with
+# generated artifacts attached, and are never displayed as verified.
+deployAccess: false

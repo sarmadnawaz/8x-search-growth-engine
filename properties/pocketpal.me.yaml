@@ -1,0 +1,44 @@
+domain: pocketpal.me
+name: "PocketPal Budget"
+description: >-
+  Paycheck-synced envelope budgeting app. Users split each paycheck into
+  envelopes and track spending against them.
+goal: app_installs
+conversionRoute: app_store_link
+
+markets:
+  - { market: us, language: en }
+
+competitors:
+  - youneedabudget.com
+  - goodbudget.com
+  - everydollar.com
+
+seedQueries:
+  - envelope budgeting app
+  - paycheck budgeting
+  - budget app for irregular income
+  - zero based budgeting app
+
+promptPanel:
+  - "What is the best envelope budgeting app?"
+  - "How do I budget when I get paid every two weeks?"
+  - "Best budgeting app for irregular income"
+  - "What is PocketPal budget app?"
+
+contentTypes: [landing_page, comparison_page, blog, free_tool]
+publishingPolicy: review_first
+
+fitWeights:
+  tool_intent: 1.4
+  commercial: 1.3
+  informational: 1.0
+  navigational: 0.7
+
+entityCollision: false
+
+crawl:
+  maxPages: 30
+  requestsPerSecond: 1
+
+deployAccess: false
