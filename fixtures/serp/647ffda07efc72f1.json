@@ -1,0 +1,123 @@
+{
+  "requestKey": "paycheck budgeting app|us|en",
+  "fetchedAt": "2026-08-04T17:31:21.041Z",
+  "payload": {
+    "searchParameters": {
+      "q": "paycheck budgeting app",
+      "gl": "us",
+      "hl": "en",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "Are there any budgeting apps that support bi weekly ...",
+        "link": "https://www.reddit.com/r/budget/comments/1ds5fgf/are_there_any_budgeting_apps_that_support_bi/",
+        "snippet": "Ynab. I promise I've tried every budget app and spreadsheet out there and ynab is by far the best. Especially if you have irregular income.",
+        "date": "2 years ago",
+        "sitelinks": [
+          {
+            "title": "Apps for living paycheck to paycheck : r ...",
+            "link": "https://www.reddit.com/r/povertyfinance/comments/1pt4o01/apps_for_living_paycheck_to_paycheck/",
+            "date": "84 answersDec 22, 2025"
+          },
+          {
+            "title": "Best budgeting app for paycheck budgeting + ...",
+            "link": "https://www.reddit.com/r/personalfinance/comments/1tiltmt/best_budgeting_app_for_paycheck_budgeting/",
+            "date": "31 answersMay 21, 2026"
+          }
+        ],
+        "position": 1
+      },
+      {
+        "title": "Goodbudget: Best Home Budget App for Android, iPhone ...",
+        "link": "https://goodbudget.com/",
+        "snippet": "A home budget app based on the envelope budget system. Available on the Web, Android, and iPhone. Replace your family budget planner, worksheet or spreadsheet",
+        "position": 2
+      },
+      {
+        "title": "EveryTwo: Paycheck Budget Planner",
+        "link": "https://everytwo.app/",
+        "snippet": "EveryTwo is a low-cost and easy-to-use budget app that lets you fully customize your budget schedule whether it's weekly, biweekly, every three weeks, monthly,",
+        "position": 3
+      },
+      {
+        "title": "Best Budgeting Apps for Living Paycheck to Paycheck",
+        "link": "https://www.cnbc.com/select/best-budgeting-apps-for-living-paycheck-to-paycheck/",
+        "snippet": "YNAB costs $14.99 a month or $109 a year, but you can try it free for 34 days with no credit card required. One subscription also covers up to ...",
+        "date": "May 18, 2026",
+        "position": 4
+      },
+      {
+        "title": "PocketGuard: Budgeting App & Tracker for iPhone, Android ...",
+        "link": "https://pocketguard.com/",
+        "snippet": "Smart budget and expense tracker app that organizes your monthly bills, debts and subscriptions into clear, beautiful tabs and graphs.",
+        "position": 5
+      },
+      {
+        "title": "Budget planner—Expense tracker - Apps on Google Play",
+        "link": "https://play.google.com/store/apps/details?id=com.colpit.diamondcoming.isavemoney&hl=en_US",
+        "snippet": "This money tracker app is your go-to financial planner calculator. Personal Finance Manager lets you account for expenses better with the automatic draft ...",
+        "rating": 4.3,
+        "ratingCount": 51613,
+        "position": 6
+      },
+      {
+        "title": "Best Budgeting Apps to Help You Track, Save & Plan",
+        "link": "https://www.chime.com/blog/best-budgeting-apps/",
+        "snippet": "PocketGuard helps you avoid going over budget by showing you exactly how much money you have to spend after you pay your bills. You can also dig ...",
+        "date": "Jul 21, 2026",
+        "position": 7
+      },
+      {
+        "title": "Best Budgeting Apps of 2026: Tested And Ranked",
+        "link": "https://www.forbes.com/financial-services/best-budgeting-apps-2/",
+        "snippet": "​Our testing found that Quicken is the best budgeting app for savings goals, earning a 3.1-star rating from our research team. With the app, you ...",
+        "date": "1 day ago",
+        "position": 8
+      }
+    ],
+    "peopleAlsoAsk": [
+      {
+        "question": "What is the best app for budgeting paychecks?"
+      },
+      {
+        "question": "Is there a free app that can create a biweekly budget?"
+      },
+      {
+        "question": "What is the 70-10-10-10 budget rule?"
+      },
+      {
+        "question": "How to budget your paycheck for free?"
+      }
+    ],
+    "relatedSearches": [
+      {
+        "query": "Paycheck budgeting app free"
+      },
+      {
+        "query": "Paycheck budgeting app download"
+      },
+      {
+        "query": "Best budget app free"
+      },
+      {
+        "query": "Simple budget app free"
+      },
+      {
+        "query": "Paycheck budgeting app for android"
+      },
+      {
+        "query": "Best paycheck budgeting app"
+      },
+      {
+        "query": "Paycheck budgeting app for iphone"
+      },
+      {
+        "query": "Free budgeting app for couples"
+      }
+    ],
+    "credits": 1
+  }
+}

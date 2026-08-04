@@ -1,0 +1,126 @@
+{
+  "requestKey": "outfit planner app|us|en",
+  "fetchedAt": "2026-08-04T17:29:57.107Z",
+  "payload": {
+    "searchParameters": {
+      "q": "outfit planner app",
+      "gl": "us",
+      "hl": "en",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "App for visualising outfits : r/HerOneBag",
+        "link": "https://www.reddit.com/r/HerOneBag/comments/12vvtn0/app_for_visualising_outfits/",
+        "snippet": "I use Stylebook; it's … it's a closet tracker that lets you import links to items, create outfits and track wears,",
+        "sitelinks": [
+          {
+            "title": "The perennial question... which wardrobe app in 2025? - Redditr/femalefashionadvice·130+ comments·1y",
+            "link": "https://www.reddit.com/r/femalefashionadvice/comments/1jjtgyt/the_perennial_question_which_wardrobe_app_in_2025/"
+          },
+          {
+            "title": "Best app to keep up with what's in your closet : r/femalefashionadvicer/femalefashionadvice·210+ comments·2y",
+            "link": "https://www.reddit.com/r/femalefashionadvice/comments/177fzog/best_app_to_keep_up_with_whats_in_your_closet/"
+          }
+        ],
+        "position": 1
+      },
+      {
+        "title": "The perennial question... which wardrobe app in 2025?",
+        "link": "https://www.reddit.com/r/femalefashionadvice/comments/1jjtgyt/the_perennial_question_which_wardrobe_app_in_2025/",
+        "sitelinks": [
+          {
+            "title": "More",
+            "link": "https://www.reddit.com/r/femalefashionadvice/comments/1jjtgyt/the_perennial_question_which_wardrobe_app_in_2025/mjt8m79/"
+          },
+          {
+            "title": "More",
+            "link": "https://www.reddit.com/r/femalefashionadvice/comments/1jjtgyt/the_perennial_question_which_wardrobe_app_in_2025/mjupvts/"
+          }
+        ],
+        "position": 2
+      },
+      {
+        "title": "Which is the best app for outfit planning?",
+        "link": "https://www.quora.com/Which-is-the-best-app-for-outfit-planning",
+        "position": 3
+      },
+      {
+        "title": "Closet and Outfit Organizer Apps for Your iPad and iPhone",
+        "link": "https://youlookfab.com/welookfab/topic/closet-and-outfit-organizer-apps-for-your-ipad-and-iphone",
+        "position": 4
+      },
+      {
+        "title": "Top 7 outfit creator & designer apps: Reviewed & tested",
+        "link": "https://www.fits-app.com/posts/top-7-outfit-creator-designer-apps",
+        "snippet": "In this guide, we cover the top 7 picks: Fits, Shuffles, ShopLook, Indyx, Whering, Acloset, and Canva. Fits has the best outfit creator.",
+        "position": 5
+      },
+      {
+        "title": "The Best 6 Closet & Outfit Planning Apps Reviewed - Laurieloo",
+        "link": "https://thelaurieloo.com/ultimate-closet-app-roundup/",
+        "snippet": "The Best 6 Closet & Outfit Planning Apps Reviewed · 1 | Stylebook · 2 | Cladwell · 4 | ClosetSpace. Available On | Android and iPhone. Price | Free. Pros.",
+        "position": 6
+      },
+      {
+        "title": "GetWardrobe AI Outfit Planner - Apps on Google Play",
+        "link": "https://play.google.com/store/apps/details?id=com.ThreeBoots&hl=en_US",
+        "snippet": "Plan what to wear, create stunning outfit collages, organize your closet digitally, and get AI-generated fashion ideas from the clothes you already",
+        "rating": 4.1,
+        "ratingCount": 4897,
+        "position": 7
+      },
+      {
+        "title": "The Best Digital Wardrobe & Styling Apps in 2025",
+        "link": "https://whering.co.uk/best-wardrobe-apps-2025",
+        "snippet": "Whering is the best free wardrobe and styling app. It has the perfect mix of organisation and play features, which allow you to see and style ...",
+        "date": "Mar 5, 2025",
+        "position": 8
+      },
+      {
+        "title": "Best Outfit Planning Apps 2026: Digital Closet Organizers Compared",
+        "link": "https://clueless.clothing/blog/best-outfit-planning-apps-comparison-2026/",
+        "snippet": "The Best Outfit Planning Apps (2026) · 1. Clueless Clothing: Best Overall for Daily Outfit Planning · 2. Whering: Best for Sustainability ...",
+        "date": "Feb 2, 2026",
+        "position": 9
+      }
+    ],
+    "peopleAlsoAsk": [
+      {
+        "question": "What is the app that lets you put outfits together?"
+      },
+      {
+        "question": "What is the 3-3-3 rule for clothing?"
+      },
+      {
+        "question": "What is the app that organizes your clothes?"
+      },
+      {
+        "question": "Which app can I use to design clothes for free?"
+      }
+    ],
+    "relatedSearches": [
+      {
+        "query": "Outfit planner app free"
+      },
+      {
+        "query": "Outfit Maker app with your own clothes"
+      },
+      {
+        "query": "Outfit planner app for iphone"
+      },
+      {
+        "query": "Outfit Planner app for travel"
+      },
+      {
+        "query": "Best wardrobe app free"
+      },
+      {
+        "query": "Vacation outfit planner app free"
+      }
+    ],
+    "credits": 1
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "requestKey": "what to wear today nyc|mx|es",
+  "fetchedAt": "2026-08-04T17:30:24.618Z",
+  "payload": {
+    "searchParameters": {
+      "q": "what to wear today nyc",
+      "gl": "mx",
+      "hl": "es",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "Daily Dress Me",
+        "link": "https://dailydressme.com/",
+        "snippet": "Daily Dress Me breaks down the weather forecast into style inspiration that actually makes sense. All you need to do is type in your city!",
+        "position": 1
+      },
+      {
+        "title": "Outfit Of The Day New York 10 | ootdnewyork10 ...",
+        "link": "https://www.instagram.com/ootdnewyork10/?hl=es",
+        "snippet": "18K followers · 925 following · 1344 posts · @ootdnewyork10: “minimal wardrobe essentials, daily outfit ideas, street style buy less buy better, new york”",
+        "position": 2
+      },
+      {
+        "title": "What to Wear Today in New York City",
+        "link": "https://whattowear.now/united-states/new-york-city/new-york-city",
+        "snippet": "What to wear in New York City right now: 26°C, feels like 27°C. Jacket, layers, shoes and umbrella — see today's outfit.",
+        "position": 3
+      },
+      {
+        "title": "Those who have been to NYC in spring or summer, what ...",
+        "link": "https://www.reddit.com/r/HerOneBag/comments/13qtbto/those_who_have_been_to_nyc_in_spring_or_summer/",
+        "snippet": "Headed there for 8 days on Friday. The temperature ranges from 20-30 Celsius/68-86F during the day or 13-16 Celsius/55-63F at night. Low ish chance of ...",
+        "sitelinks": [
+          {
+            "title": "86 respuestas",
+            "link": "https://www.reddit.com/r/HerOneBag/comments/13qtbto/those_who_have_been_to_nyc_in_spring_or_summer/jlgqyo8/"
+          },
+          {
+            "title": "What to wear to Newyork : r/womensfashion - Reddit",
+            "link": "https://www.reddit.com/r/womensfashion/comments/1r88jy8/what_to_wear_to_newyork/",
+            "date": "44 respuestas18 feb 2026"
+          },
+          {
+            "title": "Going to NYC in two weeks- help! : r ...",
+            "link": "https://www.reddit.com/r/fashionwomens35/comments/1cvde65/going_to_nyc_in_two_weeks_help/",
+            "date": "25 respuestas19 may 2024"
+          }
+        ],
+        "position": 4
+      },
+      {
+        "title": "Dress Like a Local: What To Wear in New York City",
+        "link": "https://www.viator.com/blog/Dress-Like-a-Local-What-To-Wear-in-New-York-City/l98947",
+        "snippet": "Neutral or earth-toned options will go with more outfits, while a brightly-colored pair can elevate your look. If you're planning to visit a New York City ...",
+        "position": 5
+      },
+      {
+        "title": "What to wear in New York City for comfort and style?",
+        "link": "https://www.facebook.com/groups/3135585626680301/posts/4300584470180405/",
+        "snippet": "Wear light comfortable separates. Linen shorts at just above knee length, light trousers, tees are fine and will be most useful of there is no ...",
+        "date": "hace 1 mes",
+        "position": 6
+      },
+      {
+        "title": "What to Wear in NYC in Summer",
+        "link": "https://charmedbycamille.com/what-to-wear-in-nyc-in-summer/",
+        "snippet": "What to Wear in NYC in Summer · 1. Smocked Dress · 2. Lightweight Tailored Shorts · 3. Basic Tank Tops · 4. Slip Dress · 5. Lightweight Sweater.",
+        "date": "1 may 2026",
+        "position": 7
+      },
+      {
+        "title": "New York City Outfits",
+        "link": "https://us.princesspolly.com/blogs/princess-polly-blog/new-york-city-outfits?srsltid=AfmBOoqscwbwYJUA90N1Qn_TJ9Hx6G3DZBSXeaPWljS2I68rMetY4k9I",
+        "snippet": "White tee or fitted tank · Black loafers or ballet flats · Tailored black or grey trousers · Straight-leg denim · Structured blazer in a neutral shade · Satin midi ...",
+        "position": 8
+      },
+      {
+        "title": "What to wear in New York City?",
+        "link": "https://www.clothesforecast.com/clothes-newyork.php",
+        "snippet": "Daytime: A light jacket, sweater, or light winter clothes (jacket or coat). Nighttime: A jacket or coat. Gloves and warm hat may be necessary.",
+        "position": 9
+      }
+    ],
+    "credits": 1
+  }
+}

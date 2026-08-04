@@ -1,0 +1,103 @@
+{
+  "requestKey": "digital wardrobe app reddit|us|en",
+  "fetchedAt": "2026-08-04T17:30:32.257Z",
+  "payload": {
+    "searchParameters": {
+      "q": "digital wardrobe app reddit",
+      "gl": "us",
+      "hl": "en",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "Digital wardrobe apps : r/femalefashionadvice",
+        "link": "https://www.reddit.com/r/femalefashionadvice/comments/1s242ng/digital_wardrobe_apps/",
+        "snippet": "I use Whering and I really like it! Alta! You can link your email and it will scan your inbox for receipts and automatically upload clothing ...",
+        "position": 1
+      },
+      {
+        "title": "Do y'all use digital closet apps? : r/capsulewardrobe",
+        "link": "https://www.reddit.com/r/capsulewardrobe/comments/1onp0dk/do_yall_use_digital_closet_apps/",
+        "snippet": "Hey everyone! For anyone who’s tried organizing their wardrobe online or digitally — how do you usually upload your stuff? Do you snap pics of each ...",
+        "sitelinks": [
+          {
+            "title": "More",
+            "link": "https://www.reddit.com/r/capsulewardrobe/comments/1onp0dk/do_yall_use_digital_closet_apps/nmynb17/"
+          },
+          {
+            "title": "More",
+            "link": "https://www.reddit.com/r/capsulewardrobe/comments/1onp0dk/do_yall_use_digital_closet_apps/nmyhg4v/"
+          }
+        ],
+        "position": 2
+      },
+      {
+        "title": "Help, what's your favorite digital closet app? Tried a bunch but can't find the ...",
+        "link": "https://www.reddit.com/r/fashionwomens35/comments/1pakgdj/help_whats_your_favorite_digital_closet_app_tried/",
+        "snippet": "Of all the apps I've tried Outfitly is the one I like the most. It has the most convenient outfit-creation feature, and the app removes ...",
+        "position": 3
+      },
+      {
+        "title": "The perennial question... which wardrobe app in 2025?",
+        "link": "https://www.reddit.com/r/femalefashionadvice/comments/1jjtgyt/the_perennial_question_which_wardrobe_app_in_2025/",
+        "snippet": "Hello all, I'm wondering what wardrobe app you feel is best in this year of 2025\n\nThings to include in suggestions:\n\n* Operating system (Android, iOS, ...",
+        "sitelinks": [
+          {
+            "title": "More",
+            "link": "https://www.reddit.com/r/femalefashionadvice/comments/1jjtgyt/the_perennial_question_which_wardrobe_app_in_2025/mjt8m79/"
+          },
+          {
+            "title": "More",
+            "link": "https://www.reddit.com/r/femalefashionadvice/comments/1jjtgyt/the_perennial_question_which_wardrobe_app_in_2025/mjupvts/"
+          }
+        ],
+        "position": 4
+      },
+      {
+        "title": "Does anyone use a digital wardrobe app? : r/RitaFourEssenceSystem",
+        "link": "https://www.reddit.com/r/RitaFourEssenceSystem/comments/1oavabe/does_anyone_use_a_digital_wardrobe_app/",
+        "snippet": "If so, do you recommend it? What insights have you gained? How do you use it to plan outfits?\n\nI used Whering on and off for a while. I loved the app, but ...",
+        "sitelinks": [
+          {
+            "title": "More",
+            "link": "https://www.reddit.com/r/RitaFourEssenceSystem/comments/1oavabe/does_anyone_use_a_digital_wardrobe_app/nkcn57w/"
+          },
+          {
+            "title": "More",
+            "link": "https://www.reddit.com/r/RitaFourEssenceSystem/comments/1oavabe/does_anyone_use_a_digital_wardrobe_app/nkcagu7/"
+          }
+        ],
+        "position": 5
+      },
+      {
+        "title": "Digital wardrobe apps are a game changer!! : r/nobuy",
+        "link": "https://www.reddit.com/r/nobuy/comments/1fus5we/digital_wardrobe_apps_are_a_game_changer/",
+        "snippet": "I found this app called Acloset and it's been super helpful for me. It's completely free (and ad free!) so long as you upload fewer than 100 ...",
+        "position": 6
+      }
+    ],
+    "relatedSearches": [
+      {
+        "query": "Free digital wardrobe app reddit"
+      },
+      {
+        "query": "Best digital wardrobe app reddit"
+      },
+      {
+        "query": "Stylebook"
+      },
+      {
+        "query": "Free digital wardrobe app"
+      },
+      {
+        "query": "Best digital wardrobe app"
+      },
+      {
+        "query": "Whering"
+      }
+    ],
+    "credits": 1
+  }
+}

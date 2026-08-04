@@ -1,0 +1,72 @@
+{
+  "requestKey": "what to wear today weather|mx|es",
+  "fetchedAt": "2026-08-04T17:30:21.048Z",
+  "payload": {
+    "searchParameters": {
+      "q": "what to wear today weather",
+      "gl": "mx",
+      "hl": "es",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "Daily Dress Me",
+        "link": "https://dailydressme.com/",
+        "snippet": "Daily Dress Me breaks down the weather forecast into style inspiration that actually makes sense. All you need to do is type in your city!",
+        "position": 1
+      },
+      {
+        "title": "Outfit for Todays Weather - Womens Fashion",
+        "link": "https://www.pinterest.com/ideas/outfit-for-todays-weather/955816250273/",
+        "snippet": "Best Ways To Wear Sweater. Outfit Ideas Inspo. Different Ways To Wear Sweater. Fashion Inspo. GRWM. Dive into a world of breezy elegance designed to embrace ...",
+        "date": "24 may 2025",
+        "position": 2
+      },
+      {
+        "title": "What to Wear Today, Based on the Weather – Weather Fit iOS ...",
+        "link": "https://weatherfit.com/",
+        "snippet": "What type of clothes should I wear today? Weather Fit picks the right layers for the day: t-shirt or sweater, shorts or pants, jacket or none. It tunes them to ...",
+        "position": 3
+      },
+      {
+        "title": "How to dress for the weather today",
+        "link": "https://www.my-jewellery.com/en/blog/info-advice/what-to-wear-at-which-temperature",
+        "snippet": "Throw on a short dress, some loafers or a pair of converse and you're ready to face the sun! At 23 degrees you can perfectly wear a skirt, or for the shorts ...",
+        "position": 4
+      },
+      {
+        "title": "Clothes Forecast - Smart Weather Styling",
+        "link": "https://www.clothesforecast.com/",
+        "snippet": "Recommended Outfits. T-shirt or tank top with shorts. Camisole Dress. Floral Miniskirt And Sleeveless. Orange Crochet Sundress. Oversized Tshirt And Shorts.",
+        "position": 5
+      },
+      {
+        "title": "Weather Fit: Outfit Forecast - App Store - Apple",
+        "link": "https://apps.apple.com/us/app/weather-fit-outfit-forecast/id1194408342",
+        "snippet": "Get dressed for the weather, not just told about it. Weather Fit turns the forecast into something you can see. A character that looks like you puts on ...",
+        "position": 6
+      },
+      {
+        "title": "Weather Outfit Chart",
+        "link": "https://www.pinterest.com/ideas/weather-outfit-chart/914559633720/",
+        "snippet": "How To Dress For Weather · Layering Guide For Different Temperatures · Seasonal Clothing Chart · Temperature-based Outfit Ideas ; Dressing Toddler For Weather.",
+        "position": 7
+      },
+      {
+        "title": "How to Dress for the Weather Guide - getoutsideandplay.ca",
+        "link": "https://getoutsideandplay.ca/wp-content/uploads/2020/05/How-to-Dress-for-the-Weather-STANDARD.pdf",
+        "snippet": "This layer should be waterproof with enough room for layers underneath. Tips for Cold. Dress in layers: Tips for Rain and Wet Conditions. Cotton ...",
+        "position": 8
+      },
+      {
+        "title": "Weather-Based Outfit Planner for Travel & Daily Life: What to ...",
+        "link": "https://wearforweather.com/",
+        "snippet": "Free tool to plan what to wear for any destination and date. Get personalized clothing recommendations for trips, vacations, and daily weather.",
+        "position": 9
+      }
+    ],
+    "credits": 1
+  }
+}

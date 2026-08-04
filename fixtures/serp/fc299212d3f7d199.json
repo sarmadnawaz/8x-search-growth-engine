@@ -1,0 +1,82 @@
+{
+  "requestKey": "outfit planner app|mx|es",
+  "fetchedAt": "2026-08-04T17:29:58.793Z",
+  "payload": {
+    "searchParameters": {
+      "q": "outfit planner app",
+      "gl": "mx",
+      "hl": "es",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "Top 7 outfit creator & designer apps: Reviewed & tested",
+        "link": "https://www.fits-app.com/posts/top-7-outfit-creator-designer-apps",
+        "snippet": "Acloset is a solid all-rounder when it comes to outfit planning and wardrobe management. It lets you neatly organize your clothes, track what you wear, and even ...",
+        "position": 1
+      },
+      {
+        "title": "The Best 6 Closet & Outfit Planning Apps Reviewed - Laurieloo",
+        "link": "https://thelaurieloo.com/ultimate-closet-app-roundup/",
+        "snippet": "The Best 6 Closet & Outfit Planning Apps Reviewed · 1 | Stylebook · 2 | Cladwell · 4 | ClosetSpace. Available On | Android and iPhone. Price | Free. Pros.",
+        "position": 2
+      },
+      {
+        "title": "Aplicaciones para Android de Outfit Makers en ...",
+        "link": "https://play.google.com/store/apps/dev?id=8432713423994683958&hl=es",
+        "snippet": "Outfit Makers ... Elevate your style with personalized fashion tips, organize your wardrobe, and embrace sustainable trends. Be fashion-forward!",
+        "position": 3
+      },
+      {
+        "title": "Best Outfit Planning Apps 2026: Digital Closet Organizers Compared",
+        "link": "https://clueless.clothing/blog/best-outfit-planning-apps-comparison-2026/",
+        "snippet": "Comprehensive comparison of the top outfit planner and digital closet apps for iOS and Android. Find the right wardrobe organizer app for ...",
+        "date": "2 feb 2026",
+        "position": 4
+      },
+      {
+        "title": "app used for styling outfits and planning? : r/HerOneBag",
+        "link": "https://www.reddit.com/r/HerOneBag/comments/1f3qyze/app_used_for_styling_outfits_and_planning/",
+        "snippet": "please remove if this isn’t allowed but i love seeing everyone’s well organized outfits planned out for their trips and im wondering what apps you guys ...",
+        "sitelinks": [
+          {
+            "title": "Más",
+            "link": "https://www.reddit.com/r/HerOneBag/comments/1f3qyze/app_used_for_styling_outfits_and_planning/lkfvbog/"
+          },
+          {
+            "title": "Más",
+            "link": "https://www.reddit.com/r/HerOneBag/comments/1f3qyze/app_used_for_styling_outfits_and_planning/lkfx6h0/"
+          }
+        ],
+        "position": 5
+      },
+      {
+        "title": "The Best Digital Wardrobe & Styling Apps in 2025",
+        "link": "https://whering.co.uk/best-wardrobe-apps-2025",
+        "snippet": "The best wardrobe apps in 2025 compared and ranked. Find the perfect wardrobe app for your needs today.",
+        "date": "5 mar 2025",
+        "position": 6
+      },
+      {
+        "title": "Outfit Apps Planning",
+        "link": "https://www.pinterest.com/ideas/outfit-apps-planning/951814682365/",
+        "snippet": "Discover Pinterest's best ideas and inspiration for Outfit apps planning. Get inspired and try out new things. 531 people searched this. ·. Last updated 1d.",
+        "position": 7
+      },
+      {
+        "title": "Pureple - #1 AI Outfit Planner & Closet Organizer | Free Fashion App",
+        "link": "https://pureple.com/",
+        "snippet": "Pureple is the #1 AI-powered outfit planner and closet organizer app. Get personalized outfit suggestions, weather-based recommendations, and smart wardrobe ...",
+        "position": 8
+      },
+      {
+        "title": "7 Popular Wardrobe and Outfit Planning Apps Reviewed",
+        "link": "https://insideoutstyleblog.com/2016/03/readers-favourite-style-and-wardrobe-apps.html",
+        "position": 9
+      }
+    ],
+    "credits": 1
+  }
+}

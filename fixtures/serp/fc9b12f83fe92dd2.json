@@ -1,0 +1,86 @@
+{
+  "requestKey": "desk stretches for office workers|us|en",
+  "fetchedAt": "2026-08-04T17:32:07.436Z",
+  "payload": {
+    "searchParameters": {
+      "q": "desk stretches for office workers",
+      "gl": "us",
+      "hl": "en",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "The Ultimate 'Deskercise' Routine: Stretches for the Office",
+        "link": "https://www.healthline.com/health/deskercise",
+        "snippet": "Simple stretches you can do without leaving your chair include triceps stretches, overhead reaches, shoulder stretches, hip and knee flexion, hamstring ...",
+        "position": 1
+      },
+      {
+        "title": "Desk stretches: Video collection",
+        "link": "https://www.mayoclinic.org/healthy-lifestyle/adult-health/in-depth/office-stretches/art-20046041",
+        "snippet": "Desk stretches help prevent pain and stiffness. See how they're done. seated at your desk. Watch these videos on specific stretches to learn the correct form ...",
+        "position": 2
+      },
+      {
+        "title": "10 Best Stretches for Office Workers",
+        "link": "https://www.verywellfit.com/best-stretches-for-office-workers-1231153",
+        "snippet": "If you sit at a desk on a daily basis, these stretches can help you manage stress and tension in the neck, shoulders, back, and hips.",
+        "date": "Mar 27, 2023",
+        "position": 3
+      },
+      {
+        "title": "Office Ergonomics - Stretching - At the Workstation",
+        "link": "https://www.ccohs.ca/oshanswers/ergonomics/office/stretching.html",
+        "snippet": "Slowly bend your wrist down until you feel a stretch. Hold for 3 to 5 seconds. Relax. Repeat 3 times. Then slowly bend your wrist up until you feel the stretch.",
+        "position": 4
+      },
+      {
+        "title": "9 Desk Stretches for People Who Sit All Day",
+        "link": "https://www.readers.com/blogs/news/9-desk-stretches-for-office",
+        "snippet": "The most effective desk stretches target the neck, shoulders, spine, hips, hamstrings, and wrists because these areas tighten the most during prolonged sitting.",
+        "position": 5
+      },
+      {
+        "title": "Stretch Break | Stretches at Your Desk | 7 min",
+        "link": "https://www.youtube.com/watch?v=EBxV9YDEtAk",
+        "snippet": "Take an office break and undo the bodily damage of sitting for hours on end. In just 7 minutes your whole body. Stretches to do at your desk to ...",
+        "position": 6
+      },
+      {
+        "title": "10 Best Office Stretches and Office Exercises to Do at Your Desk",
+        "link": "https://www.standupdeskstore.com/standing-news/best-office-exercises/?srsltid=AfmBOopNJpnN5y6jFxUpqYo0-3wpIL_H9fkAKBgaVZ49tf7yJLxcQRuc",
+        "snippet": "1. Calf Raises. Stand up straight and (if necessary) use your chair or desk for support. · 2. Tricep Dips · 3. Invisible Chair · 4. Desk Pushups · 5. Chair Leg ...",
+        "position": 7
+      },
+      {
+        "title": "Stretch at your desk - SafeWork NSW",
+        "link": "https://www.safework.nsw.gov.au/resource-library/physical-health/six-simple-stretches",
+        "snippet": "Concentrate on slow, sustained stretches and hold each stretch for 10 to 20 seconds. Here are six simple stretches. Repeat five times on each side. Side bends ...",
+        "position": 8
+      }
+    ],
+    "relatedSearches": [
+      {
+        "query": "Stretching for office workers pdf"
+      },
+      {
+        "query": "Ergonomic exercises for office workers pdf"
+      },
+      {
+        "query": "Desk stretches for office workers youtube"
+      },
+      {
+        "query": "Simple desk stretches for office workers"
+      },
+      {
+        "query": "Best desk stretches for office workers"
+      },
+      {
+        "query": "Workplace stretching exercises with pictures pdf"
+      }
+    ],
+    "credits": 1
+  }
+}

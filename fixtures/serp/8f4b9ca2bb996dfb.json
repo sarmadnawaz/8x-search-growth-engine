@@ -1,0 +1,123 @@
+{
+  "requestKey": "what to wear today london|us|en",
+  "fetchedAt": "2026-08-04T17:30:29.668Z",
+  "payload": {
+    "searchParameters": {
+      "q": "what to wear today london",
+      "gl": "us",
+      "hl": "en",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "What to Wear Today in London",
+        "link": "https://whattowear.now/united-kingdom/london/london",
+        "snippet": "What to wear in London right now: 29°C, feels like 27°C. Jacket, layers, shoes and umbrella. Quite warm — keep clothing very light. — keep clothing very light. ...",
+        "position": 1
+      },
+      {
+        "title": "What To Wear Today London",
+        "link": "https://www.instagram.com/popular/what-to-wear-today-london/",
+        "snippet": "It's almost spring, misiddons coat, umbrella, something for your neck ☂️🧣. Lehenga Choli, gown, sarees, men kurta pajamas, men koti, sherwani, Sometimes a ...",
+        "position": 2
+      },
+      {
+        "title": "What do I wear in london?",
+        "link": "https://www.reddit.com/r/AskUK/comments/1rvcv4e/what_do_i_wear_in_london/",
+        "position": 3
+      },
+      {
+        "title": "How To Dress Like A Local in London",
+        "link": "https://www.reddit.com/r/uktravel/comments/1i5ksxl/how_to_dress_like_a_local_in_london/",
+        "position": 4
+      },
+      {
+        "title": "What are people wearing in London right now? I'm American, and here it's super hot. Struggling to",
+        "link": "https://www.facebook.com/groups/LondonWithKids/posts/2530519860626688/",
+        "position": 5
+      },
+      {
+        "title": "What to Wear in London in 2026 | Seasonal Outfit Ideas",
+        "link": "https://witwhimsy.com/what-to-wear-in-london/",
+        "snippet": "A classic trench coat, a lightweight knit, some comfortable trousers or straight-leg jeans and chic walking shoes are ideal for sightseeing.",
+        "date": "Feb 23, 2026",
+        "position": 6
+      },
+      {
+        "title": "People in London Will Live In These Classic, Anti-Trend Outfits This Spring",
+        "link": "https://www.whowhatwear.com/fashion/outfit-ideas/classic-spring-london-outfits",
+        "snippet": "Blazer + Jeans + Loafers ・ blue jeans and black loafers ・ 100% cashmere crew neck sweater. Leather Jacket + Tube Dress + Mary Janes ・ ...",
+        "date": "Feb 13, 2024",
+        "position": 7
+      },
+      {
+        "title": "What To Wear In London In Summer | Editorial",
+        "link": "https://saintandsofia.com/blogs/london/what-to-wear-in-london-in-summer",
+        "snippet": "Slip dresses, shirt dresses and soft cotton midis all work well because they can shift easily between day and evening depending on accessories.",
+        "date": "Apr 19, 2026",
+        "position": 8
+      },
+      {
+        "title": "Dress Like a Local: What To Wear in London",
+        "link": "https://www.viator.com/it-IT/blog/Dress-Like-a-Local-What-to-Wear-in-London/l98547",
+        "snippet": "Timeless outerwear options include a tan Burberry trench coat (ideal for the fall showers), handcrafted by tailors in England; or a classic waxed Barbour jacket ...",
+        "position": 9
+      }
+    ],
+    "peopleAlsoAsk": [
+      {
+        "question": "What clothes to wear in London right now?"
+      },
+      {
+        "question": "What is the 3-3-3 rule for clothes?"
+      },
+      {
+        "question": "How to look 10 pounds thinner?"
+      },
+      {
+        "question": "What to wear in London and not look like a tourist?"
+      }
+    ],
+    "relatedSearches": [
+      {
+        "query": "What to wear today london women's"
+      },
+      {
+        "query": "What to wear today london men"
+      },
+      {
+        "query": "What to wear in London female"
+      },
+      {
+        "query": "What to wear in London male"
+      },
+      {
+        "query": "What to wear today london casual"
+      },
+      {
+        "query": "What to wear today london summer"
+      },
+      {
+        "query": "What to wear in London winter"
+      },
+      {
+        "query": "What to wear in London to not look like a tourist"
+      },
+      {
+        "query": "What to wear in London tomorrow"
+      },
+      {
+        "query": "What to Wear in London summer 2026"
+      },
+      {
+        "query": "What to wear in London in June female"
+      },
+      {
+        "query": "What to wear in London in the summer"
+      }
+    ],
+    "credits": 1
+  }
+}

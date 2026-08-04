@@ -1,0 +1,99 @@
+{
+  "requestKey": "zero based budgeting apps|us|en",
+  "fetchedAt": "2026-08-04T17:31:29.270Z",
+  "payload": {
+    "searchParameters": {
+      "q": "zero based budgeting apps",
+      "gl": "us",
+      "hl": "en",
+      "type": "search",
+      "num": 10,
+      "engine": "google"
+    },
+    "organic": [
+      {
+        "title": "Zero based budget apps : r/mintuit",
+        "link": "https://www.reddit.com/r/mintuit/comments/1rjvay0/zero_based_budget_apps/",
+        "snippet": "Simplifi is worth trying. It has flexible budgeting. If strict ZBB is what you want, YNAB is still the gold standard even if pricey. Goodbudget ...",
+        "position": 1
+      },
+      {
+        "title": "Best Zero-Based Budgeting Apps (2026 Comparison)",
+        "link": "https://waypointbudget.com/blog/zero-based-budgeting-apps-2026",
+        "snippet": "Detailed Reviews · 1. YNAB (You Need A Budget) · 2. Waypoint Budget · 3. Goodbudget · 4. EveryDollar · 5. PocketGuard. Simplest Setup. Limited ...",
+        "date": "Mar 15, 2026",
+        "rating": 4.9,
+        "ratingCount": 26,
+        "position": 2
+      },
+      {
+        "title": "The Best Budget Apps for 2026: Pros, Cons and What Users Say",
+        "link": "https://www.nerdwallet.com/finance/learn/best-budget-apps",
+        "snippet": "YNAB, for hands-on zero-based budgeting. This app is designed so that users plan ahead for their financial decisions, rather than track past ...",
+        "date": "Jun 2, 2026",
+        "position": 3
+      },
+      {
+        "title": "Top 5 budgeting apps to explore",
+        "link": "https://www.greenefinneycauley.cpa/resources/blog/top-5-budgeting-apps-to-explore",
+        "snippet": "1. YNAB (You Need a Budget). The You Need a Budget (YNAB) app uses a zero-based budgeting method, which means every dollar gets allocated to a specific ...",
+        "position": 4
+      },
+      {
+        "title": "Zerosum - Zero-Based Budgeting Made Simple",
+        "link": "https://zerosum.so/",
+        "snippet": "Zero-based budgeting app: plan every dollar, share with family, import from YNAB or Actual Budget. From $30/year, and your first month of Pro is free.",
+        "position": 5
+      }
+    ],
+    "peopleAlsoAsk": [
+      {
+        "question": "Is YNAB really worth it?"
+      },
+      {
+        "question": "Is EveryDollar no longer free?",
+        "snippet": "Is EveryDollar free? EveryDollar has a free version you can use as long as you want. If you want to experience the all-access version, EveryDollar premium, you can start with a 14-day free trial (new users only)."
+      },
+      {
+        "question": "What is Dave Ramsey's zero-based budget app called?",
+        "snippet": "EveryDollar\n\nEveryDollar is built by Ramsey Solutions, the company behind Dave Ramsey's financial teachings. The app bakes in Ramsey's methodology: the debt snowball, baby steps, and a strict zero-based budget.Mar 15, 2026"
+      },
+      {
+        "question": "Is there a completely free budgeting app?"
+      }
+    ],
+    "relatedSearches": [
+      {
+        "query": "Zero based budgeting apps free"
+      },
+      {
+        "query": "Zero based budgeting apps reddit"
+      },
+      {
+        "query": "Best zero based budgeting apps"
+      },
+      {
+        "query": "Best free zero-based budget app"
+      },
+      {
+        "query": "YNAB"
+      },
+      {
+        "query": "Alternative to zero-based budgeting"
+      },
+      {
+        "query": "Monarch Money"
+      },
+      {
+        "query": "Best free zero based budget app reddit"
+      },
+      {
+        "query": "Goodbudget"
+      },
+      {
+        "query": "Rocket money zero-based budgeting"
+      }
+    ],
+    "credits": 1
+  }
+}
