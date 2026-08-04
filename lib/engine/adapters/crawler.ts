@@ -40,9 +40,28 @@ function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
 
-function parseSitemapUrls(xml: string): string[] {
-  const urls = [...xml.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/gi)].map((m) => m[1])
-  return [...new Set(urls)]
+/**
+ * Paths from a sitemap, resolved against the origin we were asked to crawl.
+ *
+ * A sitemap lists canonical production URLs, which are not necessarily the
+ * host being audited — a staging environment, a preview deploy, or a local
+ * fixture all serve the same paths from a different origin. Taking the URLs
+ * literally means fetching a host we were not pointed at, and quietly
+ * crawling nothing.
+ */
+function parseSitemapUrls(xml: string, origin: string): string[] {
+  const locs = [...xml.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/gi)].map((m) => m[1])
+
+  const resolved = locs.map((loc) => {
+    try {
+      const { pathname, search } = new URL(loc)
+      return `${origin}${pathname}${search}`
+    } catch {
+      return loc.startsWith('/') ? `${origin}${loc}` : loc
+    }
+  })
+
+  return [...new Set(resolved)]
 }
 
 function extractPage(doc: FetchedDoc, origin: string): PageInput {
@@ -108,6 +127,8 @@ export const crawlerAdapter: Adapter = {
     const delayMs = Math.ceil(1000 / config.crawl.requestsPerSecond)
 
     const fetchThrough = async (url: string) => {
+      // Local URLs bypass the fixture cache inside `cached` itself, so a site
+      // we serve ourselves is always read fresh.
       const result = await cached('crawler', url, mode, () => fetchDoc(url))
       await ctx.record({
         adapter: 'crawler',
@@ -144,7 +165,7 @@ export const crawlerAdapter: Adapter = {
 
     // --- sitemap ----------------------------------------------------------
     const sitemap = await fetchThrough(`${origin}/sitemap.xml`)
-    const sitemapUrls = sitemap.status === 200 ? parseSitemapUrls(sitemap.body) : []
+    const sitemapUrls = sitemap.status === 200 ? parseSitemapUrls(sitemap.body, origin) : []
     evidence.push({
       kind: 'crawl_fact',
       source: 'crawler',

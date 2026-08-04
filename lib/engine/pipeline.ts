@@ -9,6 +9,7 @@ import { autocompleteAdapter } from './adapters/autocomplete'
 import { serpAdapter } from './adapters/serp'
 import { psiAdapter } from './adapters/psi'
 import { aiProbeAdapter } from './adapters/aiProbe'
+import { competitorAdapter } from './adapters/competitor'
 import type { Adapter, AdapterContext, ClusterInput } from './adapters/types'
 
 export const ENGINE_VERSION = '0.1.0'
@@ -21,6 +22,7 @@ const ADAPTERS: Adapter[] = [
   crawlerAdapter,
   autocompleteAdapter,
   serpAdapter,
+  competitorAdapter,
   psiAdapter,
   aiProbeAdapter,
 ]

@@ -5,6 +5,11 @@ import { score, toPriority } from '../scoring'
 import { technicalDetector } from './technical'
 import { keywordGapDetector, snippetDetector } from './keyword'
 import { aiCitationDetector } from './geo'
+import {
+  competitorContentGapDetector,
+  competitorSerpGapDetector,
+  localisationGapDetector,
+} from './competitor'
 import type { Detector } from './types'
 
 export const DETECTORS: Detector[] = [
@@ -12,6 +17,9 @@ export const DETECTORS: Detector[] = [
   keywordGapDetector,
   snippetDetector,
   aiCitationDetector,
+  competitorContentGapDetector,
+  competitorSerpGapDetector,
+  localisationGapDetector,
 ]
 
 export interface DetectSummary {

@@ -1,0 +1,10 @@
+{
+  "requestKey": "https://8x.social/robots.txt",
+  "fetchedAt": "2026-08-04T18:41:30.641Z",
+  "payload": {
+    "url": "https://www.8x.social/robots.txt",
+    "status": 200,
+    "body": "User-Agent: *\nAllow: /\nDisallow: /dashboard-redirect\n\nSitemap: https://www.8x.social/sitemap.xml\n",
+    "contentType": "text/plain"
+  }
+}

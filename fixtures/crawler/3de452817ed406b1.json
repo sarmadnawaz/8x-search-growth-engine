@@ -1,0 +1,10 @@
+{
+  "requestKey": "https://falia.app/robots.txt",
+  "fetchedAt": "2026-08-04T18:46:40.581Z",
+  "payload": {
+    "url": "https://falia.app/robots.txt",
+    "status": 404,
+    "body": "",
+    "contentType": "text/html; charset=utf-8"
+  }
+}

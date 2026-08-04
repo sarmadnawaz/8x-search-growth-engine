@@ -15,9 +15,16 @@ export function loadProperty(domain: string): PropertyConfig {
   return PropertyConfig.parse(parse(raw))
 }
 
+/**
+ * Files prefixed with `_` are inputs to the engine that are not properties —
+ * currently the estate recon list, which holds domains that exist but have
+ * deliberately not been onboarded yet. Treating those as configured properties
+ * would make `--all` runs and the onboarding check operate on domains nobody
+ * has configured.
+ */
 export function listPropertyDomains(): string[] {
   return readdirSync(PROPERTIES_DIR)
-    .filter((f) => f.endsWith('.yaml'))
+    .filter((f) => f.endsWith('.yaml') && !f.startsWith('_'))
     .map((f) => f.replace(/\.yaml$/, ''))
     .sort()
 }

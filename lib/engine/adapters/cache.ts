@@ -60,12 +60,32 @@ export class MissingFixtureError extends Error {
  * error rather than a silent empty result: absence of evidence must never be
  * indistinguishable from evidence of absence.
  */
+/**
+ * Local URLs are never cached, in either direction.
+ *
+ * The cache protects external dependencies — rate limits, credits, politeness
+ * budgets — and a server we run ourselves has none of those. Caching it is
+ * actively harmful: a recorded fixture would keep replaying the site as it was
+ * before the engine shipped its fixes, so a change the engine made could never
+ * appear in a later snapshot. A fixture of 127.0.0.1 is also meaningless on
+ * any other machine.
+ */
+function isLocal(requestKey: string): boolean {
+  return /^https?:\/\/(127\.0\.0\.1|localhost|\[::1\])/.test(requestKey)
+}
+
 export async function cached<T>(
   adapter: string,
   requestKey: string,
   mode: 'live' | 'replay',
   fetcher: () => Promise<T>,
 ): Promise<{ payload: T; cached: boolean; latencyMs: number }> {
+  if (isLocal(requestKey)) {
+    const started = Date.now()
+    const payload = await fetcher()
+    return { payload, cached: false, latencyMs: Date.now() - started }
+  }
+
   const hit = readFixture<T>(adapter, requestKey)
   if (hit) return { payload: hit.payload, cached: true, latencyMs: 0 }
   if (mode === 'replay') throw new MissingFixtureError(adapter, requestKey)

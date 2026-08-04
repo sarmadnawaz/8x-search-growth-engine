@@ -1,0 +1,10 @@
+{
+  "requestKey": "https://steadiapp.co/sitemap.xml",
+  "fetchedAt": "2026-08-04T18:42:01.398Z",
+  "payload": {
+    "url": "https://steadiapp.co/sitemap.xml",
+    "status": 200,
+    "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://steadiapp.co</loc>\n<changefreq>monthly</changefreq>\n<priority>1</priority>\n</url>\n<url>\n<loc>https://steadiapp.co/features</loc>\n<changefreq>monthly</changefreq>\n<priority>0.6</priority>\n</url>\n<url>\n<loc>https://steadiapp.co/pricing</loc>\n<changefreq>monthly</changefreq>\n<priority>0.6</priority>\n</url>\n<url>\n<loc>https://steadiapp.co/support</loc>\n<changefreq>monthly</changefreq>\n<priority>0.6</priority>\n</url>\n<url>\n<loc>https://steadiapp.co/privacy</loc>\n<changefreq>monthly</changefreq>\n<priority>0.6</priority>\n</url>\n<url>\n<loc>https://steadiapp.co/terms</loc>\n<changefreq>monthly</changefreq>\n<priority>0.6</priority>\n</url>\n<url>\n<loc>https://steadiapp.co/delete-account</loc>\n<changefreq>monthly</changefreq>\n<priority>0.6</priority>\n</url>\n</urlset>\n",
+    "contentType": "application/xml"
+  }
+}

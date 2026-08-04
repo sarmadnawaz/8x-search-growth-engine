@@ -1,0 +1,10 @@
+{
+  "requestKey": "https://brawnix.fitness/robots.txt",
+  "fetchedAt": "2026-08-04T18:44:29.741Z",
+  "payload": {
+    "url": "https://brawnix.fitness/robots.txt",
+    "status": 200,
+    "body": "User-Agent: *\nAllow: /\nDisallow: /admin\nDisallow: /api\n\nSitemap: https://brawnix.fitness/sitemap.xml\n",
+    "contentType": "text/plain"
+  }
+}

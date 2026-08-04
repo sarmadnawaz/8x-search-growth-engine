@@ -1,4 +1,4 @@
-import { mkdirSync, writeFileSync } from 'node:fs'
+import { mkdirSync, readdirSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { z } from 'zod'
 import { prisma } from '../db'
@@ -223,7 +223,43 @@ export async function apply(domain: string): Promise<{ applied: string[]; refuse
     }
   }
 
+  // A sitemap is a derived artifact: it goes stale the moment new pages ship,
+  // and pages nothing links to are pages nothing discovers. Re-deriving it
+  // from what is actually on disk closes that gap — which is what a deploy
+  // pipeline does, and why the next crawl can see the work.
+  if (applied.length > 0 && config.deployAccess && config.localSite) {
+    refreshSitemap(config.localSite.dir, config.domain)
+    applied.push('sitemap.xml (re-derived after publish)')
+  }
+
   return { applied, refused }
+}
+
+function refreshSitemap(dir: string, domain: string): void {
+  const root = join(process.cwd(), dir)
+  const pages: string[] = []
+
+  const walk = (current: string, prefix: string) => {
+    for (const entry of readdirSync(current, { withFileTypes: true })) {
+      if (entry.isDirectory()) walk(join(current, entry.name), `${prefix}${entry.name}/`)
+      else if (entry.name.endsWith('.html')) pages.push(`${prefix}${entry.name}`)
+    }
+  }
+  walk(root, '')
+
+  const today = new Date().toISOString().slice(0, 10)
+  const xml = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...pages.map(
+      (p) =>
+        `  <url>\n    <loc>https://${domain}/${p === 'index.html' ? '' : p}</loc>\n    <lastmod>${today}</lastmod>\n  </url>`,
+    ),
+    '</urlset>',
+    '',
+  ].join('\n')
+
+  writeFileSync(join(root, 'sitemap.xml'), xml)
 }
 
 /**
