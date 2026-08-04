@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { getPortfolio } from '@/lib/engine/queries'
 import { listPropertyDomains } from '@/lib/engine/config'
-import { Sparkline } from './components/Sparkline'
+import { MiniTrend } from './components/MiniTrend'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Callout, SectionHeader } from './components/Section'
@@ -28,7 +28,7 @@ export default async function PortfolioPage() {
               <CardHeader className="pb-3">
                 <div className="flex items-center justify-between gap-2">
                   <CardTitle className="text-base group-hover:underline">{p.domain}</CardTitle>
-                  <Sparkline values={p.series.map((s) => s.indexablePages)} />
+                  <MiniTrend values={p.series.map((s) => s.indexablePages)} />
                 </div>
                 <p className="text-muted-foreground text-xs">{p.name}</p>
               </CardHeader>
