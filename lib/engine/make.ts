@@ -1,9 +1,13 @@
-import { writeFileSync } from 'node:fs'
-import { join } from 'node:path'
+import { mkdirSync, writeFileSync } from 'node:fs'
+import { dirname, join } from 'node:path'
+import { z } from 'zod'
 import { prisma } from '../db'
 import { loadProperty } from './config'
 import { DETECTORS } from './detectors'
 import type { PropertyConfig } from '../schemas'
+import { makerFor } from './makers'
+import type { MakerContext } from './makers/types'
+import { getProvider } from './llm'
 
 /**
  * The make stage: turn scored opportunities into actions with acceptance
@@ -136,24 +140,51 @@ export async function make(snapshotId: string): Promise<MakeSummary> {
     summary.actionsCreated++
     if (!canDeploy) summary.skippedNoAccess++
 
+    // Deterministic technical fixes first; then the content makers.
     const generator = GENERATORS[draft.suggestedAction.kind]
-    if (!generator) continue
+    if (generator) {
+      const urls = pages.filter((p) => p.status === 200).map((p) => p.url)
+      const asset = generator(config, { urls })
+      await prisma.asset.create({
+        data: {
+          actionId: action.id,
+          type: asset.type,
+          path: asset.path,
+          body: asset.body,
+          reviewState: autoApply ? 'approved' : 'in_review',
+          producedBy: 'template',
+          qa: { generator: draft.suggestedAction.kind },
+        },
+      })
+      summary.assetsGenerated++
+      continue
+    }
 
-    const urls = pages.filter((p) => p.status === 200).map((p) => p.url)
-    const asset = generator(config, { urls })
+    const maker = makerFor(draft.suggestedAction.kind)
+    if (!maker) continue
+
+    const made = await maker.make(makerContext(config, draft.subject, evidence, clusters))
 
     await prisma.asset.create({
       data: {
         actionId: action.id,
-        type: asset.type,
-        path: asset.path,
-        body: asset.body,
+        type: made.type,
+        path: made.path,
+        body: made.body,
         reviewState: autoApply ? 'approved' : 'in_review',
-        producedBy: 'template',
-        qa: { generator: draft.suggestedAction.kind },
+        producedBy: made.producedBy,
+        qa: { generator: maker.kind, satisfies: made.satisfies },
       },
     })
     summary.assetsGenerated++
+
+    // The maker chose the path, so it is the maker's output that gets checked.
+    // Until now these criteria fetched the site root, which meant a perfectly
+    // good generated page failed on the homepage's shortcomings.
+    await prisma.action.update({
+      where: { id: action.id },
+      data: { criteria: scopeCriteriaTo(draft.suggestedAction.criteria, made.path) },
+    })
   }
 
   return summary
@@ -183,7 +214,9 @@ export async function apply(domain: string): Promise<{ applied: string[]; refuse
         continue
       }
 
-      writeFileSync(join(process.cwd(), config.localSite.dir, asset.path), asset.body)
+      const target = join(process.cwd(), config.localSite.dir, asset.path)
+      mkdirSync(dirname(target), { recursive: true })
+      writeFileSync(target, asset.body)
       await prisma.asset.update({ where: { id: asset.id }, data: { reviewState: 'applied' } })
       await prisma.action.update({ where: { id: action.id }, data: { status: 'executed' } })
       applied.push(`${asset.path} (${action.title})`)
@@ -191,4 +224,83 @@ export async function apply(domain: string): Promise<{ applied: string[]; refuse
   }
 
   return { applied, refused }
+}
+
+/**
+ * Assemble what a maker is allowed to know: only evidence already collected
+ * for this property. A maker that could reach outside this context could
+ * assert things the engine has not observed.
+ */
+function makerContext(
+  config: PropertyConfig,
+  subject: string,
+  evidence: { kind: string; subject: string; value: unknown }[],
+  clusters: { query: string; intent: string; demand: number }[],
+): MakerContext {
+  const serp = evidence.find((e) => e.kind === 'serp_observation' && e.subject === subject)?.value as
+    | { topResults?: { position: number; url: string; title: string }[] }
+    | undefined
+
+  const demandRow = evidence.find((e) => e.kind === 'demand_signal' && e.subject === subject)
+    ?.value as { suggestions?: string[] } | undefined
+
+  const cluster = clusters.find((c) => c.query === subject)
+  const provider = getProvider()
+  const canEnrich = provider.unavailableReason() === null
+
+  return {
+    config,
+    subject,
+    evidence: {
+      competitors: (serp?.topResults ?? []).filter((r) => !r.url.includes(config.domain)).slice(0, 5),
+      relatedQueries: demandRow?.suggestions ?? [],
+      demand: cluster?.demand ?? 0,
+      intent: cluster?.intent ?? 'commercial',
+    },
+    // Enrichment is optional by design: the asset must be publishable without
+    // it, so a missing key or a provider outage degrades copy quality rather
+    // than blocking the pipeline.
+    enrich: canEnrich
+      ? async (prompt, schemaName) => {
+          try {
+            const result = await provider.generateObject({
+              system:
+                'You write factual, plain marketing copy. No superlatives, no invented statistics, ' +
+                'no claims you cannot support. Return only the requested keys.',
+              prompt,
+              schema: LooseCopy,
+              schemaName,
+            })
+            return result
+          } catch {
+            return null
+          }
+        }
+      : undefined,
+  }
+}
+
+/** Copy comes back as free-form keys; the maker decides what it uses. */
+const LooseCopy = z.record(z.string())
+
+/** Point page-level delivery checks at the asset that was actually produced. */
+function scopeCriteriaTo(
+  criteria: { id: string; description: string; check: string }[],
+  assetPath: string,
+): { id: string; description: string; check: string }[] {
+  const PAGE_SCOPED = [
+    'answer_block_present',
+    'internal_links_min',
+    'sourced_stats',
+    'schema_type_present',
+    'page_indexable',
+    'min_text_length',
+  ]
+  const target = assetPath.startsWith('/') ? assetPath : `/${assetPath}`
+
+  return criteria.map((c) => {
+    const verb = c.check.split(':')[0].split('@')[0]
+    if (!PAGE_SCOPED.includes(verb) || c.check.includes('@')) return c
+    return { ...c, check: `${c.check}@${target}` }
+  })
 }

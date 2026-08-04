@@ -19,10 +19,14 @@ markets:
   - { market: us, language: en }
 
 competitors: []
-seedQueries: []
+seedQueries:
+  # A real query, so the SERP evidence recorded for it is genuine Google
+  # output. This property legitimately does not rank for it, which is exactly
+  # the gap the keyword detector should find.
+  - technical seo checklist
 promptPanel: []
 
-contentTypes: [landing_page]
+contentTypes: [landing_page, blog, free_tool]
 publishingPolicy: auto_low_risk
 
 fitWeights:

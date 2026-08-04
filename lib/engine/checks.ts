@@ -120,17 +120,21 @@ const DELIVERY: Record<string, (rest: string, ctx: CheckContext) => Promise<Chec
     const res = await ctx.fetchPath('/')
     if (res.status !== 200) return { passed: false, observed: `HTTP ${res.status}` }
 
-    const text = stripTags(res.body)
-    const figures = text.match(/\b\d+(\.\d+)?\s?(%|percent|x|million|billion|k\b)/gi) ?? []
-    const citations = (res.body.match(/<a[^>]+href=["']https?:\/\/(?!.*(?:localhost|127\.0))/gi) ?? [])
-      .length
+    // Counting figures and links separately cannot tell whether a number is
+    // actually attributed — a page with ten figures in one paragraph and a
+    // link in the footer would pass while sourcing nothing. So the unit of
+    // measurement is the block: a statistic is a number that sits in the same
+    // list item or paragraph as the link backing it.
+    const blocks = res.body.match(/<(li|p)\b[^>]*>[\s\S]*?<\/\1>/gi) ?? []
+    const sourced = blocks.filter((block) => {
+      const hasFigure = /\d/.test(stripTags(block))
+      const hasCitation = /<a[^>]+href=["'](https?:\/\/|\/)/i.test(block)
+      return hasFigure && hasCitation
+    })
 
-    // A statistic without a source is an assertion; a source without a figure
-    // is a link. The check wants both present.
-    const stats = Math.min(figures.length, citations)
     return {
-      passed: stats >= required,
-      observed: `${figures.length} figures, ${citations} outbound citations`,
+      passed: sourced.length >= required,
+      observed: `${sourced.length} of ${blocks.length} blocks pair a figure with a source`,
     }
   },
 
@@ -345,10 +349,19 @@ export async function evaluateCheck(
   ctx: CheckContext,
   daysElapsed: number,
 ): Promise<CheckOutcome> {
-  const [kind, ...restParts] = check.split(':')
+  // A check may name the page it applies to: `answer_block_present@/guide.html`.
+  // Without this, content checks silently audit the site root — which reads as
+  // a failing asset when the asset itself is fine, and is how a verifier starts
+  // reporting on something other than the work it was asked about.
+  const [expr, target] = check.split('@')
+  const [kind, ...restParts] = expr.split(':')
   const rest = restParts.join(':')
 
-  if (DELIVERY[kind]) return DELIVERY[kind](rest, ctx)
+  const scoped: CheckContext = target
+    ? { ...ctx, fetchPath: (path) => ctx.fetchPath(path === '/' ? target : path) }
+    : ctx
+
+  if (DELIVERY[kind]) return DELIVERY[kind](rest, scoped)
   if (OUTCOME[kind]) return OUTCOME[kind](rest, ctx, daysElapsed)
 
   return { passed: false, observed: `unsupported check "${kind}" — not evaluated` }

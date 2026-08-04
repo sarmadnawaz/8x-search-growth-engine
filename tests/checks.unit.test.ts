@@ -61,9 +61,12 @@ describe('answer_block_present', () => {
 })
 
 describe('sourced_stats', () => {
-  it('requires figures AND citations, since a number with no source is an assertion', async () => {
-    const unsourced = '<p>Engagement rose 40% and CPM fell 12% while reach grew 3x.</p>'
-    const result = await evaluateCheck('sourced_stats:3', contextServing({ '/': unsourced }), 0)
+  it('requires the figure and its source in the same block, not merely on the same page', async () => {
+    // Ten figures in one paragraph and a link in the footer sources nothing.
+    const detached = `
+      <p>Engagement rose 40%, CPM fell 12%, reach grew 3x, retention gained 8%.</p>
+      <p><a href="https://study.example/a">Our sources</a></p>`
+    const result = await evaluateCheck('sourced_stats:3', contextServing({ '/': detached }), 0)
     expect(result.passed).toBe(false)
   })
 
