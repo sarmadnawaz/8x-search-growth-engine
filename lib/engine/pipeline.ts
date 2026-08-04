@@ -213,12 +213,22 @@ export async function collect(options: RunOptions): Promise<RunSummary> {
     server?.close()
   }
 
+  // Counts are recorded with the snapshot rather than derived later: outcome
+  // checks read the ends of a series, and re-deriving them made verification
+  // cost grow with the square of elapsed time.
+  const [indexablePages, totalPages] = await Promise.all([
+    prisma.page.count({ where: { snapshotId: snapshot.id, indexable: true } }),
+    prisma.page.count({ where: { snapshotId: snapshot.id } }),
+  ])
+
   await prisma.snapshot.update({
     where: { id: snapshot.id },
     data: {
       status: degraded.length > 0 ? 'partial' : 'complete',
       finishedAt: new Date(),
       degradedAdapters: degraded,
+      indexablePages,
+      totalPages,
     },
   })
 

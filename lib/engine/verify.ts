@@ -139,14 +139,17 @@ export async function verifyActions(domain: string): Promise<VerifyResult[]> {
 
           // Outcome checks are the measure stage: each one persists a row so
           // the payoff question has a history rather than a live opinion.
-          if (outcome.metric) {
+          // A measurement belongs to a snapshot. With no snapshot there is
+          // nothing to attach it to, and writing '' as a foreign key raised a
+          // constraint violation that aborted every remaining property.
+          if (outcome.metric && latestSnapshot) {
             await prisma.measurement.upsert({
               where: {
                 actionId_metric: { actionId: action.id, metric: outcome.metric },
               },
               create: {
                 domain,
-                snapshotId: latestSnapshot?.id ?? '',
+                snapshotId: latestSnapshot.id,
                 actionId: action.id,
                 metric: outcome.metric,
                 baseline: outcome.baseline,
@@ -157,7 +160,7 @@ export async function verifyActions(domain: string): Promise<VerifyResult[]> {
               update: {
                 current: outcome.current,
                 verdict: outcome.verdict ?? 'too_early',
-                snapshotId: latestSnapshot?.id ?? '',
+                snapshotId: latestSnapshot.id,
               },
             })
           }

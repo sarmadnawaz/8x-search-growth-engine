@@ -296,16 +296,24 @@ const OUTCOME: Record<
   /** Discovery outcome: is the site actually being indexed? */
   async indexed_pages_min(rest, ctx, daysElapsed) {
     const required = Number(rest.split('=')[1] ?? rest) || 1
-    const snapshots = await prisma.snapshot.findMany({
-      where: { domain: ctx.domain, status: { not: 'pending' } },
-      orderBy: { startedAt: 'asc' },
-      select: { id: true },
-    })
-    const counts = await Promise.all(
-      snapshots.map((s) => prisma.page.count({ where: { snapshotId: s.id, indexable: true } })),
-    )
-    const baseline = counts.at(0) ?? null
-    const current = counts.at(-1) ?? null
+
+    // Only the ends of the series matter, so only the ends are read. Counting
+    // pages per snapshot made this grow with the square of elapsed time: every
+    // action re-counted every snapshot, and snapshots accumulate nightly.
+    const [first, last] = await Promise.all([
+      prisma.snapshot.findFirst({
+        where: { domain: ctx.domain, status: { not: 'pending' } },
+        orderBy: { startedAt: 'asc' },
+        select: { indexablePages: true },
+      }),
+      prisma.snapshot.findFirst({
+        where: { domain: ctx.domain, status: { not: 'pending' } },
+        orderBy: { startedAt: 'desc' },
+        select: { indexablePages: true },
+      }),
+    ])
+    const baseline = first?.indexablePages ?? null
+    const current = last?.indexablePages ?? null
 
     return {
       passed: (current ?? 0) >= required,
