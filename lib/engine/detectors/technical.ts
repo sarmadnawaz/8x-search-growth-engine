@@ -115,6 +115,11 @@ function buildAction(fact: string, label: string, urls: string[], domain: string
             description: 'robots.txt references the sitemap',
             check: 'body_contains:/robots.txt=Sitemap:',
           },
+          {
+            id: 'discovery_outcome',
+            description: 'Indexable pages grow after the fix (measured, not re-fetched)',
+            check: 'indexed_pages_min:1',
+          },
         ],
       }
     case 'sitemap_missing':
@@ -128,6 +133,11 @@ function buildAction(fact: string, label: string, urls: string[], domain: string
             id: 'sitemap_has_urls',
             description: 'sitemap lists at least one URL',
             check: 'body_contains:/sitemap.xml=<loc>',
+          },
+          {
+            id: 'discovery_outcome',
+            description: 'Indexable pages grow after the fix (measured, not re-fetched)',
+            check: 'indexed_pages_min:1',
           },
         ],
       }

@@ -235,6 +235,7 @@ model Measurement {
   snapshot Snapshot @relation(fields: [snapshotId], references: [id], onDelete: Cascade)
   action   Action?  @relation(fields: [actionId], references: [id])
 
+  @@unique([actionId, metric])
   @@index([domain, metric])
 }
 
